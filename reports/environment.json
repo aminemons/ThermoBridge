@@ -1,0 +1,192 @@
+{
+  "timestamp_utc": "2026-10-27T08:21:56Z",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "cpu_count": 8,
+  "uid": 1000,
+  "gid": 1000,
+  "project_writable": true,
+  "project_path": "/foss/designs/thermobridge",
+  "memory_kib": {
+    "MemTotal": 8018140,
+    "MemAvailable": 6873780,
+    "SwapTotal": 2097152
+  },
+  "disk_free_bytes": 1006693908480,
+  "tools": {
+    "yosys": {
+      "path": "/foss/tools/bin/yosys",
+      "command": [
+        "yosys",
+        "-V"
+      ],
+      "exit_code": 0,
+      "version": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)",
+      "output": [
+        "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+      ]
+    },
+    "iverilog": {
+      "path": "/foss/tools/bin/iverilog",
+      "command": [
+        "iverilog",
+        "-V"
+      ],
+      "exit_code": 0,
+      "version": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+      "output": [
+        "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+        "",
+        "Copyright (c) 2000-2026 Stephen Williams (steve@icarus.com)",
+        "",
+        "  This program is free software; you can redistribute it and/or modify",
+        "  it under the terms of the GNU General Public License as published by",
+        "  the Free Software Foundation; either version 2 of the License, or",
+        "  (at your option) any later version."
+      ]
+    },
+    "verilator": {
+      "path": "/foss/tools/bin/verilator",
+      "command": [
+        "verilator",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "Verilator 5.052 2026-09-05 rev v5.052",
+      "output": [
+        "Verilator 5.052 2026-09-05 rev v5.052"
+      ]
+    },
+    "openroad": {
+      "path": "/foss/tools/bin/openroad",
+      "command": [
+        "openroad",
+        "-version"
+      ],
+      "exit_code": 0,
+      "version": "26Q4-407-geb14e40b7",
+      "output": [
+        "26Q4-407-geb14e40b7"
+      ]
+    },
+    "librelane": {
+      "path": "/foss/tools/bin/librelane",
+      "command": [
+        "librelane",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "LibreLane v3.1.0.dev3",
+      "output": [
+        "LibreLane v3.1.0.dev3",
+        "",
+        "Copyright \u00a92025-2026 LibreLane Contributors",
+        "",
+        "Adapted from OpenLane 2.0",
+        "Copyright \u00a92020-2025 Efabless Corporation",
+        "",
+        "Available under the Apache License, version 2. Included with the source code,"
+      ]
+    },
+    "klayout": {
+      "path": "/foss/tools/klayout/klayout",
+      "command": [
+        "klayout",
+        "-v"
+      ],
+      "exit_code": 0,
+      "version": "KLayout 0.30.12",
+      "output": [
+        "KLayout 0.30.12"
+      ]
+    },
+    "ngspice": {
+      "path": "/foss/tools/bin/ngspice",
+      "command": [
+        "ngspice",
+        "-v"
+      ],
+      "exit_code": 0,
+      "version": "",
+      "output": [
+        "******",
+        "** ngspice-47 : Circuit level simulation program",
+        "** Compiled with KLU Direct Linear Solver",
+        "** The U. C. Berkeley CAD Group",
+        "** Copyright 1985-1994, Regents of the University of California.",
+        "** Copyright 2001-2026, The ngspice team.",
+        "** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html",
+        "** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html"
+      ]
+    },
+    "xschem": {
+      "path": "/foss/tools/bin/xschem",
+      "command": [
+        "xschem",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+      "output": [
+        "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+        "XSCHEM V3.4.8RC",
+        "Copyright (C) 1998-2026 Stefan Schippers",
+        "",
+        "This is free software; see the source for copying conditions.  There is NO",
+        "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+        "",
+        ""
+      ]
+    },
+    "magic": {
+      "path": "/foss/tools/bin/magic",
+      "command": [
+        "magic",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "8.3.685",
+      "output": [
+        "8.3.685"
+      ]
+    },
+    "netgen": {
+      "path": "/foss/tools/bin/netgen",
+      "command": [
+        "netgen",
+        "-batch",
+        "help"
+      ],
+      "exit_code": 0,
+      "version": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+      "output": [
+        "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+        "Warning: netgen command 'format' use fully-qualified name '::netgen::format'",
+        "Warning: netgen command 'global' use fully-qualified name '::netgen::global'",
+        "netgen::readnet [<format>] <file> [<filenum>]",
+        "   read a netlist file (default format=auto)",
+        "netgen::readlib <format> [<file>]",
+        "   read a format library",
+        "netgen::canonical <valid_cellname>"
+      ]
+    }
+  },
+  "python_packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1",
+    "cocotb": "2.1.0",
+    "librelane": "3.1.0.dev3"
+  },
+  "pdk": {
+    "name": "sky130A",
+    "standard_cells": "sky130_fd_sc_hd",
+    "core_voltage_V": 1.8,
+    "sources": "open_pdks 1689ac3f2dc763876eaf967227c7dfe831b031ae",
+    "resolved_directory": "/foss/pdks/ciel/sky130/versions/1689ac3f2dc763876eaf967227c7dfe831b031ae/sky130A",
+    "source_lock_sha256": "79b07135cad7120b77a00cdd2dcd0431551edfaae17c1384df7a8eab64682fc4"
+  },
+  "image": "hpretl/iic-osic-tools:2026.10",
+  "image_digest": "sha256:9201d2ebe74a406cf6af850ca2c646ac0462f3b2cea94cd98cb6580d8ceef800"
+}

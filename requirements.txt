@@ -1,0 +1,6 @@
+# Exact scientific/test versions already installed in the recorded OSIC image.
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+pytest==9.1.1
+cocotb==2.1.0
