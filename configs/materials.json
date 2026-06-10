@@ -1,0 +1,11 @@
+{
+  "schema": "thermobridge-materials-v1",
+  "status": "assumed",
+  "source": "Engineering starting assumptions only; no primary-source material data or CDTA geometry used.",
+  "valid_range_c": [20, 350],
+  "membrane": {"name":"silicon-nitride-like illustrative membrane", "thickness_m":8e-7,"density_kg_m3":3100,"heat_capacity_j_kg_k":700,"conductivity_w_m_k":3.0,"emissivity":0.35},
+  "heater": {"name":"platinum-like illustrative thin-film heater", "thickness_m":2e-7,"density_kg_m3":21450,"heat_capacity_j_kg_k":133,"conductivity_w_m_k":71.6,"resistivity_ohm_m":1.06e-7,"tcr_per_k":0.0032,"emissivity":0.35},
+  "ambient_c":25.0,
+  "environmental_loss_w_m2_k":4.0,
+  "environmental_loss_definition":"effective combined top and bottom linearized loss coefficient; radiation is modeled separately; anchor conduction is represented by fixed-temperature boundary cells and is not included here"
+}

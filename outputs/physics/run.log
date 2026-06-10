@@ -1,0 +1,186 @@
+{
+  "schema": "thermobridge-physics-validation-v1",
+  "status": "simulated; all material and geometry properties assumed",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "wall_clock_utc": "2026-10-27T08:24:20.523568+00:00",
+  "config_sha256": {
+    "physics.json": "3f1a48e6a81c9085e13492a7ee41323608d91c5799891f5b1151b2c276cdd1b5",
+    "materials.json": "c9295770e787150d3dd04db3b51ecc3831ca0facf9dbc11a53d141b77153ff71"
+  },
+  "assumptions_file": "configs/materials.json",
+  "geometry_file": "configs/physics.json",
+  "rectangular_resistor": {
+    "resistance_ohm": 0.6558749999998883,
+    "analytic_ohm": 0.6625000000000001,
+    "discrete_analytic_ohm": 0.655875,
+    "current_a": 1.5246807699640486
+  },
+  "refinement_relative_peak_change": [
+    0.011564104664606662,
+    0.005502581014099305
+  ],
+  "rc_baseline": {
+    "tau_s": 14.4,
+    "half_duty_power_w": 1.0416666666666667,
+    "equilibrium_c": 212.5
+  },
+  "gates": {
+    "resistor_within_2_percent": true,
+    "mesh_final_change_below_2_percent": true,
+    "power_balance_below_1_percent": true,
+    "thermal_balance_below_1_percent": true,
+    "time_step_halving_recorded": true,
+    "time_step_halving_change_below_1_percent": true
+  }
+}
+meshes: [
+  {
+    "cell_m": 4e-06,
+    "grid_n": 70,
+    "thermal_cells": 2620,
+    "heater_cells": 532,
+    "build_seconds": 0.02183969999987312,
+    "solve_seconds": 0.21339390000002822,
+    "active_mean_c": 65.94470489803194,
+    "active_peak_c": 67.47020916757322,
+    "roi_std_c": 0.15086393801087083,
+    "roi_peak_minus_mean_c": 0.32123461387635643,
+    "current_a": 0.000781985012970437,
+    "terminal_power_w": 0.00011729775194556555,
+    "integrated_joule_w": 0.0001172977519456012,
+    "power_balance_relative": 3.039845040181525e-13,
+    "thermal_balance_relative": 4.454214342725022e-09,
+    "solver_iterations": 9
+  },
+  {
+    "cell_m": 2e-06,
+    "grid_n": 140,
+    "thermal_cells": 10480,
+    "heater_cells": 2128,
+    "build_seconds": 0.07822770000029777,
+    "solve_seconds": 1.1245089999997617,
+    "active_mean_c": 66.75923193295529,
+    "active_peak_c": 68.25956997917342,
+    "roi_std_c": 0.1344601599804321,
+    "roi_peak_minus_mean_c": 0.3001211776040549,
+    "current_a": 0.0007861731253877562,
+    "terminal_power_w": 0.00011792596880816342,
+    "integrated_joule_w": 0.00011792596880821617,
+    "power_balance_relative": 4.4728431086477046e-13,
+    "thermal_balance_relative": 5.208053593292658e-09,
+    "solver_iterations": 9
+  },
+  {
+    "cell_m": 1e-06,
+    "grid_n": 280,
+    "thermal_cells": 41920,
+    "heater_cells": 8512,
+    "build_seconds": 0.37916909999967174,
+    "solve_seconds": 6.651070699999764,
+    "active_mean_c": 67.14791885473434,
+    "active_peak_c": 68.63725201899308,
+    "roi_std_c": 0.13397762210522668,
+    "roi_peak_minus_mean_c": 0.2990604168200406,
+    "current_a": 0.0007872911297949963,
+    "terminal_power_w": 0.00011809366946924944,
+    "integrated_joule_w": 0.00011809366946931646,
+    "power_balance_relative": 5.674922888581335e-13,
+    "thermal_balance_relative": 5.601454613872552e-09,
+    "solver_iterations": 9
+  }
+]
+compact: {
+  "train_duty": 0.5,
+  "heldout_duty": 0.65,
+  "r_th_k_per_w": 457925.3524153591,
+  "c_th_j_per_k": 1.8492535587035542e-06,
+  "train_rmse_c": 9.34591373574198e-08,
+  "heldout_rmse_c": 0.6001156450236748,
+  "heldout_max_abs_c": 0.638441682000348,
+  "fit_converged": true,
+  "train_times_s": [
+    0.0,
+    4.0,
+    8.0,
+    12.0,
+    16.0,
+    20.0,
+    24.0,
+    28.0,
+    32.0,
+    36.0,
+    40.0
+  ],
+  "train_mean_c": [
+    25.0,
+    112.28690057243533,
+    112.92408620540319,
+    112.92874341358761,
+    112.92877398032043,
+    112.92877599197408,
+    112.92877558266234,
+    112.92877566600437,
+    112.92877564906064,
+    112.92877565249123,
+    112.92877565180284
+  ],
+  "train_input_power_w": [
+    0.00019232232557106575,
+    0.00019201775280820906,
+    0.0001920155430901389,
+    0.00019201551909669496,
+    0.00019201552302850822,
+    0.00019201552206416986,
+    0.000192015522260533,
+    0.0001920155222205508,
+    0.00019201552222867951,
+    0.00019201552222703367,
+    0.00019201552222703367
+  ],
+  "heldout_times_s": [
+    0.0,
+    4.0,
+    8.0,
+    12.0,
+    16.0,
+    20.0,
+    24.0,
+    28.0,
+    32.0
+  ],
+  "heldout_mean_c": [
+    25.0,
+    132.4104351443293,
+    133.1627728561159,
+    133.16804026519895,
+    133.1680760479874,
+    133.16807924036976,
+    133.16807848041842,
+    133.1680786614416,
+    133.16807861832316
+  ],
+  "heldout_input_power_w": [
+    0.00023803413119688683,
+    0.0002376105373583745,
+    0.00023760756646138683,
+    0.0002376075431509086,
+    0.0002376075497421186,
+    0.00023760754793916656,
+    0.0002376075483686114,
+    0.00023760754826631698,
+    0.00023760754826631698
+  ],
+  "heldout_prediction_c": [
+    25.0,
+    133.03353941419184,
+    133.80101008013057,
+    133.80647958423955,
+    133.80651759324593,
+    133.8065209223701,
+    133.80652013366154,
+    133.8065203215617,
+    133.8065202768038
+  ]
+}
