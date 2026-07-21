@@ -1,0 +1,9 @@
+{
+  "training_only": true,
+  "training_schedule": "50-to-60 C; distinct from held-out 55-to-65 C",
+  "kp_q14": 1147,
+  "ki_per_sample_q14": 4,
+  "candidate_count": 6,
+  "training_hold_rmse_c": 2.2520988062765173,
+  "selected_run": "rtl-20261027T140944826204Z"
+}

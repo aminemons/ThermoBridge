@@ -27,7 +27,7 @@ module thermobridge_top #(
     output wire                  pwm_out,
     output wire                  fault,
     output reg                   sample_accepted,
-    output reg signed [15:0]     temp_q6,
+    output reg  [15:0]     temp_q6,
     output reg  [8:0]            duty_q8,
     output reg  [4:0]            fault_cause,
     output reg                   control_tick

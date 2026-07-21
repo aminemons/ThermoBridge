@@ -2,6 +2,7 @@
 """Compile and run the real RTL testbench with Icarus and cocotb."""
 from pathlib import Path
 import os
+import xml.etree.ElementTree as ET
 
 from cocotb_tools.runner import get_runner
 
@@ -22,3 +23,6 @@ runner.test(
     build_dir=ROOT / "build" / "rtl-cocotb",
     extra_env={"PYTHONPATH": str(ROOT) + os.pathsep + str(ROOT / "tb")},
 )
+results = ET.parse(ROOT / 'tb/results.xml').getroot()
+if not results.findall('.//testcase') or results.findall('.//failure') or results.findall('.//error'):
+    raise SystemExit('Cocotb verification failed; see tb/results.xml.')

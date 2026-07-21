@@ -41,7 +41,9 @@ def main():
         if not command:
             p.error('run requires a command')
         setup = 'source /foss/tools/sak/sak-pdk-script.sh sky130A sky130_fd_sc_hd >/dev/null; cd '+REMOTE+'; exec '+shlex.join(command)
-        result = subprocess.run([DOCKER,'exec','-i','-u','1000:1000','-e','IIC_OSIC_TOOLS_QUIET=1','-w',REMOTE,CONTAINER,'bash','-lc',setup])
+        commit=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,text=True).stdout.strip()
+        dirty=bool(subprocess.run(['git','status','--porcelain'],cwd=ROOT,capture_output=True,text=True).stdout.strip())
+        result = subprocess.run([DOCKER,'exec','-i','-u','1000:1000','-e','IIC_OSIC_TOOLS_QUIET=1','-e',f'THERMOBRIDGE_SOURCE_COMMIT={commit}','-e',f'THERMOBRIDGE_SOURCE_DIRTY={str(dirty).lower()}','-w',REMOTE,CONTAINER,'bash','-lc',setup])
         raise SystemExit(result.returncode)
     else:
         for item in a.paths:
