@@ -1,0 +1,10 @@
+{
+  "DESIGN_NAME": "thermobridge_top",
+  "VERILOG_FILES": "/foss/designs/thermobridge/rtl/thermobridge_top.sv",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 100.0,
+  "FP_CORE_UTIL": 35,
+  "PL_TARGET_DENSITY_PCT": 45,
+  "PNR_SDC_FILE": "/foss/designs/thermobridge/flow/adc15.sdc",
+  "SIGNOFF_SDC_FILE": "/foss/designs/thermobridge/flow/adc15.sdc"
+}
