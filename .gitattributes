@@ -1,0 +1,11 @@
+* text=auto eol=lf
+# Preserve archived run bytes so manifest hashes survive cross-platform checkouts.
+/results/** -text
+/outputs/** -text
+/reports/** -text
+/docs/figures/** -text
+*.pdf binary
+*.png binary
+*.npz binary
+*.gds binary
+*.gz binary

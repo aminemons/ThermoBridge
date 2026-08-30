@@ -1,0 +1,47 @@
+{
+  "accelerated_control_div": 32,
+  "command": [
+    "/usr/bin/python3",
+    "scripts/run_rtl_experiment.py"
+  ],
+  "duration_s": 1.713282,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": true,
+  "input_sha256": {
+    "rtl/thermobridge_top.sv": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8",
+    "src/physics/rc.py": "401d73f8320a170f84260d45c99da9f9c7f3e93584649e5efc00d3cb6ace4890",
+    "src/sensing/readout.py": "2120bcbb1fc876d3cf69101892b06f1040a8c5c3af7e3b7fee2f53b3a8881b6e",
+    "tb/rtl_plant_bridge.py": "54ea317aaf27744a769e870ade65919c598590ee23a1514eccd6dd4416a0094a",
+    "tb/test_experiment_bridge.py": "e4e4ea918e0def5b4e948a84fd7be33a7ce023cf99f8318baba88b039811ca17"
+  },
+  "outputs": {
+    "results/raw/experiments/rtl-20261027T140947426703Z/metrics.json": "124c1cb64143880e9c38deb4cdd45d852284bbcf22baeb73e80f58ab3be7590c",
+    "results/raw/experiments/rtl-20261027T140947426703Z/run.log": "1b6eb2ef9d796f7eea2c7271ef331d2532847f59254e1f0a8723a82405c7fdea",
+    "results/raw/experiments/rtl-20261027T140947426703Z/trace.csv": "860179fb38dcb832157a77ea6341e762329a74223c2dd218d3c95185c5427190"
+  },
+  "run_id": "rtl-20261027T140947426703Z",
+  "schema": "thermobridge.run.v1",
+  "seed": 11,
+  "simulation_kind": "RTL-in-the-loop using Icarus/cocotb; not Python duty replay",
+  "source_commit": "82ab0e3f799b971abefae0983712f6f144347501",
+  "source_sha256": "8ca63ef227467a6c677719b2b874b3ac54b39dcfa56163b2c14912d2818b19ba",
+  "status": "complete",
+  "timestamp_utc": "2026-10-27T14:09:46.183633+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}

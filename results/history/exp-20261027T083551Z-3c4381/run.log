@@ -1,0 +1,5 @@
+ThermoBridge paired Python reference campaign completed.
+scenario_count=20; seeds=[11, 29, 47]; rows=540
+controllers_with_settling_failures={'bangbang': 60, 'pi': 57, 'ffpi': 36, 'fixed16_pi': 60, 'fixed16_ffpi': 36, 'fixed20_pi': 60, 'fixed20_ffpi': 36, 'fixed24_pi': 60, 'fixed24_ffpi': 36}
+source_model=positive-parameter one-node ROM fitted to exact primary spatial FVM geometry; averaged-PWM electrical power with heater TCR
+feedforward_lut=feedforward_lut.json

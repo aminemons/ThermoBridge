@@ -1,0 +1,90 @@
+{
+  "training_only": true,
+  "selected": {
+    "pi": {
+      "kp": 0.08,
+      "ki": 0.4
+    },
+    "ffpi": {
+      "kp": 0.02,
+      "ki": 0.005
+    },
+    "bangbang": {
+      "hysteresis_c": 1.0
+    }
+  },
+  "top_grid_candidates": {
+    "pi": [
+      {
+        "mean_training_score": 27.424634136119238,
+        "kp": 0.08,
+        "ki": 0.4
+      },
+      {
+        "mean_training_score": 27.887426901939563,
+        "kp": 0.08,
+        "ki": 0.2
+      },
+      {
+        "mean_training_score": 28.181852807839828,
+        "kp": 0.08,
+        "ki": 0.1
+      },
+      {
+        "mean_training_score": 28.2529683267319,
+        "kp": 0.04,
+        "ki": 0.4
+      },
+      {
+        "mean_training_score": 28.333301109639038,
+        "kp": 0.08,
+        "ki": 0.05
+      }
+    ],
+    "ffpi": [
+      {
+        "mean_training_score": 10.33878334915466,
+        "kp": 0.02,
+        "ki": 0.005
+      },
+      {
+        "mean_training_score": 10.374395844731957,
+        "kp": 0.01,
+        "ki": 0.05
+      },
+      {
+        "mean_training_score": 10.404399591280184,
+        "kp": 0.02,
+        "ki": 0.02
+      },
+      {
+        "mean_training_score": 17.1022194666799,
+        "kp": 0.01,
+        "ki": 0.02
+      },
+      {
+        "mean_training_score": 17.202380641114797,
+        "kp": 0.02,
+        "ki": 0.05
+      }
+    ],
+    "bangbang": [
+      {
+        "mean_training_score": 25.101638548054307,
+        "hysteresis_c": 1.0
+      },
+      {
+        "mean_training_score": 25.151251040699293,
+        "hysteresis_c": 0.5
+      },
+      {
+        "mean_training_score": 26.077696891379418,
+        "hysteresis_c": 2.0
+      },
+      {
+        "mean_training_score": 26.134982957059673,
+        "hysteresis_c": 3.0
+      }
+    ]
+  }
+}

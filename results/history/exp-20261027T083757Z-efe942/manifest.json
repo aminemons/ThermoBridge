@@ -1,0 +1,66 @@
+{
+  "command": [
+    "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/run_experiments.py"
+  ],
+  "controller_count": 3,
+  "duration_s": 31.612147,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "fitted_rom": {
+    "c_th_j_per_k": 7.58947e-08,
+    "r_th_k_per_w": 349137.07,
+    "tau_s": 0.0264977
+  },
+  "git_dirty": true,
+  "input_sha256": {
+    "configs\\evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs\\feedforward_lut.json": "3406364f862fe487e9c55463f735ea9f03ad95d575e0e79d585689985ca85c71",
+    "configs\\physics.json": "3f1a48e6a81c9085e13492a7ee41323608d91c5799891f5b1151b2c276cdd1b5",
+    "outputs\\physics\\validation.json": "68447102ec916aed4f0737f9384622f4f18cec14b6947bb93ff2a4761cd2c3a0",
+    "src\\models\\compact.py": "7734c4e51b909b9683a70f31a5f91f3af5a3fa62ad83a866464a39f3fa916a4e",
+    "src\\physics\\fvm.py": "a93575e2632fcd2455d1e79f100a454d0959f4bc1015687279c8b804c27add51"
+  },
+  "outputs": {
+    "results\\raw\\experiments\\exp-20261027T083757Z-efe942\\metrics.csv": "bea09f0a843165b4eb007c4a372a768881506b7485664ebb34dd86ed3cf110e0",
+    "results\\raw\\experiments\\exp-20261027T083757Z-efe942\\rtn_statistics.json": "f4bef981a73faa7c91e15df56bea737c860a2435219ca3be2e6170a27502b115",
+    "results\\raw\\experiments\\exp-20261027T083757Z-efe942\\run.log": "0819d64b21ef913d61aa09d4502bc09530b00c08eecf7872017b15682394049e",
+    "results\\raw\\experiments\\exp-20261027T083757Z-efe942\\traces.csv": "57dbc4d953326c5c4257c69a6b4932c8023932ec01bb39cf518bb43f71224352",
+    "results\\raw\\experiments\\exp-20261027T083757Z-efe942\\training_tuning.json": "940ae6dc2ed2154210746a9dc0c031eedb712f9647606db5e7e27cda6b05ae0a"
+  },
+  "paired_seeds_per_scenario": 3,
+  "run_id": "exp-20261027T083757Z-efe942",
+  "scenario_count": 20,
+  "schema": "thermobridge.run.v1",
+  "seed": [
+    11,
+    29,
+    47
+  ],
+  "simulation_kind": "Python reference only; not RTL-in-loop",
+  "source_commit": "82ab0e3f799b971abefae0983712f6f144347501",
+  "source_sha256": "c79f79ca26efdeccc85d743bb950e84bebfd9bac00f6454a3e3ba02f71684093",
+  "status": "complete",
+  "timestamp_utc": "2026-10-27T08:37:57.527344+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  },
+  "tuning_scenarios": [
+    "train_nominal",
+    "train_warm_ambient",
+    "train_weak_thermal"
+  ]
+}
