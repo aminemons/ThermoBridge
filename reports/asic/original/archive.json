@@ -1,0 +1,1842 @@
+{
+  "source": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512",
+  "files": [
+    {
+      "path": "warning.log",
+      "bytes": 90876
+    },
+    {
+      "path": "flow.log",
+      "bytes": 117286
+    },
+    {
+      "path": "error.log",
+      "bytes": 0
+    },
+    {
+      "path": "62-klayout-xor/xor.xml",
+      "bytes": 6472
+    },
+    {
+      "path": "62-klayout-xor/klayout-xor.log",
+      "bytes": 21391
+    },
+    {
+      "path": "62-klayout-xor/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "14-openroad-dumprcvalues/layer_values_after.rpt",
+      "bytes": 1019
+    },
+    {
+      "path": "14-openroad-dumprcvalues/tlef_values.rpt",
+      "bytes": 1013
+    },
+    {
+      "path": "14-openroad-dumprcvalues/resizer_values_after.rpt",
+      "bytes": 1347
+    },
+    {
+      "path": "14-openroad-dumprcvalues/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "14-openroad-dumprcvalues/or_metrics_out.json",
+      "bytes": 245
+    },
+    {
+      "path": "14-openroad-dumprcvalues/openroad-dumprcvalues.log",
+      "bytes": 8498
+    },
+    {
+      "path": "02-checker-linttimingconstructs/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "34-openroad-detailedplacement/openroad-detailedplacement.log",
+      "bytes": 4902
+    },
+    {
+      "path": "34-openroad-detailedplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "34-openroad-detailedplacement/or_metrics_out.json",
+      "bytes": 2551
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/min.rpt",
+      "bytes": 5917648
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/max.rpt",
+      "bytes": 7779961
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/wns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/wns.min.rpt",
+      "bytes": 263
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/tns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/ws.min.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/skew.min.rpt",
+      "bytes": 511
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/ws.max.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/power.rpt",
+      "bytes": 1328
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/checks.rpt",
+      "bytes": 40110
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/tns.min.rpt",
+      "bytes": 267
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/or_metrics_out.json",
+      "bytes": 1351
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/openroad-stamidpnr-2.log",
+      "bytes": 13747243
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/skew.max.rpt",
+      "bytes": 513
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/violator_list.rpt",
+      "bytes": 590
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "38-openroad-stamidpnr-2/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "10-openroad-checksdcfiles/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "30-checker-powergridviolations/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "56-openroad-irdropreport/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "56-openroad-irdropreport/or_metrics_out.json",
+      "bytes": 698
+    },
+    {
+      "path": "56-openroad-irdropreport/irdrop.rpt",
+      "bytes": 1116
+    },
+    {
+      "path": "56-openroad-irdropreport/openroad-irdropreport.log",
+      "bytes": 4250
+    },
+    {
+      "path": "39-openroad-globalrouting/openroad-globalrouting.log",
+      "bytes": 7150
+    },
+    {
+      "path": "39-openroad-globalrouting/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "39-openroad-globalrouting/or_metrics_out.json",
+      "bytes": 1934
+    },
+    {
+      "path": "19-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log",
+      "bytes": 4578
+    },
+    {
+      "path": "19-openroad-tapendcapinsertion/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "19-openroad-tapendcapinsertion/or_metrics_out.json",
+      "bytes": 1522
+    },
+    {
+      "path": "18-openroad-cutrows/openroad-cutrows.log",
+      "bytes": 3826
+    },
+    {
+      "path": "18-openroad-cutrows/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "18-openroad-cutrows/or_metrics_out.json",
+      "bytes": 1996
+    },
+    {
+      "path": "28-openroad-globalplacement/openroad-globalplacement.log",
+      "bytes": 19956
+    },
+    {
+      "path": "28-openroad-globalplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "28-openroad-globalplacement/or_metrics_out.json",
+      "bytes": 2201
+    },
+    {
+      "path": "04-checker-lintwarnings/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "69-checker-illegaloverlap/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "35-openroad-cts/cts.rpt",
+      "bytes": 500
+    },
+    {
+      "path": "35-openroad-cts/openroad-cts.log",
+      "bytes": 42324
+    },
+    {
+      "path": "35-openroad-cts/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "35-openroad-cts/or_metrics_out.json",
+      "bytes": 3821
+    },
+    {
+      "path": "75-checker-maxcapviolations/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "70-netgen-lvs/lvs_script.lvs",
+      "bytes": 3041
+    },
+    {
+      "path": "70-netgen-lvs/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "70-netgen-lvs/netgen-lvs.log",
+      "bytes": 75486
+    },
+    {
+      "path": "46-openroad-checkantennas-1/openroad-checkantennas-1.log",
+      "bytes": 3232
+    },
+    {
+      "path": "46-openroad-checkantennas-1/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "46-openroad-checkantennas-1/or_metrics_out.json",
+      "bytes": 270
+    },
+    {
+      "path": "48-odb-reportdisconnectedpins/odb-reportdisconnectedpins.log",
+      "bytes": 104
+    },
+    {
+      "path": "48-odb-reportdisconnectedpins/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "48-odb-reportdisconnectedpins/or_metrics_out.json",
+      "bytes": 217
+    },
+    {
+      "path": "27-odb-applydeftemplate/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "31-openroad-stamidpnr/min.rpt",
+      "bytes": 3241585
+    },
+    {
+      "path": "31-openroad-stamidpnr/max.rpt",
+      "bytes": 4570260
+    },
+    {
+      "path": "31-openroad-stamidpnr/wns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "31-openroad-stamidpnr/wns.min.rpt",
+      "bytes": 263
+    },
+    {
+      "path": "31-openroad-stamidpnr/tns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "31-openroad-stamidpnr/ws.min.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "31-openroad-stamidpnr/skew.min.rpt",
+      "bytes": 512
+    },
+    {
+      "path": "31-openroad-stamidpnr/ws.max.rpt",
+      "bytes": 289
+    },
+    {
+      "path": "31-openroad-stamidpnr/power.rpt",
+      "bytes": 1326
+    },
+    {
+      "path": "31-openroad-stamidpnr/checks.rpt",
+      "bytes": 200091
+    },
+    {
+      "path": "31-openroad-stamidpnr/tns.min.rpt",
+      "bytes": 267
+    },
+    {
+      "path": "31-openroad-stamidpnr/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "31-openroad-stamidpnr/or_metrics_out.json",
+      "bytes": 1354
+    },
+    {
+      "path": "31-openroad-stamidpnr/openroad-stamidpnr.log",
+      "bytes": 8021455
+    },
+    {
+      "path": "31-openroad-stamidpnr/skew.max.rpt",
+      "bytes": 512
+    },
+    {
+      "path": "31-openroad-stamidpnr/violator_list.rpt",
+      "bytes": 590
+    },
+    {
+      "path": "31-openroad-stamidpnr/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "31-openroad-stamidpnr/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "40-openroad-checkantennas/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "40-openroad-checkantennas/openroad-checkantennas.log",
+      "bytes": 164019
+    },
+    {
+      "path": "40-openroad-checkantennas/or_metrics_out.json",
+      "bytes": 272
+    },
+    {
+      "path": "67-checker-klayoutdrc/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "42-openroad-repairantennas/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "45-odb-removeroutingobstructions/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "41-odb-diodesonports/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "06-yosys-synthesis/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "06-yosys-synthesis/yosys-synthesis.log",
+      "bytes": 228728
+    },
+    {
+      "path": "01-verilator-lint/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "01-verilator-lint/verilator-lint.log",
+      "bytes": 275017
+    },
+    {
+      "path": "29-odb-writeverilogheader/odb-writeverilogheader.log",
+      "bytes": 50
+    },
+    {
+      "path": "29-odb-writeverilogheader/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "29-odb-writeverilogheader/or_metrics_out.json",
+      "bytes": 130
+    },
+    {
+      "path": "57-magic-streamout/magic-streamout.log",
+      "bytes": 219218
+    },
+    {
+      "path": "57-magic-streamout/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "76-misc-reportmanufacturability/manufacturability.rpt",
+      "bytes": 58
+    },
+    {
+      "path": "76-misc-reportmanufacturability/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "12-openroad-staprepnr/summary.rpt",
+      "bytes": 2770
+    },
+    {
+      "path": "12-openroad-staprepnr/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "52-openroad-fillinsertion/openroad-fillinsertion.log",
+      "bytes": 4658
+    },
+    {
+      "path": "52-openroad-fillinsertion/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "52-openroad-fillinsertion/or_metrics_out.json",
+      "bytes": 1977
+    },
+    {
+      "path": "03-checker-linterrors/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "50-odb-reportwirelength/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "50-odb-reportwirelength/or_metrics_out.json",
+      "bytes": 165
+    },
+    {
+      "path": "50-odb-reportwirelength/odb-reportwirelength.log",
+      "bytes": 50
+    },
+    {
+      "path": "61-odb-checkdesignantennaproperties/odb-checkdesignantennaproperties.log",
+      "bytes": 2007
+    },
+    {
+      "path": "61-odb-checkdesignantennaproperties/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "61-odb-checkdesignantennaproperties/or_metrics_out.json",
+      "bytes": 130
+    },
+    {
+      "path": "20-odb-addpdnobstructions/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "23-odb-addroutingobstructions/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "15-odb-checkmacroantennaproperties/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "33-odb-manualglobalplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/min.rpt",
+      "bytes": 5918163
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/max.rpt",
+      "bytes": 7784856
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/wns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/wns.min.rpt",
+      "bytes": 263
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/tns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/ws.min.rpt",
+      "bytes": 283
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/skew.min.rpt",
+      "bytes": 513
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/ws.max.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/openroad-stamidpnr-3.log",
+      "bytes": 13752670
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/power.rpt",
+      "bytes": 1327
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/checks.rpt",
+      "bytes": 40110
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/tns.min.rpt",
+      "bytes": 267
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/or_metrics_out.json",
+      "bytes": 1350
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/skew.max.rpt",
+      "bytes": 513
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/violator_list.rpt",
+      "bytes": 590
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "43-openroad-stamidpnr-3/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "64-magic-drc/magic-drc.log",
+      "bytes": 5064
+    },
+    {
+      "path": "64-magic-drc/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "54-openroad-rcx/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "54-openroad-rcx/or_metrics_out.json",
+      "bytes": 1344
+    },
+    {
+      "path": "73-checker-holdviolations/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "63-checker-xor/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "71-checker-lvs/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "32-openroad-repairdesignpostgpl/openroad-repairdesignpostgpl.log",
+      "bytes": 38455
+    },
+    {
+      "path": "32-openroad-repairdesignpostgpl/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "32-openroad-repairdesignpostgpl/or_metrics_out.json",
+      "bytes": 2049
+    },
+    {
+      "path": "16-odb-setpowerconnections/odb-setpowerconnections.log",
+      "bytes": 50
+    },
+    {
+      "path": "16-odb-setpowerconnections/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "16-odb-setpowerconnections/or_metrics_out.json",
+      "bytes": 130
+    },
+    {
+      "path": "59-klayout-render/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "59-klayout-render/klayout-render.log",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/summary.rpt",
+      "bytes": 3904
+    },
+    {
+      "path": "55-openroad-stapostpnr/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "37-openroad-resizertimingpostcts/openroad-resizertimingpostcts.log",
+      "bytes": 38905
+    },
+    {
+      "path": "37-openroad-resizertimingpostcts/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "37-openroad-resizertimingpostcts/or_metrics_out.json",
+      "bytes": 2250
+    },
+    {
+      "path": "13-openroad-floorplan/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "13-openroad-floorplan/or_metrics_out.json",
+      "bytes": 1455
+    },
+    {
+      "path": "13-openroad-floorplan/openroad-floorplan.log",
+      "bytes": 7155
+    },
+    {
+      "path": "07-checker-yosysunmappedcells/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "51-checker-wirelength/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "74-checker-maxslewviolations/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "21-openroad-generatepdn/openroad-generatepdn.log",
+      "bytes": 4580
+    },
+    {
+      "path": "21-openroad-generatepdn/VGND-grid-errors.rpt",
+      "bytes": 1
+    },
+    {
+      "path": "21-openroad-generatepdn/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "21-openroad-generatepdn/VPWR-grid-errors.rpt",
+      "bytes": 1
+    },
+    {
+      "path": "21-openroad-generatepdn/or_metrics_out.json",
+      "bytes": 2201
+    },
+    {
+      "path": "25-openroad-ioplacement/openroad-ioplacement.log",
+      "bytes": 4777
+    },
+    {
+      "path": "25-openroad-ioplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "25-openroad-ioplacement/or_metrics_out.json",
+      "bytes": 2263
+    },
+    {
+      "path": "60-magic-writelef/magic-writelef.log",
+      "bytes": 207339
+    },
+    {
+      "path": "60-magic-writelef/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "65-klayout-drc/xml_drc_report_to_json.log",
+      "bytes": 41
+    },
+    {
+      "path": "65-klayout-drc/klayout-drc.log",
+      "bytes": 98271
+    },
+    {
+      "path": "65-klayout-drc/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "17-odb-manualmacroplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "05-yosys-jsonheader/yosys-jsonheader.log",
+      "bytes": 73635
+    },
+    {
+      "path": "05-yosys-jsonheader/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "49-checker-disconnectedpins/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "final/metrics.json",
+      "bytes": 17930
+    },
+    {
+      "path": "08-checker-yosyssynthchecks/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "58-klayout-streamout/klayout-streamout.log",
+      "bytes": 354
+    },
+    {
+      "path": "58-klayout-streamout/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "22-odb-removepdnobstructions/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "47-checker-trdrc/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "53-odb-cellfrequencytables/cell_function.rpt",
+      "bytes": 15465
+    },
+    {
+      "path": "53-odb-cellfrequencytables/odb-cellfrequencytables.log",
+      "bytes": 19883
+    },
+    {
+      "path": "53-odb-cellfrequencytables/cell.rpt",
+      "bytes": 17636
+    },
+    {
+      "path": "53-odb-cellfrequencytables/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "53-odb-cellfrequencytables/or_metrics_out.json",
+      "bytes": 130
+    },
+    {
+      "path": "53-odb-cellfrequencytables/buffer_list.txt",
+      "bytes": 2117
+    },
+    {
+      "path": "53-odb-cellfrequencytables/by_scl.rpt",
+      "bytes": 1938
+    },
+    {
+      "path": "53-odb-cellfrequencytables/buffers.rpt",
+      "bytes": 3274
+    },
+    {
+      "path": "44-openroad-detailedrouting/thermobridge_top.drc.xml",
+      "bytes": 170
+    },
+    {
+      "path": "44-openroad-detailedrouting/openroad-detailedrouting.log",
+      "bytes": 34743
+    },
+    {
+      "path": "44-openroad-detailedrouting/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "44-openroad-detailedrouting/or_metrics_out.json",
+      "bytes": 3254
+    },
+    {
+      "path": "44-openroad-detailedrouting/thermobridge_top.drc",
+      "bytes": 0
+    },
+    {
+      "path": "24-openroad-globalplacementskipio/openroad-globalplacementskipio.log",
+      "bytes": 10328
+    },
+    {
+      "path": "24-openroad-globalplacementskipio/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "24-openroad-globalplacementskipio/or_metrics_out.json",
+      "bytes": 2201
+    },
+    {
+      "path": "26-odb-customioplacement/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "66-checker-magicdrc/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "68-magic-spiceextraction/feedback.txt",
+      "bytes": 0
+    },
+    {
+      "path": "68-magic-spiceextraction/magic-spiceextraction.log",
+      "bytes": 57776
+    },
+    {
+      "path": "68-magic-spiceextraction/feedback.xml",
+      "bytes": 170
+    },
+    {
+      "path": "68-magic-spiceextraction/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "68-magic-spiceextraction/cif_scale.txt",
+      "bytes": 6
+    },
+    {
+      "path": "11-openroad-checkmacroinstances/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/min.rpt",
+      "bytes": 5917140
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/max.rpt",
+      "bytes": 7779939
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/wns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/wns.min.rpt",
+      "bytes": 263
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/tns.max.rpt",
+      "bytes": 269
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/ws.min.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/skew.min.rpt",
+      "bytes": 511
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/openroad-stamidpnr-1.log",
+      "bytes": 13746696
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/ws.max.rpt",
+      "bytes": 287
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/power.rpt",
+      "bytes": 1328
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/checks.rpt",
+      "bytes": 40110
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/tns.min.rpt",
+      "bytes": 267
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/or_metrics_out.json",
+      "bytes": 1351
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/skew.max.rpt",
+      "bytes": 513
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/violator_list.rpt",
+      "bytes": 590
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "36-openroad-stamidpnr-1/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "09-checker-netlistassignstatements/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "70-netgen-lvs/reports/lvs.netgen.rpt",
+      "bytes": 166172
+    },
+    {
+      "path": "46-openroad-checkantennas-1/reports/antenna_summary.rpt",
+      "bytes": 518
+    },
+    {
+      "path": "46-openroad-checkantennas-1/reports/antenna.rpt",
+      "bytes": 80
+    },
+    {
+      "path": "40-openroad-checkantennas/reports/antenna_summary.rpt",
+      "bytes": 2948
+    },
+    {
+      "path": "40-openroad-checkantennas/reports/antenna.rpt",
+      "bytes": 160871
+    },
+    {
+      "path": "42-openroad-repairantennas/2-openroad-checkantennas/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "42-openroad-repairantennas/2-openroad-checkantennas/openroad-checkantennas.log",
+      "bytes": 3281
+    },
+    {
+      "path": "42-openroad-repairantennas/2-openroad-checkantennas/or_metrics_out.json",
+      "bytes": 270
+    },
+    {
+      "path": "42-openroad-repairantennas/1-openroad-diodeinsertion/runtime.txt",
+      "bytes": 12
+    },
+    {
+      "path": "42-openroad-repairantennas/1-openroad-diodeinsertion/or_metrics_out.json",
+      "bytes": 2070
+    },
+    {
+      "path": "42-openroad-repairantennas/1-openroad-diodeinsertion/openroad-diodeinsertion.log",
+      "bytes": 4592
+    },
+    {
+      "path": "42-openroad-repairantennas/2-openroad-checkantennas/reports/antenna_summary.rpt",
+      "bytes": 518
+    },
+    {
+      "path": "42-openroad-repairantennas/2-openroad-checkantennas/reports/antenna.rpt",
+      "bytes": 80
+    },
+    {
+      "path": "06-yosys-synthesis/reports/pre_techmap.rpt",
+      "bytes": 1082
+    },
+    {
+      "path": "06-yosys-synthesis/reports/chk.rpt",
+      "bytes": 127
+    },
+    {
+      "path": "06-yosys-synthesis/reports/post_dff.rpt",
+      "bytes": 1303
+    },
+    {
+      "path": "06-yosys-synthesis/reports/pre_synth_chk.rpt",
+      "bytes": 126
+    },
+    {
+      "path": "06-yosys-synthesis/reports/stat.rpt",
+      "bytes": 3723
+    },
+    {
+      "path": "06-yosys-synthesis/reports/latch.rpt",
+      "bytes": 2279
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/min.rpt",
+      "bytes": 2979014
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/max.rpt",
+      "bytes": 4393733
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/ws.min.rpt",
+      "bytes": 209
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/skew.min.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/checks.rpt",
+      "bytes": 268735
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/skew.max.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/unpropagated.rpt",
+      "bytes": 9
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/clock.rpt",
+      "bytes": 1267
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ss_100C_1v60/sta.log",
+      "bytes": 7650968
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/min.rpt",
+      "bytes": 2978741
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/max.rpt",
+      "bytes": 4389319
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/skew.min.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/checks.rpt",
+      "bytes": 227737
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/skew.max.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/unpropagated.rpt",
+      "bytes": 9
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/clock.rpt",
+      "bytes": 1267
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_tt_025C_1v80/sta.log",
+      "bytes": 7605286
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/min.rpt",
+      "bytes": 2978739
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/max.rpt",
+      "bytes": 4384708
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/skew.min.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/checks.rpt",
+      "bytes": 169326
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/skew.max.rpt",
+      "bytes": 426
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/unpropagated.rpt",
+      "bytes": 9
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/clock.rpt",
+      "bytes": 1267
+    },
+    {
+      "path": "12-openroad-staprepnr/nom_ff_n40C_1v95/sta.log",
+      "bytes": 7542262
+    },
+    {
+      "path": "64-magic-drc/reports/drc.magic.rpt",
+      "bytes": 110
+    },
+    {
+      "path": "54-openroad-rcx/nom/rcx.log",
+      "bytes": 4006
+    },
+    {
+      "path": "54-openroad-rcx/max/rcx.log",
+      "bytes": 4006
+    },
+    {
+      "path": "54-openroad-rcx/min/rcx.log",
+      "bytes": 4006
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/min.rpt",
+      "bytes": 5918957
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/max.rpt",
+      "bytes": 7720397
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/wns.max.rpt",
+      "bytes": 220
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/tns.max.rpt",
+      "bytes": 219
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/ws.min.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/ws.max.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/checks.rpt",
+      "bytes": 75578
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/violator_list.rpt",
+      "bytes": 1416
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ss_100C_1v60/sta.log",
+      "bytes": 13726918
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/min.rpt",
+      "bytes": 5918716
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/max.rpt",
+      "bytes": 7717945
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/wns.max.rpt",
+      "bytes": 220
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/tns.max.rpt",
+      "bytes": 220
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/ws.min.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/ws.max.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/checks.rpt",
+      "bytes": 84645
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/violator_list.rpt",
+      "bytes": 1884
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ss_100C_1v60/sta.log",
+      "bytes": 13733762
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/min.rpt",
+      "bytes": 5918716
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/max.rpt",
+      "bytes": 7718355
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/wns.max.rpt",
+      "bytes": 221
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/tns.max.rpt",
+      "bytes": 220
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/ws.min.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/ws.max.rpt",
+      "bytes": 212
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/checks.rpt",
+      "bytes": 79521
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/violator_list.rpt",
+      "bytes": 1832
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ss_100C_1v60/sta.log",
+      "bytes": 13728999
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/min.rpt",
+      "bytes": 5918421
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/max.rpt",
+      "bytes": 7771117
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/ws.max.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/checks.rpt",
+      "bytes": 40142
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_ff_n40C_1v95/sta.log",
+      "bytes": 13740360
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/min.rpt",
+      "bytes": 5918956
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/max.rpt",
+      "bytes": 7775938
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/checks.rpt",
+      "bytes": 40166
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_ff_n40C_1v95/sta.log",
+      "bytes": 13745738
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/min.rpt",
+      "bytes": 5918447
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/max.rpt",
+      "bytes": 7769593
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/ws.max.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/checks.rpt",
+      "bytes": 39877
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_tt_025C_1v80/sta.log",
+      "bytes": 13738594
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/min.rpt",
+      "bytes": 5918440
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/max.rpt",
+      "bytes": 7768401
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/ws.min.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/checks.rpt",
+      "bytes": 39877
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/min_tt_025C_1v80/sta.log",
+      "bytes": 13737392
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/min.rpt",
+      "bytes": 5918412
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/max.rpt",
+      "bytes": 7773465
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/ws.min.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/ws.max.rpt",
+      "bytes": 211
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/checks.rpt",
+      "bytes": 40142
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/nom_ff_n40C_1v95/sta.log",
+      "bytes": 13742698
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/min.rpt",
+      "bytes": 5918714
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/max.rpt",
+      "bytes": 7741135
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/wns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/wns.min.rpt",
+      "bytes": 202
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/tns.max.rpt",
+      "bytes": 205
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/ws.min.rpt",
+      "bytes": 209
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/skew.min.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/ws.max.rpt",
+      "bytes": 210
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/power.rpt",
+      "bytes": 1094
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/checks.rpt",
+      "bytes": 39613
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/tns.min.rpt",
+      "bytes": 204
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/skew.max.rpt",
+      "bytes": 427
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/violator_list.rpt",
+      "bytes": 168
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/unpropagated.rpt",
+      "bytes": 0
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/filter_unannotated.log",
+      "bytes": 1764
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/clock.rpt",
+      "bytes": 1268
+    },
+    {
+      "path": "55-openroad-stapostpnr/max_tt_025C_1v80/sta.log",
+      "bytes": 13710134
+    },
+    {
+      "path": "44-openroad-detailedrouting/drt-run-1/thermobridge_top.drc.xml",
+      "bytes": 170
+    },
+    {
+      "path": "44-openroad-detailedrouting/drt-run-1/thermobridge_top.drc",
+      "bytes": 0
+    },
+    {
+      "path": "44-openroad-detailedrouting/drt-run-0/thermobridge_top.drc.xml",
+      "bytes": 170
+    },
+    {
+      "path": "44-openroad-detailedrouting/drt-run-0/thermobridge_top.drc",
+      "bytes": 0
+    }
+  ],
+  "note": "Original20ns ADC timing failure retained. Conditional15ns recheck is separate."
+}

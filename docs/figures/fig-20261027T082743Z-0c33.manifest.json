@@ -1,0 +1,35 @@
+{
+  "command": [
+    "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/make_figures.py",
+    "--run",
+    "results\\raw\\experiments\\exp-20261027T082602Z-6bdd72"
+  ],
+  "duration_s": 0.255541,
+  "figure_source": "saved CSV data; no fabricated traces",
+  "git_dirty": true,
+  "input_sha256": {
+    "results\\raw\\experiments\\exp-20261027T082602Z-6bdd72\\metrics.csv": "4015ecbebcdd27e261ca5ecd982edf9e79cea19d1ad068148efdff04fc436346",
+    "results\\raw\\experiments\\exp-20261027T082602Z-6bdd72\\traces.csv": "4b744b30c49012b946d5ee580970f711025368eb799e49c69e73e5ca91e48aad"
+  },
+  "outputs": {
+    "experiment_energy_tracking.png": "10493296aee9595e0f4d8fa8989cbab7c5bd9e9ce77cc8ca7f9487082fcfe30d",
+    "experiment_energy_tracking.svg": "6567c51e1c6421fa8e07276e3f5bf3c2e0e451ca756caa97a0b465f7c84e7745",
+    "experiment_paired_trace.png": "c3b6b4e8e16510163d321d2bbd3cb760ccf040f42c6a1f55f87c9b1391912c6e",
+    "experiment_paired_trace.svg": "7b6436ece4fca9c423779c6c58eef5578b846ad8b49f7111925d06db12a2ed0e",
+    "experiment_robustness_width.png": "a0c8657bd1fc5680ccdd55f0e1b0c27a01757fc4397d5e89247f861868dd247a",
+    "experiment_robustness_width.svg": "84782345e77444f5e2d48eb36db4e59f9018fa05db8786a8429dfefb0b6931f3",
+    "experiment_summary_exp-20261027T082602Z-6bdd72.csv": "4a8d11d286589111c4a727a3c0609c11980a17d6103550fadaab11ed9911fb22"
+  },
+  "run_id": "fig-20261027T082743Z-0c33",
+  "schema": "thermobridge.run.v1",
+  "seed": null,
+  "source_commit": "0e20969a105c2fb7854f0ffe4a46ce4f19dd5c5f",
+  "source_experiment_run": "exp-20261027T082602Z-6bdd72",
+  "source_sha256": "d57fae6d4a6200d99b8a7dcf221e61c1f85f82677bfe7a032c63f465be9bbbd7",
+  "status": "complete",
+  "timestamp_utc": "2026-10-27T08:27:45.597429+00:00",
+  "tool_versions": {
+    "python": "3.11.9"
+  }
+}

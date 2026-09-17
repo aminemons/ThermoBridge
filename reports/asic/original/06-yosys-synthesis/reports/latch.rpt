@@ -1,0 +1,12 @@
+
+22. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\thermobridge_top.$mem2reg_rd$\active_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$52_DATA' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325'.
+No latch inferred for signal `\thermobridge_top.\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$10.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291'.
+No latch inferred for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$9.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$8.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+No latch inferred for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$7.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$6.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+No latch inferred for signal `\thermobridge_top.\sat16_diff$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$5.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225'.
+No latch inferred for signal `\thermobridge_top.\sat16$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$4.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$3.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+No latch inferred for signal `\thermobridge_top.\cfg_rdata' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81'.

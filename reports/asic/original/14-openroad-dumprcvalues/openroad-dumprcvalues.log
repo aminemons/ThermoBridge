@@ -1,0 +1,129 @@
+[WARNING ORD-0032] Invalid thread number specification: None.
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz'…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading technology LEF file at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
+[INFO ODB-0227] LEF file: /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+Making fake IO site sky130_io…
+Making fake IO site sky130_io_corner…
+Reading cell LEF file at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 8 library cells
+Reading cell LEF file at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+Reading gpio pad LEF file at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /foss/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef at line 2.
+
+[INFO ODB-0227] LEF file: /foss/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef, created 39 library cells
+[INFO ODB-0127] Reading DEF file: /foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/13-openroad-floorplan/thermobridge_top.def
+[INFO ODB-0128] Design: thermobridge_top
+[INFO ODB-0130]     Created 124 pins.
+[INFO ODB-0131]     Created 6404 components and 48582 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 25616 connections.
+[INFO ODB-0133]     Created 6461 nets and 22965 connections.
+[INFO ODB-0134] Finished DEF file: /foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/13-openroad-floorplan/thermobridge_top.def
+[WARNING ORD-2056] The following 2 liberty cell(s) do not have LEF masters and will be marked as dont-use:
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+%OL_CREATE_REPORT tlef_values.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+== Technology LEF Values ==
+=== Routing Layers ===
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+li1                 VERTICAL            7.529412e-02        8.768172e-05        
+met1                HORIZONTAL          8.928571e-04        8.474298e-05        
+met2                VERTICAL            8.928571e-04        7.788992e-05        
+met3                HORIZONTAL          1.566667e-04        8.568987e-05        
+met4                VERTICAL            1.566667e-04        7.587661e-05        
+met5                HORIZONTAL          1.781250e-05        8.781501e-05        
+=== Vias ===
+Name                Cut Resistance      
+licon               0.000000e+00        
+mcon                9.300000e-03        
+via                 4.500000e-03        
+via2                3.410000e-03        
+via3                3.410000e-03        
+via4                3.800000e-04        
+%OL_END_REPORT
+%OL_CREATE_REPORT layer_values_after.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+== Layer Values (After Set RC) ==
+=== Routing Layers ===
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+li1                 VERTICAL            7.529412e-02        8.768172e-05        
+met1                HORIZONTAL          8.928571e-04        8.474298e-05        
+met2                VERTICAL            8.928571e-04        7.788992e-05        
+met3                HORIZONTAL          1.566667e-04        8.568987e-05        
+met4                VERTICAL            1.566667e-04        7.587661e-05        
+met5                HORIZONTAL          1.781250e-05        8.781501e-05        
+=== Vias ===
+Name                Cut Resistance      
+licon               0.000000e+00        
+mcon                9.300000e-03        
+via                 4.500000e-03        
+via2                3.410000e-03        
+via3                3.410000e-03        
+via4                3.800000e-04        
+%OL_END_REPORT
+%OL_CREATE_REPORT resizer_values_after.rpt
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+== Resizer RC Values (After Set RC) ==
+=== Corner nom_tt_025C_1v80 ===
+==== Estimation RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+Signal              Avg                 8.928571e-04        7.788992e-05        
+Clock               Avg                 4.402703e-04        8.148294e-05        
+==== Rt. Layer RC Values ====
+Name                Direction           Res/Unit Distance   Cap/Unit Distance   
+li1                 VERTICAL            0.000000e+00        0.000000e+00        
+met1                HORIZONTAL          0.000000e+00        0.000000e+00        
+met2                VERTICAL            0.000000e+00        0.000000e+00        
+met3                HORIZONTAL          0.000000e+00        0.000000e+00        
+met4                VERTICAL            0.000000e+00        0.000000e+00        
+met5                HORIZONTAL          0.000000e+00        0.000000e+00        
+==== Via R Values ====
+Name                Res/Unit Distance   
+licon               0.000000e+00        
+mcon                0.000000e+00        
+via                 0.000000e+00        
+via2                0.000000e+00        
+via3                0.000000e+00        
+via4                0.000000e+00        
+%OL_END_REPORT

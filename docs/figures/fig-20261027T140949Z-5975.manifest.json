@@ -1,0 +1,50 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/make_figures.py",
+    "--run",
+    "/foss/designs/thermobridge/results/raw/experiments/exp-20261027T135345Z-7afca8"
+  ],
+  "duration_s": 0.024545,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "figure_source": "saved CSV data; no fabricated traces",
+  "git_dirty": true,
+  "input_sha256": {
+    "results/raw/experiments/exp-20261027T135345Z-7afca8/metrics.csv": "679175619fbbe711c6da0508e6d75bcdca269ac41f37a480b34739ae97b2702e",
+    "results/raw/experiments/exp-20261027T135345Z-7afca8/traces.csv": "57dbc4d953326c5c4257c69a6b4932c8023932ec01bb39cf518bb43f71224352"
+  },
+  "outputs": {
+    "docs/figures/experiment_energy_tracking.png": "128c0b6f17d2254a77a4c4fe27f934e34c9a0e2c558b17457f9cda54a3b9b107",
+    "docs/figures/experiment_energy_tracking.svg": "f9a7b3a16fadb1be2787e1cc41a5c94aaa94a9c4daec03612e1f54fbcaf588f5",
+    "docs/figures/experiment_paired_trace.png": "e47b8ba96feb249b9a46209d1a4e2f1b0a0247bc2256455bf03c2ff7f2715976",
+    "docs/figures/experiment_paired_trace.svg": "65727de2fab143374bb926c4781561dc9793fd9bea61e5b03c9734de428494b0",
+    "docs/figures/experiment_robustness_width.png": "c0370135a4aee65d534dc8a96543713a8d79c9237bef1fe91a23b6b4b7ed08e9",
+    "docs/figures/experiment_robustness_width.svg": "545e3e506978ae2c901c0af575d2ef2afef192750af30d925e7013942a4ba004",
+    "results/processed/experiment_summary_exp-20261027T135345Z-7afca8.csv": "69a97af8bdf24ca0326ef46ce00847c0280d62b0107328d8e9667124a4c060aa"
+  },
+  "run_id": "fig-20261027T140949Z-5975",
+  "schema": "thermobridge.run.v1",
+  "seed": null,
+  "source_commit": "82ab0e3f799b971abefae0983712f6f144347501",
+  "source_experiment_run": "exp-20261027T135345Z-7afca8",
+  "source_sha256": "8ca63ef227467a6c677719b2b874b3ac54b39dcfa56163b2c14912d2818b19ba",
+  "status": "complete",
+  "timestamp_utc": "2026-10-27T14:09:51.305767+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}

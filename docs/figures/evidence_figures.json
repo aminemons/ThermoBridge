@@ -1,0 +1,9 @@
+{
+  "sources": {
+    "outputs/physics/steady_1um.npz": "6f4298f4d5b59ea0df0b26a12c0cce2cd441658cfc4e69c5ab0afabef829ef9d",
+    "outputs/physics/transient_validation.npz": "57049d52c62778c33121d9559a325ce9475072b5c15f8b9350f7454230f8fc97",
+    "results/raw/experiments/rtl-20261027T140947426703Z/trace.csv": "860179fb38dcb832157a77ea6341e762329a74223c2dd218d3c95185c5427190",
+    "outputs/physics/validation.json": "68447102ec916aed4f0737f9384622f4f18cec14b6947bb93ff2a4761cd2c3a0"
+  },
+  "method": "render archived numeric data; actual GDS captures are separate"
+}
