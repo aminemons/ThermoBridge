@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-10-27T14:22:25.858599+00:00",
+  "method": "separate on/off analytic RC phases with TCR updated per phase; compared with averaged duty*V^2/R over each period",
+  "pwm_hz": 39062.5,
+  "cases": [
+    {
+      "duty": 0.25,
+      "cycles": 800,
+      "duration_s": 0.020479999999999998,
+      "final_switched_c": 37.16835881403887,
+      "final_averaged_c": 37.17266569550933,
+      "max_endpoint_difference_c": 0.0043068814704625424,
+      "max_intra_period_ripple_c": 0.008820296356191193
+    },
+    {
+      "duty": 0.5,
+      "cycles": 800,
+      "duration_s": 0.020479999999999998,
+      "final_switched_c": 48.795495315709566,
+      "final_averaged_c": 48.80099201266717,
+      "max_endpoint_difference_c": 0.005496696957607128,
+      "max_intra_period_ripple_c": 0.011497467936763428
+    },
+    {
+      "duty": 0.75,
+      "cycles": 800,
+      "duration_s": 0.020479999999999998,
+      "final_switched_c": 59.94558803001273,
+      "final_averaged_c": 59.94954723394197,
+      "max_endpoint_difference_c": 0.003959203929241539,
+      "max_intra_period_ripple_c": 0.008441456056104357
+    }
+  ],
+  "max_allowed_difference_c": 0.1,
+  "pass": true
+}
