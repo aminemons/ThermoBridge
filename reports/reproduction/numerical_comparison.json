@@ -1,0 +1,11 @@
+{
+  "fresh_python_run": "exp-20261027T143053Z-039c63",
+  "paired_metric_rows": 540,
+  "different_metric_fields": [],
+  "fresh_rtl_run": "rtl-20261027T143102965830Z",
+  "rtl_rmse_c": 2.3424096146003164,
+  "rtl_energy_j": 1.6682860821700008e-05,
+  "rtl_metrics_reproduced": true,
+  "pass": true,
+  "source_commit": "883543a6d007b3df1e7ce73ea2837b9ab267ccd7"
+}

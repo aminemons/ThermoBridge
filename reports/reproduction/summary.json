@@ -1,0 +1,41 @@
+{
+  "timestamp_utc": "2026-10-27T14:31:04.127612+00:00",
+  "source_commit": "883543a6d007b3df1e7ce73ea2837b9ab267ccd7",
+  "source": "Git archive, excluding working-tree edits",
+  "runtime": "/foss/designs/thermobridge-clean-883543a6d007",
+  "container": "iic-osic-tools",
+  "independent_image": false,
+  "physical_rerun": false,
+  "scope": "Fresh source extraction; Python tests, actual RTL tests, frozen Python campaign and actual RTL loop; archived physical evidence audit only. Existing installed toolchain reused.",
+  "commands": [
+    {
+      "command": [
+        "make",
+        "test-physics",
+        "test-rtl"
+      ],
+      "exit_code": 0,
+      "log": "reports/reproduction/1.log",
+      "log_sha256": "99311a34cadc258f559fb8b85b440f83265b2c30d17c8e4e80c61e075a57225b"
+    },
+    {
+      "command": [
+        "make",
+        "simulate"
+      ],
+      "exit_code": 0,
+      "log": "reports/reproduction/2.log",
+      "log_sha256": "0089a21d8f7ef6fdd3cab7247a772433709fd14b7910ec8cffb69893daa05028"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/release_check.py"
+      ],
+      "exit_code": 0,
+      "log": "reports/reproduction/3.log",
+      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+    }
+  ],
+  "pass": true
+}
