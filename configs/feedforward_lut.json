@@ -1,0 +1,35 @@
+{
+  "contract_version": 1,
+  "source": "nominal default geometry steady-state spatial-FVM runs in outputs/physics/validation.json",
+  "method": "piecewise-linear inverse of active-area mean temperature versus duty; rounded to nearest 8-bit-phase duty count at 5 C setpoint bins",
+  "ambient_celsius": 25.0,
+  "bins": [
+    {"setpoint_c": 25, "duty_q8": 0},
+    {"setpoint_c": 30, "duty_q8": 14},
+    {"setpoint_c": 35, "duty_q8": 28},
+    {"setpoint_c": 40, "duty_q8": 43},
+    {"setpoint_c": 45, "duty_q8": 59},
+    {"setpoint_c": 50, "duty_q8": 74},
+    {"setpoint_c": 55, "duty_q8": 91},
+    {"setpoint_c": 60, "duty_q8": 108},
+    {"setpoint_c": 65, "duty_q8": 125},
+    {"setpoint_c": 70, "duty_q8": 143},
+    {"setpoint_c": 75, "duty_q8": 161},
+    {"setpoint_c": 80, "duty_q8": 180},
+    {"setpoint_c": 85, "duty_q8": 199},
+    {"setpoint_c": 90, "duty_q8": 218},
+    {"setpoint_c": 95, "duty_q8": 239},
+    {"setpoint_c": 100, "duty_q8": 256}
+  ],
+  "steady_state_validation": [
+    {"duty_fraction": 0.1, "mean_temperature_c": 34.05, "power_mw": 0.02579},
+    {"duty_fraction": 0.2, "mean_temperature_c": 42.607, "power_mw": 0.05024},
+    {"duty_fraction": 0.3, "mean_temperature_c": 50.740, "power_mw": 0.07355},
+    {"duty_fraction": 0.4, "mean_temperature_c": 58.505, "power_mw": 0.09586},
+    {"duty_fraction": 0.5, "mean_temperature_c": 65.945, "power_mw": 0.11730},
+    {"duty_fraction": 0.6, "mean_temperature_c": 73.096, "power_mw": 0.13796},
+    {"duty_fraction": 0.8, "mean_temperature_c": 86.645, "power_mw": 0.17728},
+    {"duty_fraction": 1.0, "mean_temperature_c": 99.338, "power_mw": 0.21431}
+  ],
+  "limits": "Assumed nominal spatial-model feedforward only; no ambient/heater variation compensation. Values are a starting table, not fitted hardware coefficients."
+}

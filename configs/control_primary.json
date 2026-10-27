@@ -1,0 +1,52 @@
+{
+  "contract_version": 1,
+  "name": "primary_16b_temp_18b_coeff",
+  "clock_hz": 10000000,
+  "control_period_cycles": 10000,
+  "control_period_seconds": 0.001,
+  "pwm_phase_bits": 8,
+  "pwm_frequency_hz": 39062.5,
+  "adc_width_bits": 12,
+  "adc_valid_acceptance": "only while control_tick is asserted",
+  "calibration": {
+    "temperature_bits": 16,
+    "temperature_fraction_bits": 6,
+    "offset_scale": "signed Celsius*64",
+    "gain_bits": 18,
+    "gain_fraction_bits": 14,
+    "formula": "sat16(offset_q6 + round_nearest_ties_even(adc_code*gain_q14 / 2^14))"
+  },
+  "controller": {
+    "kp_ki_bits": 18,
+    "kp_ki_fraction_bits": 14,
+    "output": "Q8 duty, integer 0..256",
+    "product_shift": 12,
+    "product_rounding": "nearest ties to even",
+    "integrator": "signed 24-bit Q8 with saturation",
+    "anti_windup": "do not integrate when saturated and error drives farther into saturation"
+  },
+  "faults": {
+    "bit_order_lsb_first": ["overtemperature", "invalid_calibration", "stale_adc", "commanded_shutdown", "adc_rail_code"],
+    "stale_periods": 3,
+    "adc_rail_codes": [0, 4095],
+    "clear_key_hex": "5442c1ea",
+    "clear_conditions": "explicit key, shutdown deasserted, a valid sample has been seen, latest temperature below limit, positive gain, ADC code not at rail"
+  },
+  "registers": {
+    "0x00": "CTRL shadow; bit0 enable, bit1 commanded shutdown, bit2 feedforward enable",
+    "0x04": "SETPOINT signed F6 shadow",
+    "0x08": "CAL_OFFSET signed F6 shadow",
+    "0x0c": "ADC_GAIN signed 18-bit F14 shadow",
+    "0x10": "KP signed 18-bit F14 shadow",
+    "0x14": "KI signed 18-bit F14 shadow",
+    "0x18": "absolute temperature limit signed F6 shadow",
+    "0x1c": "output minimum Q8 duty shadow, clamped to 256",
+    "0x20": "output maximum Q8 duty shadow, clamped to 256",
+    "0x24": "write 0x5442c1ea for acknowledged fault clear",
+    "0x28": "status: cause[8:4], have_sample[3], accepted[2], enable[1], shutdown[0]",
+    "0x2c": "latest signed temperature F6",
+    "0x30": "latest Q8 duty 0..256",
+    "0x34": "write bit0=1 to commit shadow words atomically at next control tick",
+    "0x40..0x7c": "16 shadow LUT duty values, one 9-bit Q8 value per 4-byte address; index 0 is 25-<30 C and index 15 is >=100 C"
+  }
+}
