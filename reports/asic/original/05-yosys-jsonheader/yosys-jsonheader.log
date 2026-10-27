@@ -1,0 +1,889 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)
+
+1. Executing Verilog-2005 frontend: /foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/tmp/ba7aaf692b86458c9a950e2576a86f84.bb.v
+Parsing SystemVerilog input from `/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/tmp/ba7aaf692b86458c9a950e2576a86f84.bb.v' to AST representation.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_20_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_40_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_60_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__decap_80_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_12'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_2'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_4'.
+Generating RTLIL representation for module `\sky130_ef_sc_hd__fill_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2111oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a211oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21bo_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21boi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a21oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a221oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a222oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a22oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a2bb2oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a311oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a31oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a32oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41o_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__a41oi_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__and4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__buf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufbuf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufbuf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufinv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__bufinv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkbuf_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s15_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s15_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s18_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s18_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s25_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s25_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s50_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkdlybuf4s50_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinvlp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__clkinvlp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__conb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_3'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__decap_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfbbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfsbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfsbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfstp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__diode_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlclkp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd1_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlygate4sd3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s2s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s4s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__dlymetal6s6s_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ebufn_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__edfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__edfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvn_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__einvp_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fa_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fah_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fahcin_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fahcon_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__fill_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__ha_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__inv_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_bleeder_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_12'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_3'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_6'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_decapkapwr_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso0n_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso0p_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso1n_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputiso1p_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_inputisolatch_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrc_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_isobufsrckapwr_16'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__macro_sparecell'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__maj3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux2i_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__mux4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nand4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__nor4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2111ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o211ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21ba_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o21bai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o221ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o22ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o2bb2ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o311ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o31ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o32ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41a_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__o41ai_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_0'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or2b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or3b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4b_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__or4bb_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__probe_p_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__probec_p_8'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbn_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfbbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtn_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfrtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfsbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfsbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfstp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sdlclkp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxbp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxbp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__sedfxtp_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tap_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tap_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvgnd2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvgnd_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__tapvpwrvgnd_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xnor3_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor2_4'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_1'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_2'.
+Generating RTLIL representation for module `\sky130_fd_sc_hd__xor3_4'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/tmp/a199a98945134dcf8bfbc68a3bdc91f7.bb.v
+Parsing SystemVerilog input from `/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/tmp/a199a98945134dcf8bfbc68a3bdc91f7.bb.v' to AST representation.
+Generating RTLIL representation for module `\sky130_ef_io__analog_esd_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__analog_noesd_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__analog_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__com_bus_slice_10um'.
+Generating RTLIL representation for module `\sky130_ef_io__com_bus_slice_1um'.
+Generating RTLIL representation for module `\sky130_ef_io__com_bus_slice_20um'.
+Generating RTLIL representation for module `\sky130_ef_io__com_bus_slice_5um'.
+Generating RTLIL representation for module `\sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um'.
+Generating RTLIL representation for module `\sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um'.
+Generating RTLIL representation for module `\sky130_ef_io__corner_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__gpiov2_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__gpiov2_pad_wrapped'.
+Generating RTLIL representation for module `\sky130_ef_io__top_power_hvc'.
+Generating RTLIL representation for module `\sky130_ef_io__vccd_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vccd_lvc_clamped2_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vccd_lvc_clamped3_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vccd_lvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vccd_lvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vdda_hvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vdda_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vdda_lvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vddio_hvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vddio_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vddio_lvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssa_hvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssa_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssa_lvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssd_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssd_lvc_clamped2_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssd_lvc_clamped3_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssd_lvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssd_lvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssio_hvc_clamped_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssio_hvc_pad'.
+Generating RTLIL representation for module `\sky130_ef_io__vssio_lvc_pad'.
+Generating RTLIL representation for module `\sky130_fd_io__com_bus_slice'.
+Generating RTLIL representation for module `\sky130_fd_io__top_gpio_ovtv2'.
+Generating RTLIL representation for module `\sky130_fd_io__top_gpiov2'.
+Generating RTLIL representation for module `\sky130_fd_io__top_ground_hvc_wpad'.
+Generating RTLIL representation for module `\sky130_fd_io__top_ground_lvc_wpad'.
+Generating RTLIL representation for module `\sky130_fd_io__top_power_hvc_wpad'.
+Generating RTLIL representation for module `\sky130_fd_io__top_power_hvc_wpadv2'.
+Generating RTLIL representation for module `\sky130_fd_io__top_power_lvc_wpad'.
+Generating RTLIL representation for module `\sky130_fd_io__top_refgen'.
+Generating RTLIL representation for module `\sky130_fd_io__top_refgen_new'.
+Generating RTLIL representation for module `\sky130_fd_io__top_sio'.
+Generating RTLIL representation for module `\sky130_fd_io__top_sio_macro'.
+Generating RTLIL representation for module `\sky130_fd_io__top_xres4v2'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /foss/designs/thermobridge/rtl/thermobridge_top.sv
+Parsing SystemVerilog input from `/foss/designs/thermobridge/rtl/thermobridge_top.sv' to AST representation.
+Storing AST representation for module `$abstract\thermobridge_top'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+5. Executing AST frontend in derive mode using pre-parsed AST for module `\thermobridge_top'.
+Generating RTLIL representation for module `\thermobridge_top'.
+Warning: Replacing memory \active_ff_lut with list of registers. See /foss/designs/thermobridge/rtl/thermobridge_top.sv:239
+Warning: Replacing memory \sh_ff_lut with list of registers. See /foss/designs/thermobridge/rtl/thermobridge_top.sv:238
+
+5.1. Analyzing design hierarchy..
+Top module:  \thermobridge_top
+
+5.2. Analyzing design hierarchy..
+Top module:  \thermobridge_top
+Removing unused module `$abstract\thermobridge_top'.
+Removed 1 unused modules.
+Renaming module thermobridge_top to thermobridge_top.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+Cleaned up 3 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325 in module thermobridge_top.
+Marked 1 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325 in module thermobridge_top.
+Marked 15 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291 in module thermobridge_top.
+Marked 2 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283 in module thermobridge_top.
+Marked 1 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262 in module thermobridge_top.
+Marked 2 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254 in module thermobridge_top.
+Marked 1 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233 in module thermobridge_top.
+Marked 2 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225 in module thermobridge_top.
+Marked 2 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217 in module thermobridge_top.
+Marked 1 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196 in module thermobridge_top.
+Marked 19 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94 in module thermobridge_top.
+Removed 1 dead cases from process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81 in module thermobridge_top.
+Marked 3 switch rules as full_case in process $proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81 in module thermobridge_top.
+Removed a total of 2 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 60 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset_n in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~57 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325'.
+     1/1: $1$mem2reg_rd$\active_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$52_DATA[8:0]$327
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291'.
+     1/15: $15\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$324
+     2/15: $14\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$322
+     3/15: $13\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$320
+     4/15: $12\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$318
+     5/15: $11\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$316
+     6/15: $10\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$314
+     7/15: $9\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$312
+     8/15: $8\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$310
+     9/15: $7\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$308
+    10/15: $6\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$306
+    11/15: $5\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$304
+    12/15: $4\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$302
+    13/15: $3\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$300
+    14/15: $2\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$298
+    15/15: $1\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$51.$result[3:0]$296
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283'.
+     1/2: $2\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$50.$result[23:0]$290
+     2/2: $1\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$50.$result[23:0]$288
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+     1/1: $2\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$49.q[33:0]$281
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254'.
+     1/2: $2\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$48.$result[23:0]$261
+     2/2: $1\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$48.$result[23:0]$259
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+     1/1: $2\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$47.q[33:0]$252
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225'.
+     1/2: $2\sat16_diff$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$46.$result[15:0]$232
+     2/2: $1\sat16_diff$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$46.$result[15:0]$230
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217'.
+     1/2: $2\sat16$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$45.$result[15:0]$224
+     2/2: $1\sat16$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$45.$result[15:0]$222
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+     1/1: $2\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$44.q[33:0]$215
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+     1/87: $9\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$164
+     2/87: $8\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$162
+     3/87: $7\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$158
+     4/87: $7\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$159
+     5/87: $6\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$149
+     6/87: $6\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$148
+     7/87: $5\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$138
+     8/87: $5\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$137
+     9/87: $4\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$134
+    10/87: $4\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$133
+    11/87: $3\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$129
+    12/87: $3\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$128
+    13/87: $2\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$127
+    14/87: $2\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$126
+    15/87: $2\k[31:0]
+    16/87: $3$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_ADDR[3:0]$117
+    17/87: $3$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_DATA[8:0]$118
+    18/87: $2$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_DATA[8:0]$107
+    19/87: $2$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_ADDR[3:0]$106
+    20/87: $0\tick_count[31:0]
+    21/87: $1\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value[31:0]$101
+    22/87: $1\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result[23:0]$100
+    23/87: $1\k[31:0]
+    24/87: $1$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_DATA[8:0]$103
+    25/87: $1$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_ADDR[3:0]$102
+    26/87: $0\pwm_phase[7:0]
+    27/87: $0\sample_accepted[0:0]
+    28/87: $0\control_tick[0:0]
+    29/87: $0\active_ff_lut[15][8:0]
+    30/87: $0\active_ff_lut[14][8:0]
+    31/87: $0\active_ff_lut[13][8:0]
+    32/87: $0\active_ff_lut[12][8:0]
+    33/87: $0\active_ff_lut[11][8:0]
+    34/87: $0\active_ff_lut[10][8:0]
+    35/87: $0\active_ff_lut[9][8:0]
+    36/87: $0\active_ff_lut[8][8:0]
+    37/87: $0\active_ff_lut[7][8:0]
+    38/87: $0\active_ff_lut[6][8:0]
+    39/87: $0\active_ff_lut[5][8:0]
+    40/87: $0\active_ff_lut[4][8:0]
+    41/87: $0\active_ff_lut[3][8:0]
+    42/87: $0\active_ff_lut[2][8:0]
+    43/87: $0\active_ff_lut[1][8:0]
+    44/87: $0\active_ff_lut[0][8:0]
+    45/87: $0\sh_ff_lut[15][8:0]
+    46/87: $0\sh_ff_lut[14][8:0]
+    47/87: $0\sh_ff_lut[13][8:0]
+    48/87: $0\sh_ff_lut[12][8:0]
+    49/87: $0\sh_ff_lut[11][8:0]
+    50/87: $0\sh_ff_lut[10][8:0]
+    51/87: $0\sh_ff_lut[9][8:0]
+    52/87: $0\sh_ff_lut[8][8:0]
+    53/87: $0\sh_ff_lut[7][8:0]
+    54/87: $0\sh_ff_lut[6][8:0]
+    55/87: $0\sh_ff_lut[5][8:0]
+    56/87: $0\sh_ff_lut[4][8:0]
+    57/87: $0\sh_ff_lut[3][8:0]
+    58/87: $0\sh_ff_lut[2][8:0]
+    59/87: $0\sh_ff_lut[1][8:0]
+    60/87: $0\sh_ff_lut[0][8:0]
+    61/87: $0\integrator_q8[23:0]
+    62/87: $0\have_sample[0:0]
+    63/87: $0\stale_count[1:0]
+    64/87: $0\active_out_max[8:0]
+    65/87: $0\active_out_min[8:0]
+    66/87: $0\active_ki[17:0]
+    67/87: $0\active_kp[17:0]
+    68/87: $0\active_adc_gain[17:0]
+    69/87: $0\active_limit[15:0]
+    70/87: $0\active_cal_offset[15:0]
+    71/87: $0\active_setpoint[15:0]
+    72/87: $0\active_ff_enable[0:0]
+    73/87: $0\active_shutdown[0:0]
+    74/87: $0\active_enable[0:0]
+    75/87: $0\commit_pending[0:0]
+    76/87: $0\sh_out_max[8:0]
+    77/87: $0\sh_out_min[8:0]
+    78/87: $0\sh_ki[17:0]
+    79/87: $0\sh_kp[17:0]
+    80/87: $0\sh_adc_gain[17:0]
+    81/87: $0\sh_limit[15:0]
+    82/87: $0\sh_cal_offset[15:0]
+    83/87: $0\sh_setpoint[15:0]
+    84/87: $0\sh_ctrl[31:0]
+    85/87: $0\fault_cause[4:0]
+    86/87: $0\duty_q8[8:0]
+    87/87: $0\temp_q6[15:0]
+Creating decoders for process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81'.
+     1/7: $3$mem2reg_rd$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:216$53_DATA[8:0]$93
+     2/7: $2\cfg_rdata[31:0]
+     3/7: $2$mem2reg_rd$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:216$53_DATA[8:0]$92
+     4/7: $2$mem2reg_rd$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:216$53_ADDR[3:0]$91
+     5/7: $1\cfg_rdata[31:0]
+     6/7: $1$mem2reg_rd$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:216$53_DATA[8:0]$85
+     7/7: $1$mem2reg_rd$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:216$53_ADDR[3:0]$84
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\thermobridge_top.$mem2reg_rd$\active_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$52_DATA' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325'.
+No latch inferred for signal `\thermobridge_top.\feedforward_index$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$10.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291'.
+No latch inferred for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$9.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$8.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+No latch inferred for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$7.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$6.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+No latch inferred for signal `\thermobridge_top.\sat16_diff$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$5.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225'.
+No latch inferred for signal `\thermobridge_top.\sat16$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$4.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217'.
+No latch inferred for signal `\thermobridge_top.\round_even$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$3.$result' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+No latch inferred for signal `\thermobridge_top.\cfg_rdata' from process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81'.
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\thermobridge_top.\sample_accepted' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1645' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\temp_q6' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1650' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\duty_q8' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1655' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\fault_cause' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1660' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\control_tick' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1665' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ctrl' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1670' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_setpoint' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1675' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_cal_offset' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1680' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_limit' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1685' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_adc_gain' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1690' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_kp' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1695' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ki' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1700' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_out_min' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1705' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_out_max' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1710' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\commit_pending' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1715' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_enable' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1720' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_shutdown' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1725' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_enable' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1730' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_setpoint' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1735' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_cal_offset' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1740' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_limit' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1745' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_adc_gain' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1750' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_kp' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1755' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ki' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1760' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_out_min' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1765' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_out_max' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1770' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\tick_count' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1775' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\pwm_phase' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1780' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\stale_count' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1785' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\have_sample' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1790' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\integrator_q8' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1795' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\k' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1800' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.$result' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1805' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sat24$func$/foss/designs/thermobridge/rtl/thermobridge_top.sv:324$43.value' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1810' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[0]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1815' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[1]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1820' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[2]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1825' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[3]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1830' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[4]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1835' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[5]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1840' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[6]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1845' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[7]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1850' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[8]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1855' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[9]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1860' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[10]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1865' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[11]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1870' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[12]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1875' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[13]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1880' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[14]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1885' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\sh_ff_lut[15]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1890' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[0]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1895' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[1]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1900' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[2]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1905' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[3]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1910' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[4]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1915' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[5]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1920' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[6]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1925' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[7]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1930' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[8]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1935' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[9]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1940' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[10]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1945' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[11]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1950' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[12]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1955' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[13]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1960' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[14]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1965' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.\active_ff_lut[15]' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1970' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_ADDR' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1975' with positive edge clock and positive level reset.
+Creating register for signal `\thermobridge_top.$mem2reg_wr$\sh_ff_lut$/foss/designs/thermobridge/rtl/thermobridge_top.sv:284$54_DATA' using process `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+  created $adff cell `$procdff$1980' with positive edge clock and positive level reset.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:94$325'.
+Found and cleaned up 15 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:92$291'.
+Found and cleaned up 2 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$283'.
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:91$262'.
+Found and cleaned up 2 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$254'.
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:90$233'.
+Found and cleaned up 2 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:85$225'.
+Found and cleaned up 2 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:82$217'.
+Found and cleaned up 1 empty switch in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:80$196'.
+Found and cleaned up 27 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:223$94'.
+Found and cleaned up 3 empty switches in `\thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81'.
+Removing empty process `thermobridge_top.$proc$/foss/designs/thermobridge/rtl/thermobridge_top.sv:199$81'.
+Cleaned up 57 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module thermobridge_top.
+<suppressed ~175 debug messages>
+
+7. Executing FLATTEN pass (flatten design).
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \thermobridge_top..
+Removed 185 unused cells and 827 unused wires.
+<suppressed ~211 debug messages>

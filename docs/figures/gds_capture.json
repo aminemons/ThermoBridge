@@ -1,0 +1,7 @@
+{
+  "source_gds": "results/asic/mag_gds/thermobridge_top.magic.gds",
+  "tool": "KLayout 0.30.12",
+  "full_view_um": "(-33.8555297872,-10.3447452128;443.883612766,431.658004787)",
+  "detail_view_um": "(157.240127234,166.456354787;252.787955745,254.856904787)",
+  "description": "Actual generated layout. Not fabricated silicon."
+}

@@ -1,0 +1,364 @@
+[WARNING ORD-0032] Invalid thread number specification: None.
+Reading timing models for corner max_tt_025C_1v80…
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz'…
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'max_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner min_ss_100C_1v60…
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib.gz'…
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz line 33, default_fanout_load is 0.0.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'min_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 18, library sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner max_ff_n40C_1v95…
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib.gz'…
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'max_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner nom_ff_n40C_1v95…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib.gz line 1, library sky130_fd_sc_hd__ff_n40C_1v95 already exists.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz line 18, library sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner max_ss_100C_1v60…
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib.gz line 1, library sky130_fd_sc_hd__ss_100C_1v60 already exists.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz line 18, library sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz line 33, default_fanout_load is 0.0.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'max_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner min_tt_025C_1v80…
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib.gz line 1, library sky130_fd_sc_hd__tt_025C_1v80 already exists.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_tt_025C_1v80_3v30.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_tt_025C_1v80_3v30_3v30.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 18, library sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'min_tt_025C_1v80' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner nom_ss_100C_1v60…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib.gz line 1, library sky130_fd_sc_hd__ss_100C_1v60 already exists.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz line 18, library sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00.lib.gz line 33, default_fanout_load is 0.0.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+[WARNING STA-1111] cell sky130_ef_io__gpiov2_pad_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad OUT -> PAD timing group combinational not found in cell sky130_ef_io__gpiov2_pad_tt_tt_025C_1v80_3v30/sky130_ef_io__gpiov2_pad.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing models for corner min_ff_n40C_1v95…
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib.gz line 1, library sky130_fd_sc_hd__ff_n40C_1v95 already exists.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vccd_lvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz line 18, library sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssd_lvc_clamped_pad_ff_n40C_1v95_5v50.lib.gz line 43, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vddio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 18, library sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__vssio_hvc_clamped_pad_ff_n40C_1v95_5v50_5v50.lib.gz line 42, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz line 18, library sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50 already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__gpiov2_pad_ff_ff_n40C_1v95_5v50.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 18, library slices_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/slices_stubs.lib.gz line 33, default_fanout_load is 0.0.
+Reading timing library for the 'min_ff_n40C_1v95' corner at '/foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz'…
+[WARNING STA-1140] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 18, library sky130_ef_io__analog_stubs already exists.
+[WARNING STA-1173] /foss/pdks/sky130A/libs.ref/sky130_fd_io/lib/sky130_ef_io__analog_stubs.lib.gz line 43, default_fanout_load is 0.0.
+Reading OpenROAD database at '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/34-openroad-detailedplacement/thermobridge_top.odb'…
+[WARNING ORD-2056] The following 18 liberty cell(s) do not have LEF masters and will be marked as dont-use:
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+  sky130_ef_io__analog_minesd_pad
+  sky130_ef_io__analog_minesd_pad_short
+Reading design constraints file at '/foss/designs/thermobridge/release/flow/constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Configuring cts characterization…
++ configure_cts_characterization 
+[INFO] Performing clock tree synthesis…
+[INFO] Looking for the following net(s): clk
+[INFO] Running Clock Tree Synthesis…
++ clock_tree_synthesis -buf_list sky130_fd_sc_hd__clkbuf_1 sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8 sky130_fd_sc_hd__clkbuf_16 -root_buf sky130_fd_sc_hd__clkbuf_16 -sink_clustering_enable -apply_ndr half
+[INFO CTS-0050] Root buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0051] Sink buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sky130_fd_sc_hd__clkbuf_1
+                    sky130_fd_sc_hd__clkbuf_2
+                    sky130_fd_sc_hd__clkbuf_4
+                    sky130_fd_sc_hd__clkbuf_8
+                    sky130_fd_sc_hd__clkbuf_16
+[INFO CTS-0049] Characterization buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0007] Net "clk" found for clock "core_clk".
+[INFO CTS-0010]  Clock net "clk" has 663 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 5 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 663.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0206] Best clustering solution was found from clustering size of 8 and clustering diameter of 50.
+[INFO CTS-0019]  Total number of sinks after clustering: 45.
+[INFO CTS-0024]  Normalized sink region: [(1.09217, 1.97189), (26.0931, 28.6989)].
+[INFO CTS-0025]     Width:  25.0009.
+[INFO CTS-0026]     Height: 26.7270.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 23
+    Sub-region size: 25.0009 X 13.3635
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 12
+    Sub-region size: 12.5005 X 13.3635
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 3
+    Direction: Vertical
+    Sinks per sub-region: 6
+    Sub-region size: 12.5005 X 6.6818
+[INFO CTS-0034]     Segment length (rounded): 4.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 8.
+[INFO CTS-0035]  Number of sinks covered: 45.
+[INFO CTS-0018]     Created 54 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 3.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 3.
+[INFO CTS-0015]     Created 54 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 5:4, 6:5, 7:1, 9:1, 10:1, 11:2, 13:2, 14:8, 15:8, 16:9, 17:9, 18:2, 19:1..
+[INFO CTS-0017]     Max level of the clock tree: 3.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 703
+[INFO CTS-0100]  Leaf buffers 45
+[INFO CTS-0101]  Average sink wire length 618.68 um
+[INFO CTS-0102]  Path depth 2 - 3
+[INFO CTS-0207]  Dummy loads inserted 40
+[INFO] Repairing long wires on clock nets…
+[INFO RSZ-0058] Using max wire length 4484um.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 376 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               292    1096.05
+  Tap cell                               2220    2777.66
+  Clock buffer                             78    1555.24
+  Timing Repair Buffer                    907    8371.78
+  Inverter                                157     589.32
+  Clock inverter                           16     167.66
+  Sequential cell                         663   16761.08
+  Multi-Input combinational cell         5584   38424.35
+  Total                                  9917   69743.14
+Writing OpenROAD database to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.odb'…
+Writing netlist to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.nl.v'…
+Writing powered netlist to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.pnl.v'…
+Writing layout to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.def'…
+Writing timing constraints to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.sdc'…
+[INFO] Legalizing…
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement        723.9 u
+average displacement        0.1 u
+max displacement            7.7 u
+original HPWL          211368.0 u
+legalized HPWL         215498.7 u
+delta HPWL                    2 %
+
+[INFO DPL-0020] Mirrored 2568 instances
+[INFO DPL-0021] HPWL before          215498.7 u
+[INFO DPL-0022] HPWL after           211680.3 u
+[INFO DPL-0023] HPWL delta               -1.8 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                               292    1096.05
+  Tap cell                               2220    2777.66
+  Clock buffer                             78    1555.24
+  Timing Repair Buffer                    907    8371.78
+  Inverter                                157     589.32
+  Clock inverter                           16     167.66
+  Sequential cell                         663   16761.08
+  Multi-Input combinational cell         5584   38424.35
+  Total                                  9917   69743.14
+Writing OpenROAD database to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.odb'…
+Writing netlist to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.nl.v'…
+Writing powered netlist to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.pnl.v'…
+Writing layout to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.def'…
+Writing timing constraints to '/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/35-openroad-cts/thermobridge_top.sdc'…
+%OL_CREATE_REPORT cts.rpt
+Total number of Clock Roots: 1.
+Total number of Buffers Inserted: 54.
+Total number of Clock Subnets: 54.
+Total number of Sinks: 663.
+Cells used:
+  sky130_fd_sc_hd__clkbuf_16: 54
+Dummys used:
+  sky130_fd_sc_hd__bufinv_16: 2
+  sky130_fd_sc_hd__clkbuf_1: 16
+  sky130_fd_sc_hd__clkbuf_8: 5
+  sky130_fd_sc_hd__clkbuf_16: 3
+  sky130_fd_sc_hd__clkinv_2: 6
+  sky130_fd_sc_hd__clkinv_4: 1
+  sky130_fd_sc_hd__clkinv_8: 1
+  sky130_fd_sc_hd__clkinvlp_4: 2
+  sky130_fd_sc_hd__inv_6: 3
+  sky130_fd_sc_hd__inv_8: 1
+%OL_END_REPORT

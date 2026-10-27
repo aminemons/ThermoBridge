@@ -1,0 +1,69 @@
+{
+  "checked_utc": "2026-10-27T12:40:50.388481+00:00",
+  "flow": "LibreLane Classic, SKY130A / sky130_fd_sc_hd, 10 MHz, digital CORE ONLY",
+  "run_path": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512",
+  "metrics_path": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/metrics.json",
+  "status": "INCOMPLETE_OR_FAIL",
+  "checks": {
+    "route__drc_errors": true,
+    "magic__drc_error__count": true,
+    "klayout__drc_error__count": true,
+    "design__lvs_error__count": true,
+    "design__lvs_device_difference__count": true,
+    "design__lvs_net_difference__count": true,
+    "design__lvs_unmatched_device__count": true,
+    "design__lvs_unmatched_net__count": true,
+    "design__lvs_unmatched_pin__count": true,
+    "timing__hold_vio__count": true,
+    "timing__setup_vio__count": false,
+    "setup_slack_nonnegative": false,
+    "hold_slack_nonnegative": true,
+    "stdcell_area_available": true,
+    "gds_exists": true,
+    "def_exists": true,
+    "netlist_exists": true
+  },
+  "metrics": {
+    "antenna__violating__nets": 0,
+    "antenna__violating__pins": 0,
+    "design__core__area": 158379,
+    "design__instance__area": 158379,
+    "design__instance__area__stdcell": 69405.3,
+    "design__lvs_device_difference__count": 0,
+    "design__lvs_error__count": 0,
+    "design__lvs_net_difference__count": 0,
+    "design__lvs_unmatched_device__count": 0,
+    "design__lvs_unmatched_net__count": 0,
+    "design__lvs_unmatched_pin__count": 0,
+    "klayout__drc_error__count": 0,
+    "magic__drc_error__count": 0,
+    "route__drc_errors": 0,
+    "timing__hold__ws": 0.10697043553717421,
+    "timing__hold_vio__count": 0,
+    "timing__setup__ws": -3.318980739739402,
+    "timing__setup_vio__count": 89
+  },
+  "artifacts": {
+    "gds": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/mag_gds/thermobridge_top.magic.gds",
+    "def": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/def/thermobridge_top.def",
+    "netlist": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/nl/thermobridge_top.nl.v",
+    "lef": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/lef/thermobridge_top.lef",
+    "sdc": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/sdc/thermobridge_top.sdc",
+    "spef": "/foss/designs/thermobridge/release/flow/runs/thermobridge_release_1793097512/final/spef/nom/thermobridge_top.nom.spef"
+  },
+  "limitations": [
+    "not a padframe, ESD, packaged ASIC or fabricated silicon",
+    "PDK flow checks, not foundry-qualified signoff",
+    "no integrated MEMS membrane or analogue sensor readout",
+    "reported GDS only valid when the actual flow completes"
+  ],
+  "returncode": 2,
+  "artifact_hashes": {
+    "gds.gds": "bd2ae0137ffbf87317f619ab1752615eacb4197246bd7cde365010d75ba88280",
+    "def.def": "a73a05e23c31a04f180b547a1579ae6f52dc5f5cc85c82d9c1540f60acbee162",
+    "netlist.v": "c112479eef3afeb0aaba09d3c2e7ff9249ab2ee22d263b08d46c635b3ef427f5",
+    "lef.lef": "5e6639d8660c614516c6446e2a814d076263212bfb2b41aa35c838ba65592576",
+    "sdc.sdc": "80169f398acf9f557d8dd9a68acf8effe4257666bc9a7b437d3f9ab607e3d860",
+    "spef.spef": "75c5ea3cdffd8f4ab20829db4578ac4cf47afbc4898d3aece745ee0dc491148e"
+  }
+}
