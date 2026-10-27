@@ -1,0 +1,12 @@
+build/
+runs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env*
+!*.example
+reports/environment.private.json
+*.vcd
+*.fst
+*.log.tmp
