@@ -1,0 +1,197 @@
+[14:50:39] [I] Starting a new run of the 'Classic' flow with the tag flow.py:654
+               'adc15'.                                                         
+[14:50:39] [I] Starting…                                       sequential.py:339
+[14:50:39] [I] Skipping step 'Verilator Lint'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Lint Timing Error Checker'…      sequential.py:370
+[14:50:39] [I] Skipping step 'Lint Errors Checker'…            sequential.py:370
+[14:50:39] [I] Skipping step 'Lint Warnings Checker'…          sequential.py:370
+[14:50:39] [I] Skipping step 'Generate JSON Header'…           sequential.py:370
+[14:50:39] [I] Skipping step 'Synthesis'…                      sequential.py:370
+[14:50:39] [I] Skipping step 'Unmapped Cells Checker'…         sequential.py:370
+[14:50:39] [I] Skipping step 'Yosys Synth Checks'…             sequential.py:370
+[14:50:39] [I] Skipping step 'Netlist Assign Statement         sequential.py:370
+               Checker'…                                                        
+[14:50:39] [I] Skipping step 'Check SDC Files'…                sequential.py:370
+[14:50:39] [I] Skipping step 'Check Macro Instances'…          sequential.py:370
+[14:50:39] [I] Skipping step 'STA (Pre-PnR)'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Floorplan Init'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Dump RC Values'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Check Antenna Properties of      sequential.py:370
+               Macros Pins in Their LEF Views'…                                 
+[14:50:39] [I] Skipping step 'Set Power Connections'…          sequential.py:370
+[14:50:39] [I] Skipping step 'Manual Macro Placement'…         sequential.py:370
+[14:50:39] [I] Skipping step 'Cut Rows'…                       sequential.py:370
+[14:50:39] [I] Skipping step 'Tap/Decap Insertion'…            sequential.py:370
+[14:50:39] [I] Skipping step 'Add PDN obstructions'…           sequential.py:370
+[14:50:39] [I] Skipping step 'Generate PDN'…                   sequential.py:370
+[14:50:39] [I] Skipping step 'Remove PDN obstructions'…        sequential.py:370
+[14:50:39] [I] Skipping step 'Add Obstructions'…               sequential.py:370
+[14:50:39] [I] Skipping step 'Global Placement Skip IO'…       sequential.py:370
+[14:50:39] [I] Skipping step 'I/O Placement'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Custom I/O Placement'…           sequential.py:370
+[14:50:39] [I] Skipping step 'Apply DEF Template'…             sequential.py:370
+[14:50:39] [I] Skipping step 'Global Placement'…               sequential.py:370
+[14:50:39] [I] Skipping step 'Write Verilog Header'…           sequential.py:370
+[14:50:39] [I] Skipping step 'Power Grid Violation Checker'…   sequential.py:370
+[14:50:39] [I] Skipping step 'STA (Mid-PnR)'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Repair Design (Post-Global       sequential.py:370
+               Placement)'…                                                     
+[14:50:39] [I] Skipping step 'Manual Global Placement'…        sequential.py:370
+[14:50:39] [I] Skipping step 'Detailed Placement'…             sequential.py:370
+[14:50:39] [I] Skipping step 'Clock Tree Synthesis'…           sequential.py:370
+[14:50:39] [I] Skipping step 'STA (Mid-PnR)'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Resizer Timing Optimizations     sequential.py:370
+               (Post-Clock Tree Synthesis)'…                                    
+[14:50:39] [I] Skipping step 'STA (Mid-PnR)'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Global Routing'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Check Antennas'…                 sequential.py:370
+[14:50:39] [I] Gating variable for step                        sequential.py:362
+               'OpenROAD.RepairDesignPostGRT' set to 'False'-                   
+               the step will be skipped.                                        
+[14:50:39] [I] Skipping step 'Repair Design (Post-Global       sequential.py:370
+               Routing)'…                                                       
+[14:50:39] [I] Skipping step 'Diodes on Ports'…                sequential.py:370
+[14:50:39] [I] Gating variable for step                        sequential.py:362
+               'Odb.HeuristicDiodeInsertion' set to 'False'-                    
+               the step will be skipped.                                        
+[14:50:39] [I] Skipping step 'Heuristic Diode Insertion'…      sequential.py:370
+[14:50:39] [I] Skipping step 'Antenna Repair'…                 sequential.py:370
+[14:50:39] [I] Gating variable for step                        sequential.py:362
+               'OpenROAD.ResizerTimingPostGRT' set to 'False'-                  
+               the step will be skipped.                                        
+[14:50:39] [I] Skipping step 'Resizer Timing Optimizations     sequential.py:370
+               (Post-Global Routing)'…                                          
+[14:50:39] [I] Skipping step 'STA (Mid-PnR)'…                  sequential.py:370
+[14:50:39] [I] Skipping step 'Detailed Routing'…               sequential.py:370
+[14:50:39] [I] Skipping step 'Remove Obstructions'…            sequential.py:370
+[14:50:39] [I] Skipping step 'Check Antennas'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Routing DRC Checker'…            sequential.py:370
+[14:50:39] [I] Skipping step 'Report Disconnected Pins'…       sequential.py:370
+[14:50:39] [I] Skipping step 'Disconnected Pins Checker'…      sequential.py:370
+[14:50:39] [I] Skipping step 'Report Wire Length'…             sequential.py:370
+[14:50:39] [I] Skipping step 'Wire Length Threshold Checker'…  sequential.py:370
+[14:50:39] [I] Skipping step 'Fill Insertion'…                 sequential.py:370
+[14:50:39] [I] Skipping step 'Generate Cell Frequency Tables'… sequential.py:370
+[14:50:39] [I] Skipping step 'Parasitics (RC) Extraction'…     sequential.py:370
+[14:50:39] [V] Running 'OpenROAD.STAPostPNR' at                     step.py:1138
+               'build/timing-adc15/01-openroad-stapostpnr'…                     
+[14:50:39] [I] Starting STA for the nom_tt_025C_1v80 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Starting STA for the nom_ss_100C_1v60 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Starting STA for the nom_ff_n40C_1v95 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_tt_02             
+               5C_1v80/sta.log'…                                                
+[14:50:39] [I] Starting STA for the min_tt_025C_1v80 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Starting STA for the min_ss_100C_1v60 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Starting STA for the min_ff_n40C_1v95 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_ss_10             
+               0C_1v60/sta.log'…                                                
+[14:50:39] [I] Starting STA for the max_tt_025C_1v80 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Starting STA for the max_ss_100C_1v60 timing      openroad.py:759
+               corner…                                                          
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_ff_n4             
+               0C_1v95/sta.log'…                                                
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_ss_10             
+               0C_1v60/sta.log'…                                                
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_tt_02             
+               5C_1v80/sta.log'…                                                
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_ff_n4             
+               0C_1v95/sta.log'…                                                
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_tt_02             
+               5C_1v80/sta.log'…                                                
+[14:50:39] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_ss_10             
+               0C_1v60/sta.log'…                                                
+[14:51:03] [I] Finished STA for the min_tt_025C_1v80 timing      openroad.py:774
+               corner.                                                          
+[14:51:03] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_tt_02             
+               5C_1v80/filter_unannotated.log'…                                 
+[14:51:04] [I] Finished STA for the nom_ff_n40C_1v95 timing      openroad.py:774
+               corner.                                                          
+[14:51:04] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_ff_n4             
+               0C_1v95/filter_unannotated.log'…                                 
+[14:51:04] [I] Finished STA for the min_ff_n40C_1v95 timing      openroad.py:774
+               corner.                                                          
+[14:51:04] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_ff_n4             
+               0C_1v95/filter_unannotated.log'…                                 
+[14:51:05] [I] Finished STA for the max_ss_100C_1v60 timing      openroad.py:774
+               corner.                                                          
+[14:51:05] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_ss_10             
+               0C_1v60/filter_unannotated.log'…                                 
+[14:51:05] [I] Finished STA for the nom_ss_100C_1v60 timing      openroad.py:774
+               corner.                                                          
+[14:51:05] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_ss_10             
+               0C_1v60/filter_unannotated.log'…                                 
+[14:51:07] [I] Starting STA for the max_ff_n40C_1v95 timing      openroad.py:759
+               corner…                                                          
+[14:51:07] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_ff_n4             
+               0C_1v95/sta.log'…                                                
+[14:51:07] [I] Finished STA for the max_tt_025C_1v80 timing      openroad.py:774
+               corner.                                                          
+[14:51:07] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_tt_02             
+               5C_1v80/filter_unannotated.log'…                                 
+[14:51:07] [I] Finished STA for the nom_tt_025C_1v80 timing      openroad.py:774
+               corner.                                                          
+[14:51:07] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/nom_tt_02             
+               5C_1v80/filter_unannotated.log'…                                 
+[14:51:07] [I] Finished STA for the min_ss_100C_1v60 timing      openroad.py:774
+               corner.                                                          
+[14:51:07] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/min_ss_10             
+               0C_1v60/filter_unannotated.log'…                                 
+[14:51:15] [I] Finished STA for the max_ff_n40C_1v95 timing      openroad.py:774
+               corner.                                                          
+[14:51:15] [I] Logging subprocess to                                step.py:1336
+               'build/timing-adc15/01-openroad-stapostpnr/max_ff_n4             
+               0C_1v95/filter_unannotated.log'…                                 
+[14:51:16] [I] Skipping step 'IR Drop Report'…                 sequential.py:370
+[14:51:16] [I] Skipping step 'GDSII Stream Out (Magic)'…       sequential.py:370
+[14:51:16] [I] Skipping step 'GDSII Stream Out (KLayout)'…     sequential.py:370
+[14:51:16] [I] Skipping step 'Render Image (w/ KLayout)'…      sequential.py:370
+[14:51:16] [I] Skipping step 'Write LEF (Magic)'…              sequential.py:370
+[14:51:16] [I] Skipping step 'Check Antenna Properties of Pins sequential.py:370
+               in The Generated Design LEF view'…                               
+[14:51:16] [I] Skipping step 'KLayout vs. Magic XOR'…          sequential.py:370
+[14:51:16] [I] Skipping step 'XOR Difference Checker'…         sequential.py:370
+[14:51:16] [I] Skipping step 'DRC'…                            sequential.py:370
+[14:51:16] [I] Skipping step 'Design Rule Check (KLayout)'…    sequential.py:370
+[14:51:16] [I] Skipping step 'Magic DRC Checker'…              sequential.py:370
+[14:51:16] [I] Skipping step 'KLayout DRC Checker'…            sequential.py:370
+[14:51:16] [I] Skipping step 'SPICE Extraction'…               sequential.py:370
+[14:51:16] [I] Skipping step 'Illegal Overlap Checker'…        sequential.py:370
+[14:51:16] [I] Skipping step 'Netgen LVS'…                     sequential.py:370
+[14:51:16] [I] Skipping step 'LVS Error Checker'…              sequential.py:370
+[14:51:16] [I] Gating variable for step 'Yosys.EQY' set to     sequential.py:362
+               'False'- the step will be skipped.                               
+[14:51:16] [I] Skipping step 'Equivalence Check'…              sequential.py:370
+[14:51:16] [I] Skipping step 'Setup Timing Violations          sequential.py:370
+               Checker'…                                                        
+[14:51:16] [I] Skipping step 'Hold Timing Violations Checker'… sequential.py:370
+[14:51:16] [I] Skipping step 'Max Slew Violations Checker'…    sequential.py:370
+[14:51:16] [I] Skipping step 'Max Cap Violations Checker'…     sequential.py:370
+[14:51:16] [I] Skipping step 'Report Manufacturability'…       sequential.py:370
+[14:51:16] [I] Saving views to                                      state.py:209
+               '/foss/designs/thermobridge/build/timing-adc15/final             
+               '…                                                               
+[14:51:17] [I] Flow complete.                                  sequential.py:413

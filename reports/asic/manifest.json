@@ -1,0 +1,55 @@
+{
+  "command": [
+    "librelane",
+    "--manual-pdk",
+    "--pdk-root",
+    "/foss/pdks",
+    "--pdk",
+    "sky130A",
+    "--scl",
+    "sky130_fd_sc_hd",
+    "--jobs",
+    "2",
+    "--run-tag",
+    "core-9be15846c720",
+    "--force-run-dir",
+    "/foss/designs/thermobridge/build/asic/core-9be15846c720",
+    "--condensed",
+    "/foss/designs/thermobridge/flow/config.json"
+  ],
+  "duration_s": 25.98427,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": false,
+  "input_sha256": {
+    "flow/config.json": "4e6950f53b93c74451dd7605f583ad944a7221eddabed92507e9a613e03de7aa",
+    "flow/constraints.sdc": "1e41f9837862d52a9942697d2af9cb67683b07d95a8cf6634cadb8956fb40583",
+    "rtl/thermobridge_top.sv": "87c8a5e0a3d1da5f89d61b55f620ab9c36a0baca826b7d7c92af9a4cdd56fbaa"
+  },
+  "outputs": {
+    "build/asic/core-9be15846c720.log": "c27118abdcfb88a0c2d47aa5cce0d4dc07d496d15a88d9ac63130cb68681f022"
+  },
+  "run_id": "core-9be15846c720",
+  "schema": "thermobridge.run.v1",
+  "seed": 0,
+  "source_commit": null,
+  "source_sha256": "a1d847ce68b89fc03c9041a24096f1450e02bfa2246a61b04c7ca551c2461109",
+  "status": "failed",
+  "timestamp_utc": "2026-10-27T08:37:10.555130+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}
