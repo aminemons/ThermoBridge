@@ -1,0 +1,10 @@
+{
+ "schema":"thermobridge-geometry-v1", "status":"assumed",
+ "active_width_m":0.0002, "active_height_m":0.0002,
+ "domain_extension_m":0.00004, "anchor_width_m":0.000012,
+ "heater_trace_width_m":0.000008, "heater_pitch_m":0.00004,
+ "heater_voltage_v":0.15, "ambient_c":25.0,
+ "mesh_cell_m":0.000004,
+ "note":"Illustrative suspended external membrane, not CDTA geometry or foundry design rules. Heater traces and narrow anchors must be resolved by at least two cells across their widths; otherwise reject mesh."
+}
+

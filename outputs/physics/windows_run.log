@@ -1,0 +1,130 @@
+{
+  "schema": "thermobridge-physics-validation-v1",
+  "status": "simulated; all material and geometry properties assumed",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "wall_clock_utc": "2026-10-27T08:30:52.215641+00:00",
+  "config_sha256": {
+    "physics.json": "3f1a48e6a81c9085e13492a7ee41323608d91c5799891f5b1151b2c276cdd1b5",
+    "materials.json": "c9295770e787150d3dd04db3b51ecc3831ca0facf9dbc11a53d141b77153ff71"
+  },
+  "assumptions_file": "configs/materials.json",
+  "geometry_file": "configs/physics.json",
+  "rectangular_resistor": {
+    "resistance_ohm": 0.6558749999998883,
+    "analytic_ohm": 0.6625000000000001,
+    "discrete_analytic_ohm": 0.655875,
+    "current_a": 1.5246807699640486
+  },
+  "refinement_relative_peak_change": [
+    0.011564104664606662,
+    0.005502581014099305
+  ],
+  "time_constant_spectral": {
+    "linearized_at_ambient_k": 298.15,
+    "dominant_tau_s": 0.02647966567774141,
+    "inverse_eigenvalue_per_s": 37.764827251599016
+  },
+  "primary_heater_at_ambient": {
+    "voltage_v": 0.15,
+    "resistance_ohm": 84.78097385577306,
+    "full_on_power_w": 0.00026538973282232343,
+    "half_duty_average_power_w": 0.00013269486641116171,
+    "status": "assumed discrete FVM heater geometry"
+  },
+  "rc_baseline": {
+    "tau_s": 14.4,
+    "half_duty_power_w": 1.0416666666666667,
+    "equilibrium_c": 212.5
+  },
+  "gates": {
+    "resistor_within_2_percent": true,
+    "mesh_final_change_below_2_percent": true,
+    "power_balance_below_1_percent": true,
+    "thermal_balance_below_1_percent": true,
+    "time_step_halving_recorded": true,
+    "time_step_halving_change_below_2_percent": true,
+    "dominant_tau_resolved_by_dt": true,
+    "heldout_compact_rmse_below_2_c": true
+  }
+}
+meshes: [
+  {
+    "cell_m": 4e-06,
+    "grid_n": 70,
+    "thermal_cells": 2620,
+    "heater_cells": 532,
+    "build_seconds": 0.04859009999972841,
+    "solve_seconds": 0.5383075999998255,
+    "active_mean_c": 65.94470489803194,
+    "active_peak_c": 67.47020916757322,
+    "roi_std_c": 0.15086393801087083,
+    "roi_peak_minus_mean_c": 0.32123461387635643,
+    "current_a": 0.000781985012970437,
+    "terminal_power_w": 0.00011729775194556555,
+    "integrated_joule_w": 0.0001172977519456012,
+    "power_balance_relative": 3.039845040181525e-13,
+    "thermal_balance_relative": 4.454214342725022e-09,
+    "solver_iterations": 9
+  },
+  {
+    "cell_m": 2e-06,
+    "grid_n": 140,
+    "thermal_cells": 10480,
+    "heater_cells": 2128,
+    "build_seconds": 0.22954900000013367,
+    "solve_seconds": 1.5714975999999297,
+    "active_mean_c": 66.75923193295529,
+    "active_peak_c": 68.25956997917342,
+    "roi_std_c": 0.1344601599804321,
+    "roi_peak_minus_mean_c": 0.3001211776040549,
+    "current_a": 0.0007861731253877562,
+    "terminal_power_w": 0.00011792596880816342,
+    "integrated_joule_w": 0.00011792596880821617,
+    "power_balance_relative": 4.4728431086477046e-13,
+    "thermal_balance_relative": 5.208053593292658e-09,
+    "solver_iterations": 9
+  },
+  {
+    "cell_m": 1e-06,
+    "grid_n": 280,
+    "thermal_cells": 41920,
+    "heater_cells": 8512,
+    "build_seconds": 0.37229059999981473,
+    "solve_seconds": 5.577501099999608,
+    "active_mean_c": 67.14791885473434,
+    "active_peak_c": 68.63725201899308,
+    "roi_std_c": 0.13397762210522668,
+    "roi_peak_minus_mean_c": 0.2990604168200406,
+    "current_a": 0.0007872911297949963,
+    "terminal_power_w": 0.00011809366946924944,
+    "integrated_joule_w": 0.00011809366946931646,
+    "power_balance_relative": 5.674922888581335e-13,
+    "thermal_balance_relative": 5.601454613872552e-09,
+    "solver_iterations": 9
+  }
+]
+time-step max normalized trajectory error: 0.0038536527935703283
+compact: {
+  "train_duty": 0.5,
+  "train_pulse_duration_s": 0.16,
+  "heldout_duty": 0.65,
+  "heldout_pulse_duration_s": 0.08,
+  "r_th_k_per_w": 349137.07348866574,
+  "c_th_j_per_k": 7.589470919091034e-08,
+  "fitted_tau_s": 0.02649765666018778,
+  "train_rmse_c": 0.007734220486765904,
+  "heldout_rmse_c": 0.044267739075388515,
+  "heldout_max_abs_c": 0.06857123068122917,
+  "fit_converged": true,
+  "sample_dt_s": 0.0005,
+  "fit_geometry": {
+    "cell_m": 4e-06,
+    "heater_width_m": 8e-06,
+    "heater_pitch_m": 4e-05,
+    "anchor_width_m": 1.2e-05,
+    "active_m": 0.0002,
+    "voltage_v": 0.15
+  }
+}
