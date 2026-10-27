@@ -84,6 +84,8 @@ Configured Linux environment: `make doctor`, `make test-physics`, `make test-rtl
 
 [Reproduction guide](docs/REPRODUCE.md) explains copies/fetches, historical outputs and physical-run cost. [Environment lock](docs/ENVIRONMENT.md) records the reused image/PDK. Archived routed evidence is audited by hashes. No independent clean-image full physical rerun is claimed.
 
+A [clean Git-source extraction](reports/reproduction/summary.json) passed the tests, frozen campaign, actual RTL loop and archived-evidence audit in the existing image. All **540 metric rows** and selected RTL RMSE/energy reproduced within the declared tolerance: [comparison](reports/reproduction/numerical_comparison.json). Full physical design was not rerun.
+
 ## Findings and remaining work
 
 Across 60 paired trials per floating controller, mean hold RMSE is 9.092 C (bang-bang), 9.544 C (PI), 7.125 C (FFPI). Mean heater energy is 16.512, 14.786, 16.030 uJ respectively. Settling failures are 60/60, 57/60, 36/60. These results do not demonstrate a 5-15% energy saving.

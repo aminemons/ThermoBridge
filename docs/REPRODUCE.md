@@ -47,3 +47,7 @@ The report reads archived data and writes `reports/technical_report.pdf`. The RE
 `release/` preserves an earlier desktop runner/tests. Local `release_out/` and ZIP exports predate final conditional timing and are superseded. Canonical evidence is `reports/asic/summary.json` and `reports/release_snapshot.json`. `reports/asic/manifest.json` is a failed earlier attempt. Selected earlier failure manifests/metrics are retained under `results/history/`; bulky historical traces remain local.
 
 No gate-level power, analogue macro, fabricated sensor or completed PFE sweep is implied. See [LIMITATIONS.md](LIMITATIONS.md).
+
+## Executed clean-source check
+
+`python scripts/clean_reproduce.py` exported commit `883543a6d007b3df1e7ce73ea2837b9ab267ccd7` with `git archive` into a new Linux directory in the existing container. Tests, frozen campaign, real RTL loop and archived-evidence audit all returned zero. `python scripts/compare_reproduction.py` compared 540 rows and RTL RMSE/energy against the baselines, finding no differences at relative tolerance 1e-10 / absolute tolerance 1e-12. Logs and exact scope: [reproduction report](../reports/reproduction/summary.json). This is a fresh source extraction, not an independent image or full physical rerun.

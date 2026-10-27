@@ -19,5 +19,8 @@ assert json.loads((ROOT/'reports/pwm_validation.json').read_text())['pass']
 assert (ROOT/'reports/technical_report.pdf').is_file()
 for target in re.findall(r'!\[[^\]]*\]\(([^)]+)\)',(ROOT/'README.md').read_text()):
     assert (ROOT/target).is_file(),'Broken README image: '+target
+for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)',(ROOT/'README.md').read_text()):
+    if target.startswith(('https://','http://','#')):continue
+    assert (ROOT/target.split('#')[0]).exists(),'Broken README link: '+target
 print(json.dumps({'status':'PASS: conditional research snapshot, not all aspirational targets','engineering_targets':snapshot['engineering_targets'],'limitations':'docs/LIMITATIONS.md'},indent=2))
 if a.strict and not all(snapshot['engineering_targets'].values()):raise SystemExit(1)

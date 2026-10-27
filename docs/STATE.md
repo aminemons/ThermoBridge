@@ -10,3 +10,4 @@ Date: 27 October 2026. Phase: conditional research snapshot and evidence publica
 - Evidence: `reports/release_snapshot.json`, `reports/asic/summary.json`, primary campaign `exp-20261027T135345Z-7afca8`, `reports/technical_report.pdf`.
 - Next: human review; new training/calibration with fresh held-out protocol; independent physical rerun/PFE work in `docs/LIMITATIONS.md`.
 - Last physical milestone: `fcd61fb`. Final validation commit is recorded by Git and the reproduction audit.
+- Clean source `883543a` passed tests/campaign/RTL/evidence audit in the installed image; 540 metric rows and RTL RMSE/energy reproduced. See `reports/reproduction/`.
