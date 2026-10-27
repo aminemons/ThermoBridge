@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Installed-container integration checks; independent clean-source rerun recorded separately",
+  "python": {
+    "command": "python3 -m pytest -q tests release/tests",
+    "passed": 25,
+    "failed": 0
+  },
+  "rtl": {
+    "command": "python3 scripts/run_rtl.py",
+    "passed": 2,
+    "failed": 0,
+    "engine": "Icarus 14 development / cocotb 2.1.0",
+    "python_interpreter": "3.12.12"
+  },
+  "rtl_sha256": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8"
+}
