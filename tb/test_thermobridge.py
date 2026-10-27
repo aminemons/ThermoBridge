@@ -229,6 +229,21 @@ async def controller_directed_and_randomized(dut):
         await expect_sample(dut, code, 32768, -64, expected)
         CHECKS["randomized_sample_comparisons"] += 1
 
+    # Extreme positive gain plus offset must saturate calibrated temperature, not wrap.
+    await bus_write(dut, REG_CAL_OFFSET, 32767)
+    await bus_write(dut, REG_ADC_GAIN, 131071)
+    await bus_write(dut, REG_LIMIT, 32767)
+    await commit(dut)
+    saturated_temp = await wait_sample(dut, 4094)
+    assert saturated_temp == 32767
+    assert int(dut.fault_cause.value) & 0x01
+    await bus_write(dut, REG_CAL_OFFSET, -64)
+    await bus_write(dut, REG_ADC_GAIN, 32768)
+    await bus_write(dut, REG_LIMIT, 30000)
+    await commit(dut)
+    await wait_sample(dut, 100)
+    await clear_safe(dut)
+
     # PI product rounding ties are covered in RTL at 0.5 and 1.5 duty counts.
     await bus_write(dut, REG_CAL_OFFSET, -1)
     await bus_write(dut, REG_ADC_GAIN, 16384)
@@ -315,13 +330,12 @@ async def controller_directed_and_randomized(dut):
     assert int(dut.fault_cause.value) & 0x08
     assert int(dut.pwm_out.value) == 0
     await bus_write(dut, REG_CTRL, 1)
-    await bus_write(dut, REG_SETPOINT, 5000)
-    await bus_write(dut, REG_KI, 16384)
     await commit(dut)
     await clear_safe(dut)
     assert int(dut.fault_cause.value) == 0
     CHECKS["directed_cases"] = [
-        "signed calibration ties", "register shadow/readback/commit", "PI rounding ties",
+        "signed calibration ties", "register shadow/readback/commit", "setpoint/gain endpoints",
+        "calibration saturation", "PI rounding ties",
         "negative error", "anti-windup", "PWM exact off/full/partial", "ADC rails 0 and 4095",
         "invalid calibration cannot clear", "overtemperature safe clear", "commanded shutdown clear",
     ]
@@ -341,6 +355,8 @@ async def stale_fault_after_three_control_ticks(dut):
     await Timer(30, unit="ns")
     dut.reset_n.value = 1
     await bus_write(dut, REG_CTRL, 1)
+    await bus_write(dut, REG_SETPOINT, 5000)
+    await bus_write(dut, REG_KI, 16384)
     await bus_write(dut, REG_OUT_MIN, 256)
     await bus_write(dut, REG_OUT_MAX, 256)
     await commit(dut)
@@ -348,6 +364,7 @@ async def stale_fault_after_three_control_ticks(dut):
     assert int(dut.duty_q8.value) == 256
     assert int(dut.pwm_out.value) == 1
     integral_before_invalid = int(dut.integrator_q8.value.to_signed())
+    assert integral_before_invalid > 0
     await RisingEdge(dut.control_tick)
     await RisingEdge(dut.clk)
     await Timer(1, unit="ps")
@@ -369,4 +386,7 @@ async def stale_fault_after_three_control_ticks(dut):
             break
     assert int(dut.fault_cause.value) & 0x04
     assert int(dut.pwm_out.value) == 0
-    write_summary(stale_asserted_on_missed_tick=missed_ticks, stale_pwm_was_active_before_fault=True)
+    write_summary(stale_asserted_on_missed_tick=missed_ticks,
+                  stale_asserted_one_clock_after_tick=True,
+                  invalid_sample_left_integrator_unchanged=True,
+                  stale_pwm_was_active_before_fault=True)

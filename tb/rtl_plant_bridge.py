@@ -36,6 +36,7 @@ class RTLPlantBridge:
         d.cfg_write.value = 1
         d.cfg_valid.value = 1
         await RisingEdge(d.clk)
+        await Timer(1, unit="ns")
         d.cfg_write.value = 0
         d.cfg_valid.value = 0
         await RisingEdge(d.clk)
