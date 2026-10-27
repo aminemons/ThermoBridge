@@ -1,0 +1,40 @@
+{
+  "command": [
+    "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/run_experiments.py"
+  ],
+  "controller_count": 3,
+  "duration_s": 8.856993,
+  "git_dirty": true,
+  "input_sha256": {
+    "configs\\evaluation_v1.json": "12fdb16f73d47c5877888fa19f2f463791fc7c9820e69e605071ef131bb1ab9f"
+  },
+  "outputs": {
+    "metrics.csv": "765c87811ce65ccd3d7a47919749fb108513fbd6e36b66ebf7b923485e05ed7d",
+    "rtn_statistics.json": "361100a99168a160abad8a706683baf572f31ecc62e78d834ddea463d54932c1",
+    "traces.csv": "2989925b4027fa5dd76f0fe44692cedda51ec690a5dd874a683864f41ea6966f",
+    "training_tuning.json": "1fe1bff7333235318c245d7e99ae8b3e9f12dfdc5d183ea44df153f630bb3098"
+  },
+  "paired_seeds_per_scenario": 3,
+  "run_id": "exp-20261027T082145Z-782f88",
+  "scenario_count": 20,
+  "schema": "thermobridge.run.v1",
+  "seed": [
+    11,
+    29,
+    47
+  ],
+  "simulation_kind": "Python reference only; not RTL-in-loop",
+  "source_commit": "0e20969a105c2fb7854f0ffe4a46ce4f19dd5c5f",
+  "source_sha256": "8bd0a5fbcb234ff52048375b80a09103ca3d739f6dce079c1802baa0c9cd7e3a",
+  "status": "complete",
+  "timestamp_utc": "2026-10-27T08:21:45.249471+00:00",
+  "tool_versions": {
+    "python": "3.11.9"
+  },
+  "tuning_scenarios": [
+    "train_nominal",
+    "train_warm_ambient",
+    "train_weak_thermal"
+  ]
+}

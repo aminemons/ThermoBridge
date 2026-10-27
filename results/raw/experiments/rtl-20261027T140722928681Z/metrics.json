@@ -1,0 +1,22 @@
+{
+  "run_id": "rtl-20261027T140722928681Z",
+  "simulation_kind": "rtl_in_loop_cocotb_icarus",
+  "plant": "primary fitted RC ROM from spatial FVM; duty read from RTL at every sample; nonlinear divider ADC feeds next sample",
+  "arithmetic": "synthesizable RTL controller; Q14 KP/KI, Q6 calibration/setpoint, Q8 duty",
+  "paired_reference": "Python reference RC run in experiment metrics CSV; this accelerated trace is a separate subset",
+  "scenario_id": "E01_nominal",
+  "seed": 11,
+  "controller": "thermobridge_top feedforward plus PI with frozen spatial-FVM LUT",
+  "kp": 0.02,
+  "ki_per_s": 0.005,
+  "control_dt_s": 0.001,
+  "control_div_clock_cycles": 32,
+  "rmse_hold_c": 3.2709875411095095,
+  "energy_warmup_j": 1.0529322127259497e-05,
+  "energy_hold_j": 5.750224229954853e-06,
+  "energy_cooldown_j": 0.0,
+  "energy_total_j": 1.627954635721435e-05,
+  "sensing_energy_j": 2.902144017285798e-07,
+  "sample_count": 238,
+  "fault_count": 0
+}

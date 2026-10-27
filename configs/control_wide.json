@@ -1,0 +1,13 @@
+{
+  "contract_version": 1,
+  "name": "wide_20f8_20f16_reference_variant",
+  "implementation_status": "integer-reference variant; RTL physical implementation pending",
+  "temperature_bits": 20,
+  "temperature_fraction_bits": 8,
+  "coefficient_bits": 20,
+  "coefficient_fraction_bits": 16,
+  "product_shift_to_duty_q8": 16,
+  "temperature_range_celsius": [-2048.0, 2047.99609375],
+  "rounding": "nearest ties to even",
+  "saturation": "signed two's-complement temperature and 24-bit Q8 integrator"
+}

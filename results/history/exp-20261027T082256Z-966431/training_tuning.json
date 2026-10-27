@@ -1,0 +1,72 @@
+{
+  "training_only": true,
+  "selected": {
+    "pi": {
+      "kp": 0.04,
+      "ki": 0.00015
+    },
+    "ffpi": {
+      "kp": 0.008,
+      "ki": 5e-05
+    },
+    "bangbang": {
+      "hysteresis_c": 1.0
+    }
+  },
+  "top_grid_candidates": {
+    "pi": [
+      {
+        "mean_training_score": 54.41381481853957,
+        "kp": 0.04,
+        "ki": 0.00015
+      },
+      {
+        "mean_training_score": 58.165317757035545,
+        "kp": 0.025,
+        "ki": 0.0004
+      },
+      {
+        "mean_training_score": 59.51645665702727,
+        "kp": 0.06,
+        "ki": 0.0008
+      },
+      {
+        "mean_training_score": 59.778445758424986,
+        "kp": 0.06,
+        "ki": 0.0004
+      },
+      {
+        "mean_training_score": 59.83610655090961,
+        "kp": 0.04,
+        "ki": 0.0008
+      }
+    ],
+    "ffpi": [
+      {
+        "mean_training_score": 51.82998888934058,
+        "kp": 0.008,
+        "ki": 5e-05
+      },
+      {
+        "mean_training_score": 51.84035236410637,
+        "kp": 0.004,
+        "ki": 5e-05
+      },
+      {
+        "mean_training_score": 51.932418070372535,
+        "kp": 0.008,
+        "ki": 0.00015
+      },
+      {
+        "mean_training_score": 51.942618270190394,
+        "kp": 0.015,
+        "ki": 5e-05
+      },
+      {
+        "mean_training_score": 51.994591572086534,
+        "kp": 0.015,
+        "ki": 0.00015
+      }
+    ]
+  }
+}

@@ -10,3 +10,9 @@ reports/environment.private.json
 *.vcd
 *.fst
 *.log.tmp
+ThermoBridge_complete_*.zip
+*.backup_*
+# Historical external-run duplicates stay local; selected evidence is under reports/results.
+release_out/
+tmp/
+tb/results.xml

@@ -1,0 +1,1 @@
+Cocotb/Icarus completed successfully. The plant duty was consumed from the RTL duty_q8 output at each sampled update; ADC codes came from the nonlinear divider model. CONTROL_DIV=32 is a simulation acceleration.
