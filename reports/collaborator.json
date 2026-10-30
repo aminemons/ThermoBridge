@@ -3,7 +3,7 @@
   "authenticated_login": "aminemons",
   "requested_user": "Ishaq-ML",
   "requested_permission": "push",
-  "timestamp_utc": "2026-10-27T08:31:22.960315+00:00",
+  "timestamp_utc": "2026-10-30T18:01:32.379159+00:00",
   "authenticated_repository_permissions": {
     "admin": true,
     "maintain": true,
@@ -11,7 +11,6 @@
     "triage": true,
     "pull": true
   },
-  "status": "invited_pending_acceptance",
-  "invitation_id": 339921444,
+  "status": "already_collaborator",
   "permission": "write"
 }

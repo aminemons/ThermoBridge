@@ -1,5 +1,13 @@
 # Executed environment
 
+## 30 October execution note
+
+The existing Docker Desktop installation initially failed on a stale `Docker/run/dockerInference` runtime socket. The runtime directory was preserved by a reversible rename to `run.stale-20261030`, after which Desktop and the existing `iic-osic-tools` container started. No image, PDK or container data was reset or reinstalled.
+
+New actual RTL experiments use the existing container. The bounded spatial screen runs on the Windows host: Python 3.11.9, NumPy 2.4.6 and SciPy 1.17.1. Its manifest records these actual execution versions rather than inheriting container metadata. The report/figure dependencies are separately pinned in `requirements-report.txt`. Approximately 2.3 GB of host disk remained during this revision; no large new physical implementation was started.
+
+## Original locked toolchain
+
 The project reuses the user's already installed IIC-OSIC-TOOLS container. Docker, the image and PDK were not reinstalled. The executable project directory is `/foss/designs/thermobridge`, on the Ubuntu Linux filesystem. Work and netlist outputs are writable as UID/GID 1000:1000.
 
 The exact observations are in [environment.json](../reports/environment.json). The image is `hpretl/iic-osic-tools:2026.10`, native AMD64 digest `sha256:9201d2ebe74a406cf6af850ca2c646ac0462f3b2cea94cd98cb6580d8ceef800`. Windows host RAM is 16 GB. The WSL VM reports about 7.6 GiB RAM, the tool container has a 6 GiB limit, and physical flows use two workers. The Linux virtual disk's advertised free capacity is not host capacity: approximately 9 GB remained on Windows C: at the initial inspection. Large intermediates stay outside Git.
