@@ -12,8 +12,7 @@ simulate:
 	$(PYTHON) scripts/run_experiments.py
 	$(PYTHON) scripts/run_rtl_experiment.py
 sweep:
-	@echo "PFE geometry-optimization sweep is not implemented in this release."
-	@exit 1
+	$(PYTHON) scripts/run_geometry_study.py
 synth:
 	$(PYTHON) scripts/run_flow.py --synth-only
 gds:
@@ -23,6 +22,6 @@ verify-layout:
 figures:
 	$(PYTHON) scripts/make_figures.py --run $(RUN)
 report:
-	$(PYTHON) scripts/build_report.py
+	$(PYTHON) scripts/build_article.py
 release-check:
 	$(PYTHON) scripts/release_check.py

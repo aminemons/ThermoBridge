@@ -1,0 +1,7 @@
+{
+  "status": "PASS: conditional research snapshot, not all aspirational targets",
+  "engineering_targets": {
+    "nominal_hold_rmse_le_2_c": false
+  },
+  "limitations": "docs/LIMITATIONS.md"
+}

@@ -1,0 +1,91 @@
+{
+  "timestamp_utc": "2026-10-30T18:10:48.834073+00:00",
+  "status": "PASS",
+  "scope": "Current host/container tests, actual RTL unit tests, archived evidence audit and PDF QA. Full physical flow not rerun.",
+  "checks": [
+    {
+      "name": "host_pytest",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "release/tests"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "log": "reports/revision_checks/host_pytest.log",
+      "log_sha256": "49272102c43795b457b32a679f7fc027841f0c9e9667247b47e43b12cb630d7c"
+    },
+    {
+      "name": "container_pytest",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/container.py",
+        "run",
+        "python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "release/tests"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "log": "reports/revision_checks/container_pytest.log",
+      "log_sha256": "89780b3297b01d69c81399df4507e2a70706a3d8273d146f961c163d72603aaa"
+    },
+    {
+      "name": "rtl",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/container.py",
+        "run",
+        "python3",
+        "scripts/run_rtl.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "log": "reports/revision_checks/rtl.log",
+      "log_sha256": "542fba8a42a6024f37fee7ea77f933c6cb9df44390e87f20c3561322adc94d30"
+    },
+    {
+      "name": "evidence",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/release_check.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "log": "reports/revision_checks/evidence.log",
+      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+    },
+    {
+      "name": "unmet_target",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/release_check.py",
+        "--strict"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true,
+      "log": "reports/revision_checks/unmet_target.log",
+      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+    }
+  ],
+  "pdf": {
+    "pages": 5,
+    "replacement_characters": 0,
+    "main_figures": 6,
+    "tables": 5,
+    "visual_review": "All final rendered pages inspected in this revision"
+  },
+  "engineering_target_met": false,
+  "rtl_source_sha256": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8"
+}

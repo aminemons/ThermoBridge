@@ -1,5 +1,14 @@
 # Release limitations
 
+## Revision of 30 October 2026
+
+- The new RTL protocol selects coefficients using 36 training runs and evaluates baseline/retuned settings in ten paired runs. The previously observed 55-to-65 C regression improves to 2.101 C, still above the 2 C objective. All four new retuned cases also exceed 2 C; the warm-ambient case worsens slightly. This is not a successful closure of the tracking objective.
+- The bounded geometry study completes 27 actual geometries at three duty conditions, with a whole-geometry 18/9 training/test split. Its quadratic temperature surrogate has 2.124 C median and 5.133 C worst held-out error. Two discrete training-front candidates are directly refined near 55 C on a 2 um grid. This is screening, not a global or closed-loop energy Pareto optimum. There is no Bayesian-optimization comparison or independent 3D validation.
+- Geometry solves use the Windows host's recorded numerical packages. RTL runs use the existing OSIC image. The old eight-page report and original snapshot remain archived evidence, while the new article describes this revision.
+- The physically implemented RTL, GDS and ADC15 timing contract are unchanged. This revision does not reroute the core or re-run foundry checks. A transistor OTA, separately routed arithmetic variants, gate/formal equivalence and activity-qualified power remain unfinished PFE extensions.
+
+## Original 27 October snapshot (retained)
+
 - The initial 20 ns ADC-input budget failed routed timing by 3.319 ns at a 100 ns clock. Unchanged geometry was requalified using a 15 ns ADC-code/valid input budget, retaining 20 ns for other inputs and outputs. Worst setup slack is +1.681 ns and hold slack +0.107 ns across the available corners. This conditional interface constraint is not a measured maximum frequency.
 - Magic DRC, KLayout DRC and Netgen LVS passed on the original routed geometry. The timing recheck did not alter that geometry. Slew and capacitance warnings remain in the reports. These are installed flow checks, not foundry-qualified signoff. The core has no pads, ESD or package.
 - Numerical geometry/material properties are assumed. There are no measured CDTA data, experimental sensors, fabricated silicon, ppm/selectivity results, safety certification or admissions claims.

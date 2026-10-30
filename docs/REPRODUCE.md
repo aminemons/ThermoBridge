@@ -29,18 +29,17 @@ make release-check     # conditional snapshot; not all targets achieved
 python3 scripts/release_check.py --strict  # intentionally fails <=2 C target
 ```
 
-`simulate` uses frozen coefficients, not test-based retuning. Training is separate: `python3 scripts/tune_rtl.py`. `make sweep` explicitly fails because the PFE geometry Pareto sweep is pending. Full physical design has not been independently rerun from a clean image; current evidence reuses the earlier routed core and a separate STA recheck.
+`simulate` preserves the original frozen campaign. Original training is separate: `python3 scripts/tune_rtl.py`. The new bounded protocol is `python3 scripts/run_rtl_study.py`, followed by fetching `reports/rtl_study_v2.json`, `results/rtl_study`, and `python scripts/fetch_rtl_study.py` for its 46 raw runs. `make sweep` now executes 27 geometries at three conditions with selected 2 um refinements. Full physical design has not been independently rerun from a clean image; retained geometry and the separate STA recheck remain the physical evidence.
 
 ## Report on the host
 
 ```powershell
 python -m pip install -r requirements-report.txt
-python scripts/evidence_figures.py
-python scripts/build_report.py
+python scripts/build_article.py
 python scripts/release_check.py
 ```
 
-The report reads archived data and writes `reports/technical_report.pdf`. The README selects campaign `exp-20261027T135345Z-7afca8`; a fresh experiment receives its own directory/manifest. Use `scripts/make_figures.py --run` with that directory for a rerun comparison. Changed source requires new validation rather than editing old passing reports.
+The article generator reads archived evidence, writes `reports/thermobridge_article.pdf`, and renders README.md from `docs/article.template.md`. Edit that template for reproducible article changes. The earlier `reports/technical_report.pdf` is preserved. New runs receive new IDs; do not overwrite old measurements or select coefficients from held-out results. Host spatial-study packages are recorded in its run manifest, separately from the OSIC environment.
 
 ## Historical material
 

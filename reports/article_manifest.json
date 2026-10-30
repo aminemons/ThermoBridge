@@ -1,0 +1,27 @@
+{
+  "inputs": {
+    "docs/article.template.md": "a580da6f44abecb0e85e1dcf0589ba9c3987ceb3dab4cd8fa5a28af7dcd00bb0",
+    "reports/rtl_study_v2.json": "5793dcaccb11758f103114a51e45b153a0b2474e45e7afd97de5b8a05aaa345e",
+    "reports/geometry_study.json": "0ee64423bddca5c01895c51766b3bc1b8d4e29a83b30c8fa9c7e49fa3751cc4a",
+    "outputs/physics/validation.json": "68447102ec916aed4f0737f9384622f4f18cec14b6947bb93ff2a4761cd2c3a0",
+    "reports/asic/summary.json": "cfd0bfbce6501192bce54328067192a29240c1a6d848ae2ead366bce6078cf0e",
+    "outputs/physics/steady_1um.npz": "6f4298f4d5b59ea0df0b26a12c0cce2cd441658cfc4e69c5ab0afabef829ef9d",
+    "outputs/physics/transient_validation.npz": "57049d52c62778c33121d9559a325ce9475072b5c15f8b9350f7454230f8fc97",
+    "results/raw/experiments/exp-20261027T135345Z-7afca8/metrics.csv": "679175619fbbe711c6da0508e6d75bcdca269ac41f37a480b34739ae97b2702e",
+    "results/geometry/geometry-20261030T175916Z/steady.csv": "9e8561317c32ba476d365d6ada7323f222aa9ce836a305165a03babf591a5510",
+    "results/geometry/geometry-20261030T175916Z/surrogate.npz": "ae9ead24b38f36576244fcf7a7f85756a13055c1c8af6863d2900ddb7c2fe03d"
+  },
+  "outputs": {
+    "README.md": "9932ffa2979e72e288f68d3370aac3f3bddbf7666f846d9a5921dc22604452a1",
+    "reports/thermobridge_article.pdf": "b055b438c9603d1f64977ca2f73ac6e24b6ce7483dc2c923b72ac6f090edf2d0",
+    "docs/figures/physics_temperature_article.png": "0af966cb716aac09a900760d24fa35cc0fdc4be4d8a8d191e04cc49e5fb10153",
+    "docs/figures/physics_validation_article.png": "ace135149f2ffff1ce519bd365673aa6f19e40d74e409ef651bcd0ba7db69a7b",
+    "docs/figures/experiment_energy_article.png": "0a5d73e00ef78cbd3d7e61610b15152165e6f0db707c4ecab9b9a33418a3fb12",
+    "docs/figures/rtl_retuning_v2.png": "997842777da81d7dddacf9e10a137c9a4bc42cae9d3987579f3d0c269a1f8446",
+    "docs/figures/geometry_study.png": "4c1b9f4ecc47a6ed6ed9f48d6499b5f14a1a909cb4113e78926cf4d494c9a7cc",
+    "docs/figures/routed_core.png": "a5bc3891af36c1947bbbd72ebb6970f860ccdef94e2e9f1781407fa8aa9796ee",
+    "docs/figures/experiment_paired_trace.png": "e47b8ba96feb249b9a46209d1a4e2f1b0a0247bc2256455bf03c2ff7f2715976",
+    "docs/figures/routed_core_detail.png": "104521768bf03312067b5ac08c84621708dad33c97b90556f8402a1595ed8210"
+  },
+  "format": "Two-column technical report; IEEE-style structure, Times fonts and numbered references; not an IEEE publication"
+}
