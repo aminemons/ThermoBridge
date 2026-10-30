@@ -1,15 +1,15 @@
 python3 -m pytest -q tests/test_physics.py
 ......                                                                   [100%]
-6 passed in 1.89s
+6 passed in 0.60s
 python3 -m pytest -q tests/test_rtl_reference.py tests/test_sensing.py tests/test_experiments.py release/tests
-...................                                                      [100%]
-19 passed in 1.57s
+....................                                                     [100%]
+20 passed in 0.68s
 python3 scripts/run_rtl.py
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /usr/bin/python3
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793111451
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793383864
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -20,8 +20,8 @@ python3 scripts/run_rtl.py
  97691.00ns INFO     cocotb.regression                  *****************************************************************************************************************
                                                         ** TEST                                                     STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *****************************************************************************************************************
-                                                        ** test_thermobridge.controller_directed_and_randomized      PASS       96061.00           0.65     148789.80  **
-                                                        ** test_thermobridge.stale_fault_after_three_control_ticks   PASS        1630.00           0.01     133257.45  **
+                                                        ** test_thermobridge.controller_directed_and_randomized      PASS       96061.00           0.43     224057.35  **
+                                                        ** test_thermobridge.stale_fault_after_three_control_ticks   PASS        1630.00           0.01     197444.20  **
                                                         *****************************************************************************************************************
-                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                         97691.00           0.66     148230.90  **
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                         97691.00           0.44     223049.79  **
                                                         *****************************************************************************************************************

@@ -7,10 +7,8 @@ import scipy
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from src.physics.fvm import Params,ElectroThermalFVM
+from src.models.geometry_surrogate import geometry_features as features
 from scripts.run_manifest import write_manifest
-def features(geometry,duty):
-    x=np.array([geometry['heater_width_um']/12,geometry['heater_pitch_um']/40,geometry['anchor_width_um']/12,duty/.5])
-    return np.r_[1,x,[x[i]*x[j] for i in range(4) for j in range(i,4)]]
 def pareto(rows):
     return [r for r in rows if not any(all(s[k]<=r[k] for k in ['estimated_power_w','estimated_roi_std_c']) and any(s[k]<r[k] for k in ['estimated_power_w','estimated_roi_std_c']) for s in rows if s is not r)]
 def main():

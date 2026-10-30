@@ -41,6 +41,8 @@ python scripts/release_check.py
 
 The article generator reads archived evidence, writes `reports/thermobridge_article.pdf`, and renders README.md from `docs/article.template.md`. Edit that template for reproducible article changes. The earlier `reports/technical_report.pdf` is preserved. New runs receive new IDs; do not overwrite old measurements or select coefficients from held-out results. Host spatial-study packages are recorded in its run manifest, separately from the OSIC environment.
 
+To run the spatial solver on the host, install `requirements-host.txt` as well. Article rendering uses a lightweight shared feature function and does not import SciPy or launch the PDE solver.
+
 ## Historical material
 
 `release/` preserves an earlier desktop runner/tests. Local `release_out/` and ZIP exports predate final conditional timing and are superseded. Canonical evidence is `reports/asic/summary.json` and `reports/release_snapshot.json`. `reports/asic/manifest.json` is a failed earlier attempt. Selected earlier failure manifests/metrics are retained under `results/history/`; bulky historical traces remain local.
@@ -49,4 +51,4 @@ No gate-level power, analogue macro, fabricated sensor or completed PFE sweep is
 
 ## Executed clean-source check
 
-`python scripts/clean_reproduce.py` exported commit `883543a6d007b3df1e7ce73ea2837b9ab267ccd7` with `git archive` into a new Linux directory in the existing container. Tests, frozen campaign, real RTL loop and archived-evidence audit all returned zero. `python scripts/compare_reproduction.py` compared 540 rows and RTL RMSE/energy against the baselines, finding no differences at relative tolerance 1e-10 / absolute tolerance 1e-12. Logs and exact scope: [reproduction report](../reports/reproduction/summary.json). This is a fresh source extraction, not an independent image or full physical rerun.
+`python scripts/clean_reproduce.py` exports a committed Git archive into a new Linux directory in the existing container. The latest source commit is recorded in [reproduction report](../reports/reproduction/summary.json); earlier checks remain in Git history. Tests, the frozen Python campaign, real RTL loop and archived-evidence audit returned zero. `python scripts/compare_reproduction.py` compared 540 rows and baseline RTL RMSE/energy at relative tolerance 1e-10 / absolute tolerance 1e-12. `python scripts/check_clean_rtl_case.py` additionally reproduces one frozen v2 case. This is a fresh source extraction, not an independent image or full physical rerun, and not a repetition of all 46 v2 runs.

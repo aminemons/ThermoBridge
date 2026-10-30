@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /usr/bin/python3
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793383854
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793383919
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -13,8 +13,8 @@
  97691.00ns INFO     cocotb.regression                  *****************************************************************************************************************
                                                         ** TEST                                                     STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *****************************************************************************************************************
-                                                        ** test_thermobridge.controller_directed_and_randomized      PASS       96061.00           0.45     214579.02  **
-                                                        ** test_thermobridge.stale_fault_after_three_control_ticks   PASS        1630.00           0.01     172013.56  **
+                                                        ** test_thermobridge.controller_directed_and_randomized      PASS       96061.00           0.47     204389.20  **
+                                                        ** test_thermobridge.stale_fault_after_three_control_ticks   PASS        1630.00           0.01     197843.05  **
                                                         *****************************************************************************************************************
-                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                         97691.00           0.46     213284.57  **
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0                                         97691.00           0.48     203807.19  **
                                                         *****************************************************************************************************************

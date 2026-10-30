@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-10-30T18:12:39.865763+00:00",
+  "source_commit": "ac5923469905cfa55928316c6a2e6ae64092b0a1",
+  "case": "new52",
+  "run_id": "rtl2-20261030T181237812085Z",
+  "rmse_hold_c": 2.1262828585632945,
+  "energy_total_j": 1.5402076830053444e-05,
+  "comparison": "RMSE and energy against frozen v2 result; relative1e-10, absolute1e-12",
+  "pass": true,
+  "scope": "One actual RTL-in-loop case in fresh Git extraction; not a rerun of all46 training/evaluation runs"
+}

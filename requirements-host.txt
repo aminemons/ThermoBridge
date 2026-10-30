@@ -1,0 +1,5 @@
+# Windows numerical/test environment used by the 30 October spatial study.
+# RTL/physical tools remain in the separately locked OSIC container.
+numpy==2.4.6
+scipy==1.17.1
+pytest==9.1.1

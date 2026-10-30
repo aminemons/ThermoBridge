@@ -17,7 +17,10 @@ ROOT=Path(__file__).resolve().parents[1];FIG=ROOT/'docs/figures';OUT=ROOT/'repor
 sys.path.insert(0,str(ROOT))
 
 def save(fig,name):
-    for ext in ['png','svg']:fig.savefig(FIG/f'{name}.{ext}',dpi=300,bbox_inches='tight')
+    for ext in ['png','svg']:
+        path=FIG/f'{name}.{ext}';fig.savefig(path,dpi=300,bbox_inches='tight')
+        if ext=='svg':
+            path.write_text('\n'.join(line.rstrip() for line in path.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8',newline='\n')
     plt.close(fig)
 
 def figures(rtl,geometry):
@@ -50,7 +53,7 @@ def figures(rtl,geometry):
         vals=[next(r['rmse_hold_c'] for r in rtl['evaluation'] if r['scenario_id']==c and r['study_label']==label) for c in cases]
         ax.bar(x+shift,vals,.34,label=label,color=color)
     ax.axhline(2,color='#a54c2b',ls='--',lw=1);ax.set_xticks(x,['52→62','57→67','cold52','warm57','old55']);ax.set(ylabel='hold RMSE (°C)',ylim=(0,3.4));ax.legend(frameon=False,ncol=2);ax.grid(axis='y',alpha=.2);save(fig,'rtl_retuning_v2')
-    from scripts.run_geometry_study import features
+    from src.models.geometry_surrogate import geometry_features as features
     run=ROOT/geometry['run'];rows=list(csv.DictReader((run/'steady.csv').open()));coef=np.load(run/'surrogate.npz')['coefficients']
     test=[{k:(v if k in ['id','split'] else float(v)) for k,v in r.items()} for r in rows if r['split']=='test']
     true=[r['mean_c'] for r in test];pred=[float(features(r,r['duty'])@coef[:,0]) for r in test]

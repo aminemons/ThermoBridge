@@ -10,4 +10,4 @@ Date: 30 October 2026. Phase: reviewed prototype revision and article publicatio
 - Evidence: `reports/rtl_study_v2.json`, `reports/geometry_study.json`, `reports/thermobridge_article.pdf`; baseline physical/snapshot evidence unchanged.
 - Next: human review; close calibration/tracking on a newly frozen protocol; analogue/layout alternatives and independent physical rerun per `docs/LIMITATIONS.md`.
 - Last physical milestone: `fcd61fb`. Final validation commit is recorded by Git and the reproduction audit.
-- Clean source `883543a` passed tests/campaign/RTL/evidence audit in the installed image; 540 metric rows and RTL RMSE/energy reproduced. See `reports/reproduction/`.
+- Clean source `ac59234` passed current tests, campaign, RTL and evidence audit; all 540 metric rows and baseline RTL metrics reproduced. A representative v2 case is checked separately in `reports/reproduction/`.
