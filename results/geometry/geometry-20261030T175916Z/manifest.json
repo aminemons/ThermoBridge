@@ -1,0 +1,37 @@
+{
+  "command": [
+    "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/run_geometry_study.py"
+  ],
+  "duration_s": 154.574966,
+  "environment_manifest_sha256": null,
+  "execution_python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "geometry_split_unit": "whole geometry",
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/geometry_study_v1.json": "9548aba8fba4b20f99b438c42656b6af8a325368a7dc1ae32116172f3c9d4476",
+    "configs/materials.json": "78f9a7f25ec422dcfdce54edfa93d7c4c0122e619e514ccc5bcb0cd9344c2aa8",
+    "configs/physics.json": "4ca8c5d21a11162205a8597905f606f581a8755ff10b5321fe9d9e6b6cc10364",
+    "src/physics/fvm.py": "03b82c763f3191f4a31fccac6cd36802677a43145e8b5eccd84fdfedd0f403be"
+  },
+  "outputs": {
+    "results/geometry/geometry-20261030T175916Z/selection.json": "0bb36fc502bb97cfca1f9e82fd8201b59255bce8dd3f11bde874901594802c12",
+    "results/geometry/geometry-20261030T175916Z/split.json": "33cd674e1cf9462efc57b2c0af5f5ff3c41bffa80abad63656f6960725d4b34c",
+    "results/geometry/geometry-20261030T175916Z/steady.csv": "9e8561317c32ba476d365d6ada7323f222aa9ce836a305165a03babf591a5510",
+    "results/geometry/geometry-20261030T175916Z/summary.json": "ac84c68f478e61b83675800bfb19b3fca5b75095ad26e312d69910dd5170bfb5"
+  },
+  "run_id": "geometry-20261030T175916Z",
+  "schema": "thermobridge.run.v1",
+  "seed": 20261030,
+  "source_commit": "e6352a27ee0394fa2ca748613560b4a548253a28",
+  "source_sha256": "cf79b34907db815cda91c5ac1aece428f3572999a446eeb6e589d6ee1a20ab79",
+  "status": "complete",
+  "timestamp_utc": "2026-10-30T17:59:16.863667+00:00",
+  "tool_versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "execution_platform": "Windows-10-10.0.26200-SP0",
+  "provenance_note": "Host execution; package metadata corrected from inherited container record without changing solver outputs. The protocol and loaded numerical source are retained in input_sha256. Path keys use portable forward slashes; raw output bytes and input hashes are unchanged."
+}

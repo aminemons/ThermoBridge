@@ -1,0 +1,60 @@
+{
+  "run_id": "geometry-20261030T175916Z",
+  "geometry_count": 27,
+  "operating_points": 81,
+  "training_geometries": 18,
+  "test_geometries": 9,
+  "failures": [],
+  "surrogate": {
+    "mean_c": {
+      "median_abs_error": 2.124228353523904,
+      "worst_abs_error": 5.133248702821504
+    },
+    "roi_std_c": {
+      "median_abs_error": 0.05882640100736175,
+      "worst_abs_error": 0.1646526331971519
+    },
+    "power_w": {
+      "median_abs_error": 3.635075397215369e-06,
+      "worst_abs_error": 1.7687529515071773e-05
+    }
+  },
+  "refined_candidates": [
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 40,
+      "anchor_width_um": 12,
+      "id": "G04",
+      "estimated_power_w": 8.578269939625718e-05,
+      "estimated_roi_std_c": 0.11039613493779615,
+      "status": "solved",
+      "cell_um": 2,
+      "duty": 0.346435546875,
+      "mean_c": 54.991620062201655,
+      "roi_std_c": 0.09644438613915779,
+      "power_w": 8.451946260258884e-05,
+      "warmup_to_target_minus_1c_s": 0.08600000000000001,
+      "energy_first_160ms_j": 1.371134991019531e-05
+    },
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 32,
+      "anchor_width_um": 16,
+      "id": "G02",
+      "estimated_power_w": 0.00010766344103428608,
+      "estimated_roi_std_c": 0.09620904408562833,
+      "status": "solved",
+      "cell_um": 2,
+      "duty": 0.505126953125,
+      "mean_c": 54.98700630449578,
+      "roi_std_c": 0.08744097706630562,
+      "power_w": 0.000106187857904645,
+      "warmup_to_target_minus_1c_s": 0.07,
+      "energy_first_160ms_j": 1.7181334174982093e-05
+    }
+  ],
+  "max_power_balance_rel": 5.204903981141491e-13,
+  "max_thermal_balance_rel": 2.6543477282855246e-08,
+  "scope": "Spatial steady-state geometry screening and training-only candidate refinement; not a closed-loop energy Pareto optimum or independent 3D validation",
+  "runtime_s": 154.327575
+}

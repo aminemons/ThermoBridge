@@ -56,3 +56,13 @@ def test_three_width_contracts_preserve_one_degree_scale():
         ) == 256
         assert calibrate_contract(4095, adc_gain, 0, contract) <= (1 << (contract.temp_bits - 1)) - 1
         assert setpoint_100c == 100 * (1 << contract.temp_frac)
+
+def test_integral_coefficient_resolution_in_both_error_directions():
+    # A whole-Q8 integrator cannot accumulate increments rounded to zero.
+    for sign in [-1,1]:
+        state=PIState()
+        for _ in range(20):
+            state.update(temp_q6=0,setpoint_q6=sign*64,kp_q14=0,ki_q14=4,ff_q8=100)
+        assert state.integrator_q8==0
+        state.update(temp_q6=0,setpoint_q6=sign*64,kp_q14=0,ki_q14=64,ff_q8=100)
+        assert state.integrator_q8==sign

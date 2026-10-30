@@ -1,8 +1,8 @@
 * text=auto eol=lf
 # Preserve archived run bytes so manifest hashes survive cross-platform checkouts.
-/results/** -text
-/outputs/** -text
-/reports/** -text
+/results/** -text whitespace=cr-at-eol
+/outputs/** -text whitespace=cr-at-eol
+/reports/** -text whitespace=cr-at-eol
 /docs/figures/** -text
 *.pdf binary
 *.png binary

@@ -1,0 +1,89 @@
+{
+  "protocol": "thermobridge-rtl-retuning-v2",
+  "frozen_date": "2026-10-30",
+  "purpose": "Study Q8 integral dead zone using supported register settings; RTL and routed geometry unchanged",
+  "candidate_kp_q14": [
+    492,
+    819,
+    1147
+  ],
+  "candidate_ki_per_sample_q14": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "selection": "minimum mean training hold RMSE; no held-out metrics used in coefficient selection",
+  "training": [
+    {
+      "id": "train45",
+      "initial_setpoint_c": 45,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    },
+    {
+      "id": "train50",
+      "initial_setpoint_c": 50,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    },
+    {
+      "id": "train60",
+      "initial_setpoint_c": 60,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    }
+  ],
+  "evaluation": [
+    {
+      "id": "new52",
+      "initial_setpoint_c": 52,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 41,
+      "previously_observed": false
+    },
+    {
+      "id": "new57",
+      "initial_setpoint_c": 57,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 83,
+      "previously_observed": false
+    },
+    {
+      "id": "new52_cold",
+      "initial_setpoint_c": 52,
+      "step_c": 10,
+      "ambient_c": 20,
+      "seed": 41,
+      "noise_rms_v": 0.0005,
+      "previously_observed": false
+    },
+    {
+      "id": "new57_warm",
+      "initial_setpoint_c": 57,
+      "step_c": 10,
+      "ambient_c": 35,
+      "seed": 83,
+      "noise_rms_v": 0.0005,
+      "previously_observed": false
+    },
+    {
+      "id": "legacy55_regression",
+      "initial_setpoint_c": 55,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 11,
+      "previously_observed": true
+    }
+  ],
+  "baseline": {
+    "kp_q14": 1147,
+    "ki_per_sample_q14": 4
+  },
+  "scope": "Accelerated actual RTL-in-loop, external ideal centered front end, existing RC model. Legacy55 is a regression, not new held-out evidence."
+}

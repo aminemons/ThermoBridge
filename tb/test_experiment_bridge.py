@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+from dataclasses import replace
 from datetime import datetime, timezone
 import json
 import math
@@ -23,7 +24,7 @@ from tb.rtl_plant_bridge import RTLPlantBridge
 @cocotb.test()
 async def rtl_ffpi_closed_loop_rc(dut):
     start = datetime.now(timezone.utc)
-    run_id = "rtl-" + start.strftime("%Y%m%dT%H%M%S%fZ")
+    run_id = os.environ.get('THERMO_RTL_RUN_ID', "rtl-" + start.strftime("%Y%m%dT%H%M%S%fZ"))
     out = ROOT / "results/raw/experiments" / run_id
     out.mkdir(parents=True, exist_ok=False)
     dut.reset_n.value = 0
@@ -40,12 +41,18 @@ async def rtl_ffpi_closed_loop_rc(dut):
     base=evaluation["baseline"]; cycle=dict(evaluation["cycle"]); dt=evaluation["time_step_s"]
     training=os.environ.get('THERMO_RTL_TRAINING')=='1'
     if training: cycle['initial_setpoint_c']=50.0
+    case=json.loads(os.environ.get('THERMO_RTL_CASE_JSON','{}'))
+    for key in ('initial_setpoint_c','step_c'):
+        if key in case:cycle[key]=case[key]
+    base=dict(base,ambient_c=case.get('ambient_c',base['ambient_c']))
     plant = ThermalRC(r_th_k_per_w=base["r_th_k_per_w"],c_th_j_per_k=base["c_th_j_per_k"],ambient_c=base["ambient_c"],heater_v=base["heater_v"],heater_r_ohm=base["heater_r_ohm"],r_tcr_per_k=base["r_tcr_per_k"])
     # Explicit ideal differential front end centers the divider output before
     # amplification. It is external behavioural circuitry, not an on-chip OTA.
     readout = HeaterReadout(ReadoutConfig(r0_ohm=base["heater_r_ohm"],tcr_per_k=base["r_tcr_per_k"],reference_c=25.0,calibration_r0_ohm=base["heater_r_ohm"],calibration_tcr_per_k=base["r_tcr_per_k"],divider_reference_ohm=base["heater_r_ohm"],excitation_v=0.018,front_end_gain=800.0,front_end_reference_v=0.0086,adc_reference_v=1.8,valid_temperature_c=(20,350),delay_samples=0,noise_rms_v=0), seed=11)
-    lo_code = readout.sample(40.0, 1.0).code
-    hi_code = readout.sample(80.0, 1.0).code
+    readout=HeaterReadout(replace(readout.config,noise_rms_v=case.get('noise_rms_v',0)),seed=case.get('seed',11))
+    calibration=HeaterReadout(replace(readout.config,noise_rms_v=0),seed=0)
+    lo_code = calibration.sample(40.0, 1.0).code
+    hi_code = calibration.sample(80.0, 1.0).code
     gain_q14 = round((40.0 * 64.0 / (hi_code - lo_code)) * (1 << 14))
     offset_q6 = round(40.0*64.0 - lo_code * gain_q14 / (1 << 14))
     assert 0 < gain_q14 < (1 << 17) and -(1 << 15) <= offset_q6 < (1 << 15)
@@ -124,5 +131,9 @@ async def rtl_ffpi_closed_loop_rc(dut):
         cooldown_stale_latched=any(x['fault_cause']==4 for x in trace if x['phase']=='cooldown'),
         paired_reference='Separate RTL subset with explicitly centered ideal external readout; not identical to Python front end',
         readout={'gain':800,'reference_v':.0086,'excitation_v':.018,'calibration_c':[40,80],'amplifier_power':'not modeled'})
+    if case:
+        summary.update(scenario_id=case['id'],seed=case['seed'],case=case,
+            protocol='thermobridge-rtl-retuning-v2',previously_observed=case.get('previously_observed',False))
+    summary['overshoot_hold_c']=max(0.0,max(errors))
     (out/"metrics.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     dut._log.info("RTL-in-loop experiment complete: %s",json.dumps(summary))

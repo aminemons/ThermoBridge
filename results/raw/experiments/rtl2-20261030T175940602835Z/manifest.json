@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/run_rtl_experiment.py",
+    "--case",
+    "new52",
+    "--kp-q14",
+    "1147",
+    "--ki-q14",
+    "4"
+  ],
+  "duration_s": 1.665897,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs/feedforward_lut.json": "3406364f862fe487e9c55463f735ea9f03ad95d575e0e79d585689985ca85c71",
+    "configs/rtl_study_v2.json": "e01c5b7f60a3a2f203d4d45f0d4c381e000453fea39b779adadcd97f8fa17951",
+    "configs/rtl_tuned.json": "f134524938fb44a6dabdb82105b0f33bd139d128666abc7bd5b50b8f3ab336e6",
+    "rtl/thermobridge_top.sv": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8",
+    "src/physics/rc.py": "8dfb8e4fddba2b9e8bb3b32b252629f5143fad66caa763b36f95e7c8100c5862",
+    "src/sensing/readout.py": "2120bcbb1fc876d3cf69101892b06f1040a8c5c3af7e3b7fee2f53b3a8881b6e",
+    "tb/rtl_plant_bridge.py": "54ea317aaf27744a769e870ade65919c598590ee23a1514eccd6dd4416a0094a",
+    "tb/test_experiment_bridge.py": "bc80a7fff9359d0bd304d541928c3c5f2770bbc7a7c85c84f4cb1b3d4fa1050c"
+  },
+  "outputs": {
+    "results/raw/experiments/rtl2-20261030T175940602835Z/metrics.json": "dfdc7bca85ec19c012901b462bfbfde9db956d8fe7a0d5426a6ce20579312522",
+    "results/raw/experiments/rtl2-20261030T175940602835Z/run.log": "70c79b592a99bb056ecd562544174c54b03259676c73035515e38cddd225bda3",
+    "results/raw/experiments/rtl2-20261030T175940602835Z/trace.csv": "433381e1a39cc56532fe55bb7cd0de82099232dfcf1c91d66aa9ee322ea1a4cc"
+  },
+  "run_id": "rtl2-20261030T175940602835Z",
+  "schema": "thermobridge.run.v1",
+  "seed": 41,
+  "simulation_kind": "Actual RTL-in-loop; accelerated control divider32",
+  "source_commit": "e6352a27ee0394fa2ca748613560b4a548253a28",
+  "source_sha256": "5379fc1820fe25aeda8892cf3d00a913a6caacbada5ea3e6a30349ee8276a500",
+  "status": "complete",
+  "timestamp_utc": "2026-10-30T17:59:40.602835+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}

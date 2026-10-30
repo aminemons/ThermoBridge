@@ -1,0 +1,38 @@
+{
+  "training_front": [
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 40,
+      "anchor_width_um": 12,
+      "id": "G04",
+      "estimated_power_w": 8.578269939625718e-05,
+      "estimated_roi_std_c": 0.11039613493779615
+    },
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 32,
+      "anchor_width_um": 16,
+      "id": "G02",
+      "estimated_power_w": 0.00010766344103428608,
+      "estimated_roi_std_c": 0.09620904408562833
+    }
+  ],
+  "selected": [
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 40,
+      "anchor_width_um": 12,
+      "id": "G04",
+      "estimated_power_w": 8.578269939625718e-05,
+      "estimated_roi_std_c": 0.11039613493779615
+    },
+    {
+      "heater_width_um": 8,
+      "heater_pitch_um": 32,
+      "anchor_width_um": 16,
+      "id": "G02",
+      "estimated_power_w": 0.00010766344103428608,
+      "estimated_roi_std_c": 0.09620904408562833
+    }
+  ]
+}

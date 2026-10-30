@@ -1,0 +1,46 @@
+{
+  "run_id": "rtl2-20261030T175913472185Z",
+  "simulation_kind": "rtl_in_loop_cocotb_icarus",
+  "plant": "primary fitted RC ROM from spatial FVM; duty read from RTL at every sample; nonlinear divider ADC feeds next sample",
+  "arithmetic": "synthesizable RTL controller; Q14 KP/KI, Q6 calibration/setpoint, Q8 duty",
+  "paired_reference": "Separate RTL subset with explicitly centered ideal external readout; not identical to Python front end",
+  "scenario_id": "train50",
+  "seed": 17,
+  "controller": "thermobridge_top feedforward plus PI with frozen spatial-FVM LUT",
+  "kp": 0.04998779296875,
+  "ki_per_s": 7.8125,
+  "control_dt_s": 0.001,
+  "control_div_clock_cycles": 32,
+  "rmse_hold_c": 2.3843013055379783,
+  "energy_warmup_j": 9.085746675492786e-06,
+  "energy_hold_j": 5.284640234453193e-06,
+  "energy_cooldown_j": 0.0,
+  "energy_total_j": 1.437038690994598e-05,
+  "sensing_energy_j": 2.9176373229348003e-07,
+  "sample_count": 238,
+  "training_only": true,
+  "kp_q14": 819,
+  "ki_per_sample_q14": 128,
+  "powered_fault_count": 0,
+  "cooldown_stale_latched": true,
+  "readout": {
+    "gain": 800,
+    "reference_v": 0.0086,
+    "excitation_v": 0.018,
+    "calibration_c": [
+      40,
+      80
+    ],
+    "amplifier_power": "not modeled"
+  },
+  "case": {
+    "id": "train50",
+    "initial_setpoint_c": 50,
+    "step_c": 10,
+    "ambient_c": 25,
+    "seed": 17
+  },
+  "protocol": "thermobridge-rtl-retuning-v2",
+  "previously_observed": false,
+  "overshoot_hold_c": 1.8707517304473953
+}

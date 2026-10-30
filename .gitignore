@@ -16,3 +16,4 @@ ThermoBridge_complete_*.zip
 release_out/
 tmp/
 tb/results.xml
+build-*.log

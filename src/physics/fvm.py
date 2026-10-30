@@ -178,7 +178,7 @@ class ElectroThermalFVM:
         # Current is signed into the zero volt terminal; use magnitude.
         current=abs(current)
         V=np.full((self.n,self.n),np.nan); V[self.heater]=phi
-        return power/current if False else (V,power,current, p.voltage_v*current)
+        return V,power,current,p.voltage_v*current
 
     def thermal_step(self,T_c,power_cell_w,dt_s,max_iter=30,tol_k=1e-7):
         p=self.p; ta=p.ambient_c+273.15; old=T_c[self.domain].copy()+273.15
@@ -204,7 +204,7 @@ class ElectroThermalFVM:
         return out
 
     def simulate_transient(self, duties, times_s, initial_c=None, coupling_tol_k=2e-5, max_coupling_iter=20):
-        """Implicit coupled transient; duty/time arrays describe piecewise-constant intervals."""
+        """Implicit thermal transient with electrically lagged sources per interval."""
         times=np.asarray(times_s,float); ds=np.asarray(duties,float)
         if times.ndim!=1 or ds.shape!=times.shape or len(times)<2 or times[0]!=0 or np.any(np.diff(times)<=0): raise ValueError('times must start at zero and strictly increase; duty must match')
         if np.any((ds<0)|(ds>1)): raise ValueError('duty must be in [0,1]')

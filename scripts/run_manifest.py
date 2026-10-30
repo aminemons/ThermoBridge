@@ -45,6 +45,9 @@ def git_state() -> dict:
 
 def write_manifest(path: Path, *, run_id: str, command: list[str], input_paths: list[Path], seed, started: datetime,
                    status: str, output_paths: list[Path], extra: dict | None = None) -> dict:
+    if status=='complete':
+        missing=[str(p) for p in output_paths if not p.is_file()]
+        if missing:raise FileNotFoundError('Successful run is missing outputs: '+', '.join(missing))
     state = git_state()
     env_path = ROOT / "reports/environment.json"
     try:
@@ -59,12 +62,12 @@ def write_manifest(path: Path, *, run_id: str, command: list[str], input_paths: 
         "schema": "thermobridge.run.v1", "run_id": run_id,
         "timestamp_utc": started.astimezone(timezone.utc).isoformat(),
         "source_commit": state["commit"], "git_dirty": state["dirty"], "source_sha256": source_hash(),
-        "input_sha256": {str(p.resolve().relative_to(ROOT)): sha256_file(p) for p in input_paths},
+        "input_sha256": {p.resolve().relative_to(ROOT).as_posix(): sha256_file(p) for p in input_paths},
         "seed": seed, "tool_versions": tool_versions,
         "environment_manifest_sha256": environment_hash,
         "command": command, "duration_s": (datetime.now(timezone.utc) - started).total_seconds(),
         "status": status,
-        "outputs": {str(p.resolve().relative_to(ROOT)): sha256_file(p) for p in output_paths if p.exists()},
+        "outputs": {p.resolve().relative_to(ROOT).as_posix(): sha256_file(p) for p in output_paths if p.exists()},
     }
     if extra:
         manifest.update(extra)

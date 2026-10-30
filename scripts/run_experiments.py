@@ -27,7 +27,7 @@ LUT_PATH = ROOT / "configs/feedforward_lut.json"
 
 
 def feedforward_q8(setpoint_c: float) -> int:
-    """Piecewise-linear lookup using the same frozen spatial-FVM table as RTL."""
+    """Interpolate the shared table; RTL uses a step index between table knots."""
     table=json.loads(LUT_PATH.read_text(encoding="utf-8"))["bins"]
     if setpoint_c < table[0]["setpoint_c"]: return 0
     for a,b in zip(table,table[1:]):
@@ -50,11 +50,12 @@ def _signed_sat(value: int, width: int) -> int:
 
 
 def _fixed_pi_output(error_c: float, integral_c_s: float, kp: float, ki: float, ff: float, width: int) -> tuple[float, float]:
-    """Bit-accurate Q6 temperature, Q14 coefficients, Q8 duty profile.
+    """Separate Q6 temperature/Q14 coefficient/Q8 duty arithmetic study.
 
     Each multiply rounds to nearest/even before the Q8 sum; the error
     accumulator is signed `width` bits in Q6 °C·s and saturates. These are
-    controller arithmetic profiles, not RTL-in-loop measurements.
+    controller arithmetic profiles, not the exact primary RTL accumulator model
+    and not RTL-in-loop measurements.
     """
     q6 = 1 << 6
     q14 = 1 << 14

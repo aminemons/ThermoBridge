@@ -1,0 +1,74 @@
+{
+  "protocol": {
+    "protocol": "thermobridge-spatial-screen-v1",
+    "frozen_date": "2026-10-30",
+    "heater_width_um": [
+      8,
+      12,
+      16
+    ],
+    "heater_pitch_um": [
+      32,
+      40,
+      48
+    ],
+    "anchor_width_um": [
+      8,
+      12,
+      16
+    ],
+    "duty_conditions": [
+      0.35,
+      0.5,
+      0.65
+    ],
+    "coarse_cell_um": 4,
+    "validation_cell_um": 2,
+    "seed": 20261030,
+    "heldout_geometry_count": 9,
+    "selection_target_c": 55,
+    "candidate_count": 3,
+    "scope": "Spatial steady-state geometry screening and training-only candidate refinement; not a closed-loop energy Pareto optimum or independent 3D validation"
+  },
+  "geometry_ids": [
+    "G00",
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26"
+  ],
+  "heldout_ids": [
+    "G01",
+    "G05",
+    "G08",
+    "G09",
+    "G10",
+    "G15",
+    "G17",
+    "G21",
+    "G22"
+  ],
+  "selection_policy": "Use training geometries only; heldout data used solely for surrogate scoring"
+}
