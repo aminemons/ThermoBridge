@@ -29,11 +29,15 @@ The suspended active region is 200 × 200 µm, with a 40 µm domain extension an
 The electrical and thin-film thermal balances are
 
 $$
-\nabla\cdot[\sigma(T)\nabla\phi]=0 \tag{1}
+\begin{array}{lr}
+\displaystyle \nabla\cdot[\sigma(T)\nabla\phi]=0 & \text{(1)}
+\end{array}
 $$
 
 $$
-C_A\frac{\partial T}{\partial t}=\nabla\cdot(K_A\nabla T)+q_J-q_{\mathrm{loss}} \tag{2}
+\begin{array}{lr}
+\displaystyle C_A\frac{\partial T}{\partial t}=\nabla\cdot(K_A\nabla T)+q_J-q_{\mathrm{loss}} & \text{(2)}
+\end{array}
 $$
 
 Here, the sheet heat capacity and conductance include the heater only where its mask is present. Harmonic face conductances enforce conservative interface fluxes. Anchors are fixed at ambient and suspended lateral boundaries are adiabatic. The sparse steady solution iterates electrical heating and thermal response. Transients use implicit thermal integration with an electrically lagged source, whose splitting error is assessed by time-step refinement.
@@ -47,7 +51,9 @@ Here, the sheet heat capacity and conductance include the heater only where its 
 The reduced plant is
 
 $$
-C_{\mathrm{th}}\dot T=P-\frac{T-T_a}{R_{\mathrm{th}}},\qquad P=\frac{dV_h^2}{R_h(T)} \tag{3}
+\begin{array}{lr}
+\displaystyle C_{\mathrm{th}}\dot T=P-\frac{T-T_a}{R_{\mathrm{th}}},\qquad P=\frac{dV_h^2}{R_h(T)} & \text{(3)}
+\end{array}
 $$
 
 The positive fitted parameters are 349,137 K/W and 75.895 nJ/K, giving a 26.498 ms time constant. They describe the primary 4 µm spatial discretization, rather than a universal microhotplate. A separate 65%-duty pulse and cooldown test is reserved for compact-model evaluation.
@@ -67,7 +73,9 @@ The nominal 10 MHz clock produces 39.0625 kHz PWM and a 1 ms control interval. S
 The implemented integral increment is quantized to whole Q8 duty counts:
 
 $$
-\Delta I=\mathrm{round}_{\mathrm{even}}\!\left(\frac{K_{i,\mathrm{q14}}e_{\mathrm{q6}}}{4096}\right) \tag{4}
+\begin{array}{lr}
+\displaystyle \Delta I=\mathrm{round}_{\mathrm{even}}\!\left(\frac{K_{i,\mathrm{q14}}e_{\mathrm{q6}}}{4096}\right) & \text{(4)}
+\end{array}
 $$
 
 At a 1 °C error, the original coefficient 4 gives a zero increment. The new study therefore tests supported coefficient settings without changing RTL or invalidating its routed geometry. The [frozen v2 protocol](../configs/rtl_study_v2.json) evaluates 12 coefficient pairs on three training schedules. Selection minimizes mean training hold RMSE; a selection file is written before evaluation starts.

@@ -139,8 +139,78 @@ def pdf(text):
                     equation_lines.append(part)
                 else:raise ValueError('Unclosed display equation')
             markup=' '.join(equation_lines).strip()
-            match=re.search(r'\\tag\{(\d+)\}',markup);number=match.group(1) if match else ''
-            equation=re.sub(r'\\tag\{\d+\}','',markup).strip().rstrip('.')
+            match=re.search(r'\\text\{\((\d+)\)\}',markup)
+            if not match:match=re.search(r'\\tag\{(\d+)\}',markup)
+            number=match.group(1) if match else ''
+            equation=re.sub(r'\\tag\{\d+\}','',markup)
+            equation=re.sub(r'^\\begin\{array\}\{lr\}\s*\\displaystyle\s*','',equation)
+            equation=re.sub(r'\s*&\s*\\text\{\(\d+\)\}\s*\\end\{array\}\s*
+            fig=plt.figure(figsize=(3.8,.55));fig.text(.01,.5,'$'+equation+'$',fontsize=9.5,va='center')
+            temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number or i}.png'
+            fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
+            w,h=ImageReader(str(path)).getSize();scale=min((width-22)/w,40/h)
+            table=Table([[Image(str(path),width=w*scale,height=h*scale),Paragraph('('+number+')' if number else '',styles['small'])]],colWidths=[width-22,22])
+            table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0)]))
+            story.extend([table,Spacer(1,7)]);continue
+        if line.startswith('!['):
+            match=re.match(r'!\[(.*?)\]\((.*?)\)',line);path=ROOT/match.group(2);w,h=ImageReader(str(path)).getSize();scale=min(width/w,260/h)
+            block=[Image(str(path),width=w*scale,height=h*scale),Spacer(1,4)];i+=1
+            while i<len(lines) and not lines[i].strip():i+=1
+            if i<len(lines) and lines[i].startswith('**Fig.'):
+                block.append(Paragraph(inline(lines[i]),styles['caption']));i+=1
+            story.append(KeepTogether(block));continue
+        if line.startswith('|'):
+            data=[]
+            while i<len(lines) and lines[i].startswith('|'):
+                row=[s.strip() for s in lines[i].strip().strip('|').split('|')]
+                if not all(re.fullmatch(r':?-+:?',s.replace(' ','')) for s in row):data.append(row)
+                i+=1
+            cells=[[Paragraph(inline(s),styles['small']) for s in row] for row in data]
+            count=len(data[0]);widths=[width/count]*count
+            if count>=4:widths=[width*.31]+[width*.69/(count-1)]*(count-1)
+            t=Table(cells,colWidths=widths,repeatRows=1,hAlign='LEFT')
+            t.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,colors.black),('LINEBELOW',(0,0),(-1,0),.4,colors.black),('LINEBELOW',(0,-1),(-1,-1),.6,colors.black),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),3),('RIGHTPADDING',(0,0),(-1,-1),3),('TOPPADDING',(0,0),(-1,-1),4),('BOTTOMPADDING',(0,0),(-1,-1),3)]))
+            block=[t,Spacer(1,7)]
+            if pending_caption is not None:
+                block.insert(0,pending_caption);pending_caption=None
+                while story and isinstance(story[-1],Paragraph) and story[-1].style.name in ['h1','h2']:
+                    block.insert(0,story.pop())
+            story.append(KeepTogether(block));continue
+        if line.startswith('```'):
+            code=[];i+=1
+            while i<len(lines) and not lines[i].startswith('```'):
+                code.extend(textwrap.wrap(lines[i],width=57,replace_whitespace=False) or ['']);i+=1
+            i+=1;story.append(Preformatted('\n'.join(code),styles['code']));continue
+        paragraph=[line];i+=1
+        while i<len(lines) and lines[i].strip() and not lines[i].startswith(('#','![','|','```','$$','<details>')):
+            paragraph.append(lines[i].strip());i+=1
+        value=' '.join(paragraph);style=styles['small'] if re.match(r'^\[\d+\]',value) else styles['body']
+        if value.startswith('**Table '):
+            pending_caption=Paragraph(inline(value),styles['tablecaption']);continue
+        story.append(Paragraph(inline(value),style))
+    def header(canvas,doc):
+        canvas.setFont('Article',8);canvas.drawString(48,764,'THERMOBRIDGE - TECHNICAL REPORT, REVISION 2, OCTOBER 2026');canvas.drawRightString(564,29,str(doc.page))
+    def first(canvas,doc):
+        header(canvas,doc)
+        title=Paragraph('ThermoBridge: Electrothermal Modelling and<br/>Fixed-Point Control of a Microhotplate',ParagraphStyle('title',fontName='Article',fontSize=21,leading=24,alignment=1))
+        title.wrap(516,80);title.drawOn(canvas,48,695)
+        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'Amine Allab  |  Ishaq Kolla');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | Not peer reviewed | 30 October 2026')
+    doc=BaseDocTemplate(str(OUT/'thermobridge_article.pdf'),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=50,bottomMargin=42,title='ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate',author='Amine Allab; Ishaq Kolla')
+    frames=lambda top:[Frame(48,42,width,top-42,id='left',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0),Frame(314,42,width,top-42,id='right',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)]
+    doc.addPageTemplates([PageTemplate(id='first',frames=frames(643),onPage=first),PageTemplate(id='body',frames=frames(744),onPage=header)])
+    doc.build(story)
+
+def main():
+    FIG.mkdir(parents=True,exist_ok=True);OUT.mkdir(exist_ok=True)
+    rtl=json.loads((OUT/'rtl_study_v2.json').read_text());geometry=json.loads((OUT/'geometry_study.json').read_text())
+    figures(rtl,geometry);text=markdown(rtl,geometry);pdf(text)
+    paths=[ROOT/'docs/article.template.md',OUT/'rtl_study_v2.json',OUT/'geometry_study.json',ROOT/'outputs/physics/validation.json',OUT/'asic/summary.json',ROOT/'outputs/physics/steady_1um.npz',ROOT/'outputs/physics/transient_validation.npz',ROOT/'results/raw/experiments/exp-20261027T135345Z-7afca8/metrics.csv',ROOT/geometry['run']/'steady.csv',ROOT/geometry['run']/'surrogate.npz']
+    images=[ROOT/p for p in re.findall(r'!\[[^\]]*\]\(([^)]+)\)',text)]
+    (OUT/'article_manifest.json').write_text(json.dumps({'inputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},'outputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'README.md',OUT/'thermobridge_article.pdf',*images]},'format':'Two-column technical report; IEEE-style structure, Times fonts and numbered references; not an IEEE publication'},indent=2)+'\n')
+    print('Built README.md, article figures and reports/thermobridge_article.pdf')
+if __name__=='__main__':main()
+,'',equation)
+            equation=equation.strip().rstrip('.')
             fig=plt.figure(figsize=(3.8,.55));fig.text(.01,.5,'$'+equation+'$',fontsize=9.5,va='center')
             temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number or i}.png'
             fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
