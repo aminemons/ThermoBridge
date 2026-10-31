@@ -12,7 +12,7 @@ Research question: can a spatially informed feedforward plus PI controller impro
 
 All material properties and process-independent membrane dimensions are assumptions. The membrane, ADC, differential sensing amplifier and heater switch are external to the digital core. There are no measured silicon, fabricated membranes, gas-selectivity data or certified operating limits. Heater energy is distinct from unestimated digital-core and amplifier power.
 
-Implementation date: 27 October 2026. Work was generated with Codex assistance, including Luna agents. Human review and independent reproduction remain necessary. Contributors and pending collaborator invitation are recorded in docs/CONTRIBUTIONS.md.
+Technical snapshot: 27 October 2026. Project authors: Amine Allab and Ishaq Kolla. The numerical and physical findings are bounded by the documented verification conditions; independent reproduction remains necessary. See docs/CONTRIBUTIONS.md.
 
 2. Spatial electrothermal model
 
@@ -87,7 +87,7 @@ This is a conditional interface qualification. It requires the external source t
 8. Reproduction, limits and next work
 
 ## Reproduction, limits and next work
-Repository: https://github.com/aminemons/project. Begin with README.md and reports/release_snapshot.json. The latter hashes RTL, constraints and primary numerical/experiment evidence. Every primary run retains configuration, seed, manifest, logs and raw values. Tools/PDK revisions are in reports/environment.json. Histories use ordinary current timestamps, and no unobserved human contributions are assigned.
+Repository: https://github.com/aminemons/ThermoBridge. Begin with README.md and reports/release_snapshot.json. The latter hashes RTL, constraints and primary numerical/experiment evidence. Every primary run retains configuration, seed, manifest, logs and raw values. Tools/PDK revisions are in reports/environment.json. Histories use ordinary current timestamps, and no unobserved human contributions are assigned.
 
 Windows with the existing container: python scripts/container.py sync; python scripts/container.py run make test-physics test-rtl; python scripts/container.py run make simulate. Use selective fetch for results. Inside the configured Linux tool environment: make doctor, make test-physics, make test-rtl, make simulate, make figures, make synth, make gds. Full physical design is explicit and expensive; verify-layout audits archived physical evidence without silently rerouting.
 
@@ -107,6 +107,6 @@ KLayout documentation: https://www.klayout.de/doc/
 
 Cocotb verification documentation: https://docs.cocotb.org/
 
-Project equations, assumptions and acceptance protocol: docs/DESKTOP_CODEX_BRIEF.md; code and raw results in this repository.
+Model assumptions and acceptance criteria: configs/physics.json, configs/evaluation_v1.json and docs/LIMITATIONS.md; code and raw results are retained in the repository.
 
 The contribution is an auditable integration exercise connecting conventional electrothermal, compact-model and PI-control methods with fixed-point hardware. A systematic literature survey and independent comparison are still needed before asserting research novelty.

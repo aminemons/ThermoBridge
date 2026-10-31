@@ -80,7 +80,9 @@ def markdown(rtl,geo):
         if r['status']=='solved':gt.append(f"| {r['id']} ({r['heater_width_um']}/{r['heater_pitch_um']}/{r['anchor_width_um']}) | {r['mean_c']:.3f} | {r['power_w']*1e6:.3f} | {r['roi_std_c']:.4f} | {r['warmup_to_target_minus_1c_s']*1e3:.0f} |")
     for key,value in {'RTL_SELECTION':selection_text,'RTL_TABLE':'\n'.join(table),'GEOMETRY_SUMMARY':description,'GEOMETRY_TABLE':'\n'.join(gt),'GEOMETRY_RUN':geo['run']}.items():text=text.replace('{{'+key+'}}',value)
     assert '{{' not in text,'Unresolved article field'
-    (ROOT/'README.md').write_text(text,encoding='utf-8',newline='\n');(OUT/'thermobridge_article.md').write_text(text,encoding='utf-8')
+    (ROOT/'README.md').write_text(text,encoding='utf-8',newline='\n')
+    article_text=re.sub(r'\]\((?!https?://|#)([^)]+)\)',lambda m: '](../'+m.group(1)+')',text)
+    (OUT/'thermobridge_article.md').write_text(article_text,encoding='utf-8')
     return text
 
 def pdf(text):
@@ -104,7 +106,7 @@ def pdf(text):
     def inline(s):
         s=escape(s.replace('—','-').replace('–','-').replace('−','-'))
         def link(m):
-            label,target=m.groups();url=target if target.startswith('http') else 'https://github.com/aminemons/project/blob/main/'+quote(target)
+            label,target=m.groups();url=target if target.startswith('http') else 'https://github.com/aminemons/ThermoBridge/blob/main/'+quote(target)
             return '<a href="'+escape(url,quote=True)+'" color="#111111">'+label+'</a>'
         s=re.sub(r'\[([^\]]+)\]\(([^)]+)\)',link,s)
         s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s);s=re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)',r'<i>\1</i>',s)
@@ -114,18 +116,38 @@ def pdf(text):
     while i<len(lines):
         line=lines[i].strip()
         if line.startswith('<details>'):break
-        if not line or line.startswith('# ') or line.startswith('**Technical report') or line.startswith('Project maintainers:') or line.startswith('[Two-column article]') or line.startswith('Editorial structure follows'):
+        if not line or line.startswith('# ') or line.startswith('**Technical report') or line.startswith('**Authors:**') or line.startswith('[Two-column article]') or line.startswith('Editorial structure follows'):
             i+=1;continue
         if line.startswith('## '):story.append(Paragraph(inline(line[3:]).upper(),styles['h1']));i+=1;continue
         if line.startswith('### '):story.append(Paragraph(inline(line[4:]),styles['h2']));i+=1;continue
         if line.startswith('$$'):
-            match=re.search(r'\\tag\{(\d+)\}',line);number=match.group(1) if match else ''
-            equation=re.sub(r'\\tag\{\d+\}','',line.strip('$')).strip().rstrip('.')
-            fig=plt.figure(figsize=(3.45,.38));fig.text(.01,.35,'$'+equation+'$',fontsize=10)
-            temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number}.png';fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
-            w,h=ImageReader(str(path)).getSize();scale=min((width-18)/w,36/h)
-            table=Table([[Image(str(path),width=w*scale,height=h*scale),Paragraph('('+number+')',styles['small'])]],colWidths=[width-18,18])
-            table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0)]));story.extend([table,Spacer(1,7)]);i+=1;continue
+            equation_lines=[]
+            if line=='$$':
+                i+=1
+                while i<len(lines) and lines[i].strip()!='$$':
+                    equation_lines.append(lines[i].strip());i+=1
+                if i>=len(lines):raise ValueError('Unclosed display equation')
+                i+=1
+            elif line.endswith('$$') and len(line)>4:
+                equation_lines.append(line[2:-2]);i+=1
+            else:
+                equation_lines.append(line[2:]);i+=1
+                while i<len(lines):
+                    part=lines[i].strip();i+=1
+                    if part.endswith('$$'):
+                        equation_lines.append(part[:-2]);break
+                    equation_lines.append(part)
+                else:raise ValueError('Unclosed display equation')
+            markup=' '.join(equation_lines).strip()
+            match=re.search(r'\\tag\{(\d+)\}',markup);number=match.group(1) if match else ''
+            equation=re.sub(r'\\tag\{\d+\}','',markup).strip().rstrip('.')
+            fig=plt.figure(figsize=(3.8,.55));fig.text(.01,.5,'$'+equation+'$',fontsize=9.5,va='center')
+            temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number or i}.png'
+            fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
+            w,h=ImageReader(str(path)).getSize();scale=min((width-22)/w,40/h)
+            table=Table([[Image(str(path),width=w*scale,height=h*scale),Paragraph('('+number+')' if number else '',styles['small'])]],colWidths=[width-22,22])
+            table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0)]))
+            story.extend([table,Spacer(1,7)]);continue
         if line.startswith('!['):
             match=re.match(r'!\[(.*?)\]\((.*?)\)',line);path=ROOT/match.group(2);w,h=ImageReader(str(path)).getSize();scale=min(width/w,260/h)
             block=[Image(str(path),width=w*scale,height=h*scale),Spacer(1,4)];i+=1
@@ -168,8 +190,8 @@ def pdf(text):
         header(canvas,doc)
         title=Paragraph('ThermoBridge: Electrothermal Modelling and<br/>Fixed-Point Control of a Microhotplate',ParagraphStyle('title',fontName='Article',fontSize=21,leading=24,alignment=1))
         title.wrap(516,80);title.drawOn(canvas,48,695)
-        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'ThermoBridge project contributors');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | Not peer reviewed | 30 October 2026')
-    doc=BaseDocTemplate(str(OUT/'thermobridge_article.pdf'),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=50,bottomMargin=42,title='ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate',author='ThermoBridge contributors; implementation and writing used Codex assistance')
+        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'Amine Allab  |  Ishaq Kolla');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | Not peer reviewed | 30 October 2026')
+    doc=BaseDocTemplate(str(OUT/'thermobridge_article.pdf'),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=50,bottomMargin=42,title='ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate',author='Amine Allab; Ishaq Kolla')
     frames=lambda top:[Frame(48,42,width,top-42,id='left',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0),Frame(314,42,width,top-42,id='right',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)]
     doc.addPageTemplates([PageTemplate(id='first',frames=frames(643),onPage=first),PageTemplate(id='body',frames=frames(744),onPage=header)])
     doc.build(story)

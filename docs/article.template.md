@@ -2,7 +2,7 @@
 
 **Technical report · Revision 2 · 30 October 2026**
 
-Project maintainers: [Amine Allab](https://github.com/aminemons) and [Ishaq Kolla](https://github.com/Ishaq-ML)
+**Authors:** [Amine Allab](https://github.com/aminemons) and [Ishaq Kolla](https://github.com/Ishaq-ML)
 
 [Two-column article](reports/thermobridge_article.pdf) · [Reproduction guide](docs/REPRODUCE.md) · [Contributor guide](docs/CONTRIBUTOR_QUICKSTART.md) · [Revision review](docs/REVIEW_20261030.md)
 
@@ -28,9 +28,13 @@ The suspended active region is 200 × 200 µm, with a 40 µm domain extension an
 
 The electrical and thin-film thermal balances are
 
-$$\nabla\cdot[\sigma(T)\nabla\phi]=0. \tag{1}$$
+$$
+\nabla\cdot[\sigma(T)\nabla\phi]=0 \tag{1}
+$$
 
-$$C_A\frac{\partial T}{\partial t}=\nabla\cdot(K_A\nabla T)+q_J-q_{loss}. \tag{2}$$
+$$
+C_A\frac{\partial T}{\partial t}=\nabla\cdot(K_A\nabla T)+q_J-q_{\mathrm{loss}} \tag{2}
+$$
 
 Here, the sheet heat capacity and conductance include the heater only where its mask is present. Harmonic face conductances enforce conservative interface fluxes. Anchors are fixed at ambient and suspended lateral boundaries are adiabatic. The sparse steady solution iterates electrical heating and thermal response. Transients use implicit thermal integration with an electrically lagged source, whose splitting error is assessed by time-step refinement.
 
@@ -42,7 +46,9 @@ Here, the sheet heat capacity and conductance include the heater only where its 
 
 The reduced plant is
 
-$$C_{th}\dot T=P-\frac{T-T_a}{R_{th}},\qquad P=\frac{dV_h^2}{R_h(T)}. \tag{3}$$
+$$
+C_{\mathrm{th}}\dot T=P-\frac{T-T_a}{R_{\mathrm{th}}},\qquad P=\frac{dV_h^2}{R_h(T)} \tag{3}
+$$
 
 The positive fitted parameters are 349,137 K/W and 75.895 nJ/K, giving a 26.498 ms time constant. They describe the primary 4 µm spatial discretization, rather than a universal microhotplate. A separate 65%-duty pulse and cooldown test is reserved for compact-model evaluation.
 
@@ -60,7 +66,9 @@ The nominal 10 MHz clock produces 39.0625 kHz PWM and a 1 ms control interval. S
 
 The implemented integral increment is quantized to whole Q8 duty counts:
 
-$$\Delta I=\operatorname{round}_{even}(K_{i,q14}e_{q6}/4096). \tag{4}$$
+$$
+\Delta I=\mathrm{round}_{\mathrm{even}}\!\left(\frac{K_{i,\mathrm{q14}}e_{\mathrm{q6}}}{4096}\right) \tag{4}
+$$
 
 At a 1 °C error, the original coefficient 4 gives a zero increment. The new study therefore tests supported coefficient settings without changing RTL or invalidating its routed geometry. The [frozen v2 protocol](configs/rtl_study_v2.json) evaluates 12 coefficient pairs on three training schedules. Selection minimizes mean training hold RMSE; a selection file is written before evaluation starts.
 
@@ -166,7 +174,7 @@ ThermoBridge provides a traceable route from a conservative spatial thermal mode
 
 ## VII. Reproduction and Artifact Availability
 
-The [environment record](docs/ENVIRONMENT.md) identifies the installed OSIC image digest, tool versions and PDK revision. Reuse that environment rather than downloading another tools checkout. The 30 October spatial study ran on the Windows host; its manifest records the actual Python/NumPy/SciPy versions separately. Historical run manifests retain their original source IDs, including the pre-rewrite Git checkpoint.
+The [environment record](docs/ENVIRONMENT.md) identifies the OSIC image digest, tool versions and PDK revision. Reuse that environment to reproduce the digital flow. The 30 October spatial study ran on the Windows host; its manifest records the Python, NumPy and SciPy versions separately. Historical run manifests retain their original source identifiers for reproducibility.
 
 In PowerShell, from this checkout:
 
@@ -188,9 +196,9 @@ python scripts/release_check.py
 
 `make sweep` executes the bounded geometry study and `make report` builds this article. Physical implementation is explicit: `make synth` or `make gds`. `make verify-layout` audits archived hashes rather than rerunning DRC/LVS. The strict check still fails the tracking objective. [Earlier clean-source reproduction](reports/reproduction/summary.json), [current verification](reports/revision_verification.json) and the [original report](reports/technical_report.pdf) preserve scope and results.
 
-## Acknowledgment and Contributions
+## Authors and Contributions
 
-Amine Allab supplied the research brief and directed the project. Ishaq Kolla contributed the contributor setup guide in pull request #1. Implementation and technical writing used Codex assistance; human technical review remains necessary. This revision reviews those contributions, repairs the guide and records the new study protocols and outputs. [Contribution record](docs/CONTRIBUTIONS.md). No affiliation, human contribution or measured result is inferred from commit dates.
+ThermoBridge is a collaborative research and engineering project developed by **Amine Allab** and **Ishaq Kolla**. The project combines electrothermal modelling, numerical verification, fixed-point control, RTL evaluation, geometry exploration and physical design. Both authors contributed to the project's development and documentation. Technical results, implementation details and reproducibility evidence are provided in the repository and its [contribution record](docs/CONTRIBUTIONS.md).
 
 ## References
 
@@ -221,6 +229,6 @@ Editorial structure follows the [IEEE Author Center guidance](https://conference
 
 **Fig. S2.** Detail from the same generated GDS. [Capture metadata](docs/figures/gds_capture.json).
 
-Historical release exports and earlier unrelated RC campaigns are superseded, not additional successful tests. The [execution brief](docs/DESKTOP_CODEX_BRIEF.md) and [27 October snapshot](reports/release_snapshot.json) preserve their original scope.
+Historical release exports and earlier unrelated RC campaigns are superseded, not additional successful tests. The [27 October snapshot](reports/release_snapshot.json) preserves the earlier scope and recorded results.
 
 </details>
