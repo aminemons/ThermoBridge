@@ -144,7 +144,8 @@ def pdf(text):
             number=match.group(1) if match else ''
             equation=re.sub(r'\\tag\{\d+\}','',markup)
             equation=re.sub(r'^\\begin\{array\}\{lr\}\s*\\displaystyle\s*','',equation)
-            equation=re.sub(r'\s*&\s*\\text\{\(\d+\)\}\s*\\end\{array\}\s*
+            equation=re.sub(r'\s*&\s*\\text\{\(\d+\)\}\s*\\end\{array\}', '', equation)
+            equation=equation.strip().rstrip('.')
             fig=plt.figure(figsize=(3.8,.55));fig.text(.01,.5,'$'+equation+'$',fontsize=9.5,va='center')
             temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number or i}.png'
             fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
