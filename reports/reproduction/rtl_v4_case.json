@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-11-09T15:50:22.684062+00:00",
+  "source_commit": "1e91b8f4308d79f3d539d2b4390815eda2a57033",
+  "case": "v4_E03",
+  "run_id": "rtl4-20261109T155020720209Z",
+  "heater_voltage_v": 0.18,
+  "rmse_hold_c": 1.7771890877283287,
+  "energy_total_j": 1.901665881264807e-05,
+  "comparison": "Frozen RMSE and energy, relative tolerance1e-10 and absolute tolerance1e-12",
+  "pass": true,
+  "scope": "One actual RTL feedback case in the recorded fresh Git extraction"
+}

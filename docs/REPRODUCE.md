@@ -64,6 +64,14 @@ The v3 protocol uses 36 training runs and 16 paired evaluation runs. The v4 prot
 
 Each RTL experiment owns a separate simulator directory and XML result. Its fully qualified test module supports that isolation. The article generator supports `--refresh-figures` for regenerating the archived baseline plots. Normal report generation reuses those images and builds the current operating-point plot.
 
+The current clean-source check exports commit `1e91b8f4308d79f3d539d2b4390815eda2a57033`. It reproduces all 540 original metric rows and baseline RTL energy/RMSE. The command below reproduces the worst fresh 0.18 V case from that extraction.
+
+```powershell
+python scripts/check_clean_rtl_case.py --report reports/rtl_study_v4.json --case v4_E03
+```
+
+Its recorded RMSE is 1.777189 C with matching energy at relative tolerance 1e-10 and absolute tolerance 1e-12. Concurrent-run checks are recorded in `reports/rtl_isolation.json`.
+
 ## Historical material
 
 `release/` preserves an earlier desktop runner/tests. Local `release_out/` and ZIP exports predate final conditional timing and are superseded. Canonical evidence is `reports/asic/summary.json` and `reports/release_snapshot.json`. `reports/asic/manifest.json` is a failed earlier attempt. Selected earlier failure manifests/metrics are retained under `results/history/`; bulky historical traces remain local.

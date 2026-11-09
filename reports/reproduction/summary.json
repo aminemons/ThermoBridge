@@ -1,8 +1,8 @@
 {
-  "timestamp_utc": "2026-10-30T18:11:13.128869+00:00",
-  "source_commit": "ac5923469905cfa55928316c6a2e6ae64092b0a1",
+  "timestamp_utc": "2026-11-09T15:49:55.376693+00:00",
+  "source_commit": "1e91b8f4308d79f3d539d2b4390815eda2a57033",
   "source": "Git archive, excluding working-tree edits",
-  "runtime": "/foss/designs/thermobridge-clean-ac5923469905",
+  "runtime": "/foss/designs/thermobridge-clean-1e91b8f4308d",
   "container": "iic-osic-tools",
   "independent_image": false,
   "physical_rerun": false,
@@ -16,7 +16,7 @@
       ],
       "exit_code": 0,
       "log": "reports/reproduction/1.log",
-      "log_sha256": "934334f96351d830fcf4019ea84cef99f8c6c1465edb9a48265535c25b1fd6b4"
+      "log_sha256": "901869dfd120a938477d48b824ebfff4deff059a9b2079bde83b846011149c5a"
     },
     {
       "command": [
@@ -25,7 +25,7 @@
       ],
       "exit_code": 0,
       "log": "reports/reproduction/2.log",
-      "log_sha256": "a434b1d74b4c4cd27250065427bfacf94d6565923066026e4ad9b5f4cae740a8"
+      "log_sha256": "4ba9d427d1221e3222d14a60143e6b8c600ae4f9cf88ea90ad7d34752ed0a44d"
     },
     {
       "command": [
@@ -34,7 +34,7 @@
       ],
       "exit_code": 0,
       "log": "reports/reproduction/3.log",
-      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+      "log_sha256": "051c376a40d5438afd89720d3db4cebaaa2f1ed1047f4966f2b6ac4c8c96fdd4"
     }
   ],
   "pass": true

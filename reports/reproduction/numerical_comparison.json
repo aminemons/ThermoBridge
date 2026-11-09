@@ -1,11 +1,11 @@
 {
-  "fresh_python_run": "exp-20261030T181105Z-e33960",
+  "fresh_python_run": "exp-20261109T154945Z-938b4b",
   "paired_metric_rows": 540,
   "different_metric_fields": [],
-  "fresh_rtl_run": "rtl-20261030T181110980416Z",
+  "fresh_rtl_run": "rtl-20261109T154953174251Z",
   "rtl_rmse_c": 2.3424096146003164,
   "rtl_energy_j": 1.6682860821700008e-05,
   "rtl_metrics_reproduced": true,
   "pass": true,
-  "source_commit": "ac5923469905cfa55928316c6a2e6ae64092b0a1"
+  "source_commit": "1e91b8f4308d79f3d539d2b4390815eda2a57033"
 }

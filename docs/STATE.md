@@ -11,4 +11,4 @@ Date: 9 November 2026. Phase: heater operating-point validation and prototype re
 - Evidence: `reports/rtl_study_v3.json`, `reports/rtl_study_v4.json`, `reports/operating_point_validation.json`, `reports/heating_reference.json`, and the revision3 article.
 - Next: human review of the proposed heater supply; transistor OTA and extracted layout; arithmetic alternatives and independent physical rerun per `docs/LIMITATIONS.md`.
 - Last physical milestone: `fcd61fb`. Final validation commit is recorded by Git and the reproduction audit.
-- Clean source `ac59234` passed current tests, campaign, RTL and evidence audit; all 540 metric rows and baseline RTL metrics reproduced. A representative v2 case is checked separately in `reports/reproduction/`.
+- Clean source `1e91b8f` passed 29 tests, both RTL unit tests, the 540-row campaign and the evidence audit. The worst fresh 0.18 V case reproduced at 1.777 C in `reports/reproduction/rtl_v4_case.json`.
