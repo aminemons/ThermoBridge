@@ -1,0 +1,127 @@
+{
+  "protocol": "thermobridge-heater-operating-point-v4",
+  "frozen_date": "2026-11-09",
+  "report_name": "rtl_study_v4.json",
+  "purpose": "Prospective paired heater-voltage ablation with controller coefficients frozen from v3 training",
+  "candidate_kp_q14": [
+    1638
+  ],
+  "candidate_ki_per_sample_q14": [
+    32
+  ],
+  "calibration_candidates_c": [
+    [
+      45,
+      70
+    ]
+  ],
+  "training_heater_v": 0.18,
+  "selection": "Single predeclared setting, inherited from v3 training. Evaluation compares only external heater voltage.",
+  "training": [
+    {
+      "id": "v4_train45",
+      "initial_setpoint_c": 45,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    },
+    {
+      "id": "v4_train50",
+      "initial_setpoint_c": 50,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    },
+    {
+      "id": "v4_train60",
+      "initial_setpoint_c": 60,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 17
+    }
+  ],
+  "evaluation": [
+    {
+      "id": "v4_E01",
+      "initial_setpoint_c": 48,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 131,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_E02",
+      "initial_setpoint_c": 53,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 137,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_E03",
+      "initial_setpoint_c": 58,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 139,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_E04_cold",
+      "initial_setpoint_c": 48,
+      "step_c": 10,
+      "ambient_c": 22,
+      "seed": 149,
+      "noise_rms_v": 0.0005,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_E05_warm",
+      "initial_setpoint_c": 53,
+      "step_c": 10,
+      "ambient_c": 30,
+      "seed": 151,
+      "noise_rms_v": 0.0005,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_E06_warm",
+      "initial_setpoint_c": 58,
+      "step_c": 10,
+      "ambient_c": 35,
+      "seed": 157,
+      "noise_rms_v": 0.0005,
+      "previously_observed": false
+    },
+    {
+      "id": "v4_regression55",
+      "initial_setpoint_c": 55,
+      "step_c": 10,
+      "ambient_c": 25,
+      "seed": 11,
+      "previously_observed": true
+    },
+    {
+      "id": "v4_regression52cold",
+      "initial_setpoint_c": 52,
+      "step_c": 10,
+      "ambient_c": 20,
+      "seed": 41,
+      "noise_rms_v": 0.0005,
+      "previously_observed": true
+    }
+  ],
+  "baseline": {
+    "kp_q14": 1638,
+    "ki_per_sample_q14": 32,
+    "calibration_c": [
+      45,
+      70
+    ],
+    "heater_v": 0.15
+  },
+  "engineering_limits": {
+    "hold_rmse_c": 2.0,
+    "hold_overshoot_c": 5.0
+  },
+  "scope": "Changed external heater operating point, 0.15 versus0.18 V. Same RTL, gains, calibration, timing and front-end model. Six new paired cases and two regressions. Higher peak heater power is included in every run."
+}

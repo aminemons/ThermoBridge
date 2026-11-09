@@ -46,6 +46,7 @@ async def rtl_ffpi_closed_loop_rc(dut):
     for key in ('initial_setpoint_c','step_c'):
         if key in case:cycle[key]=case[key]
     base=dict(base,ambient_c=case.get('ambient_c',base['ambient_c']))
+    base['heater_v'] = float(os.environ.get('THERMO_RTL_HEATER_V',base['heater_v']))
     plant = ThermalRC(r_th_k_per_w=base["r_th_k_per_w"],c_th_j_per_k=base["c_th_j_per_k"],ambient_c=base["ambient_c"],heater_v=base["heater_v"],heater_r_ohm=base["heater_r_ohm"],r_tcr_per_k=base["r_tcr_per_k"])
     # Explicit ideal differential front end centers the divider output before
     # amplification. It is external behavioural circuitry, not an on-chip OTA.
@@ -137,6 +138,7 @@ async def rtl_ffpi_closed_loop_rc(dut):
         summary.update(scenario_id=case['id'],seed=case['seed'],case=case,
             protocol=os.environ.get('THERMO_RTL_PROTOCOL','thermobridge-rtl-retuning-v2'),previously_observed=case.get('previously_observed',False))
     summary['overshoot_hold_c']=max(0.0,max(errors))
+    summary['heater_voltage_v'] = base['heater_v']
     summary['readout_rmse_hold_c']=math.sqrt(sum((r['estimated_temp_c']-r['temp_c'])**2 for r in hold)/len(hold))
     (out/"metrics.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     dut._log.info("RTL-in-loop experiment complete: %s",json.dumps(summary))

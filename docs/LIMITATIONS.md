@@ -1,5 +1,13 @@
 # Release limitations
 
+## Revision of 9 November 2026
+
+- The v3 joint calibration/gain study keeps the 0.15 V heater supply and misses the 2 C target in five of six fresh cases. The v4 study uses the v3-trained controller at a proposed 0.18 V external supply. All six further fresh cases pass the 2 C hold-RMSE and 5 C hold-overshoot gates. Peak available heater power rises44%. These are operating-point-specific model results.
+- A separate 25 ms full-duty pulse and cooldown at0.18 V validates the frozen RC against the primary spatial geometry. RMS error is0.128 C at0.25ms and time-step sensitivity is0.324%. This extends the simulated operating range. Measured-device validation remains pending.
+- The heating reference starts exactly at the pre-step target with perfect readout and no preheating. It supports a heating-rate diagnosis under those conditions. Anticipatory trajectories can have different tracking costs.
+- The v3/v4 studies contain71 actual RTL runs with an ideal external front end. The 1ms plant interval remains accelerated to32 RTL clock cycles. Analogue layout, extracted amplifier behaviour, padframe and full physical reruns remain pending.
+- A duplicated fragment after the article generator's entry point prevented execution after the incoming math repair. This revision removes that fragment and adds a syntax regression check.
+
 ## Revision of 30 October 2026
 
 - The new RTL protocol selects coefficients using 36 training runs and evaluates baseline/retuned settings in ten paired runs. The previously observed 55-to-65 C regression improves to 2.101 C, still above the 2 C objective. All four new retuned cases also exceed 2 C; the warm-ambient case worsens slightly. This is not a successful closure of the tracking objective.

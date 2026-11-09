@@ -1,0 +1,11 @@
+{
+  "protocol":"thermobridge-operating-point-validation-v1",
+  "frozen_date":"2026-11-09",
+  "heater_voltage_v":0.18,
+  "pulse_duration_s":0.025,
+  "duration_s":0.1,
+  "time_steps_s":[0.0005,0.00025],
+  "compact_rmse_limit_c":2.0,
+  "refinement_relative_limit":0.02,
+  "scope":"Unseen full-duty pulse and cooldown in the primary spatial geometry with the original frozen RC coefficients"
+}

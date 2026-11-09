@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "scope": "Two simultaneous actual RTL invocations with distinct build directories and XML outputs",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/container.py",
+        "run",
+        "python3",
+        "scripts/run_rtl_experiment.py",
+        "--protocol",
+        "configs/rtl_study_v4.json",
+        "--case",
+        "v4_E01",
+        "--kp-q14",
+        "1638",
+        "--ki-q14",
+        "32",
+        "--calibration-c",
+        "45",
+        "70",
+        "--heater-v",
+        "0.18"
+      ],
+      "case": "v4_E01",
+      "run_id": "rtl4-20261109T154831579492Z",
+      "rmse_hold_c": 1.6744777232144339,
+      "log": "reports/revision_checks/isolation-v4_E01.log",
+      "log_sha256": "e5c1fff5e04d084e7813a85dc465883ae12eb81efed8145239fec43c16e76bf6"
+    },
+    {
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/container.py",
+        "run",
+        "python3",
+        "scripts/run_rtl_experiment.py",
+        "--protocol",
+        "configs/rtl_study_v4.json",
+        "--case",
+        "v4_E02",
+        "--kp-q14",
+        "1638",
+        "--ki-q14",
+        "32",
+        "--calibration-c",
+        "45",
+        "70",
+        "--heater-v",
+        "0.18"
+      ],
+      "case": "v4_E02",
+      "run_id": "rtl4-20261109T154831583035Z",
+      "rmse_hold_c": 1.7135237194115356,
+      "log": "reports/revision_checks/isolation-v4_E02.log",
+      "log_sha256": "260e1e25dfb00c200ea251951ae88b037327ef0d998c0d5493a40b2c7edd7969"
+    }
+  ]
+}

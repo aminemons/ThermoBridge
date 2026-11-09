@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-30T18:11:54.108641+00:00",
+  "timestamp_utc": "2026-11-09T15:48:38.023024+00:00",
   "status": "PASS",
   "scope": "Current host/container tests, actual RTL unit tests, archived evidence audit and PDF QA. Full physical flow not rerun.",
   "checks": [
@@ -17,7 +17,7 @@
       "expected_exit_code": 0,
       "pass": true,
       "log": "reports/revision_checks/host_pytest.log",
-      "log_sha256": "c578938aac494af2eeb7eb2e788cf44d3ad9f22ed6362e6e82173e0c8507b987"
+      "log_sha256": "ef08e9919afb6a4927a565177d05382c2d963260b2fcee45e53995772bd13de0"
     },
     {
       "name": "container_pytest",
@@ -36,7 +36,7 @@
       "expected_exit_code": 0,
       "pass": true,
       "log": "reports/revision_checks/container_pytest.log",
-      "log_sha256": "bd38d6d6e7d5710afb381334bffbc24b9b611ab5c35f54360df5d241303f2a5d"
+      "log_sha256": "129cf8c53238111dbb70aa35802a2c682926e3e312b760eec97c411f2986abc3"
     },
     {
       "name": "rtl",
@@ -51,7 +51,7 @@
       "expected_exit_code": 0,
       "pass": true,
       "log": "reports/revision_checks/rtl.log",
-      "log_sha256": "8d5ec6e2b0624e64065c340e5036d4ee676072dad7c7f5c704be3e38532a4175"
+      "log_sha256": "d79ac6801b0ad6a08baa0d86330f016d1a368829b7fa9f8d0f7f1cc365cfe560"
     },
     {
       "name": "evidence",
@@ -63,7 +63,20 @@
       "expected_exit_code": 0,
       "pass": true,
       "log": "reports/revision_checks/evidence.log",
-      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+      "log_sha256": "051c376a40d5438afd89720d3db4cebaaa2f1ed1047f4966f2b6ac4c8c96fdd4"
+    },
+    {
+      "name": "operating_point",
+      "command": [
+        "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/release_check.py",
+        "--operating-point"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true,
+      "log": "reports/revision_checks/operating_point.log",
+      "log_sha256": "051c376a40d5438afd89720d3db4cebaaa2f1ed1047f4966f2b6ac4c8c96fdd4"
     },
     {
       "name": "unmet_target",
@@ -76,16 +89,17 @@
       "expected_exit_code": 1,
       "pass": true,
       "log": "reports/revision_checks/unmet_target.log",
-      "log_sha256": "ba06fa0dcd45960c984b9588eb352b4c8ab51f0b2829b774af800a76de36ff7f"
+      "log_sha256": "051c376a40d5438afd89720d3db4cebaaa2f1ed1047f4966f2b6ac4c8c96fdd4"
     }
   ],
   "pdf": {
-    "pages": 5,
+    "pages": 6,
     "replacement_characters": 0,
-    "main_figures": 6,
-    "tables": 5,
+    "main_figures": 7,
+    "tables": 6,
     "visual_review": "All final rendered pages inspected in this revision"
   },
   "engineering_target_met": false,
+  "operating_point_target_met": true,
   "rtl_source_sha256": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8"
 }

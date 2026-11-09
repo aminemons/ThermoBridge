@@ -1,4 +1,4 @@
-.PHONY: doctor test-physics test-rtl simulate sweep synth gds verify-layout figures report release-check
+.PHONY: doctor test-physics test-rtl simulate simulate-operating-point sweep synth gds verify-layout figures report release-check
 PYTHON ?= python3
 RUN ?= results/raw/experiments/exp-20261027T135345Z-7afca8
 doctor:
@@ -6,11 +6,13 @@ doctor:
 test-physics:
 	$(PYTHON) -m pytest -q tests/test_physics.py
 test-rtl:
-	$(PYTHON) -m pytest -q tests/test_rtl_reference.py tests/test_sensing.py tests/test_experiments.py release/tests
+	$(PYTHON) -m pytest -q tests/test_rtl_reference.py tests/test_sensing.py tests/test_calibration.py tests/test_experiments.py tests/test_article_source.py release/tests
 	$(PYTHON) scripts/run_rtl.py
 simulate:
 	$(PYTHON) scripts/run_experiments.py
 	$(PYTHON) scripts/run_rtl_experiment.py
+simulate-operating-point:
+	$(PYTHON) scripts/run_rtl_study.py --protocol configs/rtl_study_v4.json
 sweep:
 	$(PYTHON) scripts/run_geometry_study.py
 synth:

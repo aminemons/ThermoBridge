@@ -21,6 +21,8 @@ def run_trial(case, coefficients, label, protocol_path, output):
         "--ki-q14", str(coefficients["ki_per_sample_q14"]),
         "--calibration-c", *map(str, calibration),
     ]
+    if "heater_v" in coefficients:
+        arguments.extend(["--heater-v", str(coefficients["heater_v"])])
     name = (
         f"{label}-{case['id']}-{coefficients['kp_q14']}-"
         f"{coefficients['ki_per_sample_q14']}-{calibration[0]}-{calibration[1]}"
@@ -71,6 +73,8 @@ def main():
             "ki_per_sample_q14": ki,
             "calibration_c": calibration,
         }
+        if "training_heater_v" in protocol:
+            coefficients["heater_v"] = protocol["training_heater_v"]
         scores = [
             run_trial(case, coefficients, "training", protocol_path, output)
             for case in protocol["training"]

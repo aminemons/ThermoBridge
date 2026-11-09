@@ -1,0 +1,40 @@
+{
+  "command": [
+    "C:\\Users\\bouba\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/check_heating_reference.py"
+  ],
+  "duration_s": 0.27176,
+  "environment_manifest_sha256": null,
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs/rtl_study_v3.json": "14f8c9d913790337d29d675bad68066c82ce123b298c921eff4e65b4eb4df2bb",
+    "src/physics/rc.py": "401d73f8320a170f84260d45c99da9f9c7f3e93584649e5efc00d3cb6ace4890"
+  },
+  "outputs": {
+    "results/heating_reference/20261109T154030921338Z/summary.json": "896bdc4258ea134345dd1b175868ffdfd8f5b49ee652fa5e3c123a8023468d11",
+    "results/heating_reference/20261109T154030921338Z/v3_E01-0.15.csv": "2923276dcfd09938087dd1ef6e6e89e662f08b4de37bab81ad865d2805df8044",
+    "results/heating_reference/20261109T154030921338Z/v3_E01-0.18.csv": "98b2225ea7f11c5ca461bf8ab2cc581884030a4795218fb0dee24521eb0e871d",
+    "results/heating_reference/20261109T154030921338Z/v3_E02-0.15.csv": "c32ce016ede89ee5c8e4e0747618e0509ea9b85b3e971e49a96c260d3bd7fad0",
+    "results/heating_reference/20261109T154030921338Z/v3_E02-0.18.csv": "77b2a572d5cc43b07d75198021f786075ebb0c491001ec4f723823178ce9840b",
+    "results/heating_reference/20261109T154030921338Z/v3_E03-0.15.csv": "f59f944af69decdf834eb3ea86cb1c47b0065ecc0af5368fb6b4cac0f991e89e",
+    "results/heating_reference/20261109T154030921338Z/v3_E03-0.18.csv": "7e675ba35e2f6caf011ee9af92ebc10ad3d41b6595f27f7c89872f8cabb6a29e",
+    "results/heating_reference/20261109T154030921338Z/v3_E04_cold-0.15.csv": "c45ac7e0b4ad9c828c116613c41209187ddfbf4513ae57b9bb78516f633aa350",
+    "results/heating_reference/20261109T154030921338Z/v3_E04_cold-0.18.csv": "af327aefcbeb7145e321b529ad5e7a0a0b78e663b6fa2136c97bd2ab7eb42bb8",
+    "results/heating_reference/20261109T154030921338Z/v3_E05_warm-0.15.csv": "fb6548d2c6d4cf5dd67dc6776e84b0f4240593bc3d71a90725b4b442d828d396",
+    "results/heating_reference/20261109T154030921338Z/v3_E05_warm-0.18.csv": "cbc34924b01d83de8f755924e0f13ab39818d7425a1bcdae747a7fb88257d497",
+    "results/heating_reference/20261109T154030921338Z/v3_E06_warm-0.15.csv": "5f58fe14d4370f867bd5dcca8d224387545a838be6b2a74492dd2ad34c7050b0",
+    "results/heating_reference/20261109T154030921338Z/v3_E06_warm-0.18.csv": "66904a82ffe720a7d2242cce8bc1b20afb9e07be65b36eae6220f0d427e2f36c"
+  },
+  "run_id": "20261109T154030921338Z",
+  "schema": "thermobridge.run.v1",
+  "seed": null,
+  "source_commit": "fc23552cfa8d5d7838882d7633ecfe8c5558e99f",
+  "source_sha256": "c64b170a4614e311d25c18fc86dca42d3385ab6b52a2348b01407940b6bfeaad",
+  "status": "complete",
+  "timestamp_utc": "2026-11-09T15:40:30.921338+00:00",
+  "tool_versions": {
+    "python": "3.11.9"
+  },
+  "execution_platform": "Windows-10-10.0.26200-SP0"
+}

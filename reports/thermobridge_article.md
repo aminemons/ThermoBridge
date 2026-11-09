@@ -1,14 +1,14 @@
 # ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate
 
-**Technical report · Revision 2 · 30 October 2026**
+**Technical report · Revision 3 · 9 November 2026**
 
 **Authors:** [Amine Allab](https://github.com/aminemons) and [Ishaq Kolla](https://github.com/Ishaq-ML)
 
-[Two-column article](../reports/thermobridge_article.pdf) · [Reproduction guide](../docs/REPRODUCE.md) · [Contributor guide](../docs/CONTRIBUTOR_QUICKSTART.md) · [Revision review](../docs/REVIEW_20261030.md)
+[Two-column article](../reports/thermobridge_article.pdf) · [Reproduction guide](../docs/REPRODUCE.md) · [Contributor guide](../docs/CONTRIBUTOR_QUICKSTART.md) · [Revision review](../docs/REVIEW_20261109.md)
 
 ## Abstract
 
-Microhotplate control couples temperature-dependent electrical heating, spatial thermal nonuniformity, sampled resistance readout and finite-precision feedback. This work presents a reproducible simulation-to-layout study of that coupling. A two-dimensional thin-film finite-volume model is reduced to a positive-parameter thermal network and connected to a synthesizable feedforward-plus-PI controller. The spatial model passes analytical, conservation and refinement checks; the compact model achieves a held-out temperature error of 0.0443 °C RMS for the primary geometry. A new geometry study evaluates 27 geometries at three operating points, reserves nine whole geometries for surrogate testing, and refines selected training candidates. Actual RTL-in-loop experiments expose an integral-action quantization dead zone and evaluate a bounded register-level retuning without changing the implemented circuit. The original regression improves from 2.342 to 2.101 °C RMS, while four newly evaluated cases remain above the 2 °C objective. A routed SKY130 core passes the installed design-rule and layout-versus-schematic checks; 10 MHz timing is conditional on a 15 ns ADC input-arrival budget. Results support an auditable prototype, but do not establish energy savings, experimental sensor accuracy or fabrication readiness.
+Microhotplate control couples temperature-dependent electrical heating, spatial thermal nonuniformity, sampled resistance readout and finite-precision feedback. This work connects a two-dimensional thin-film finite-volume model, a positive-parameter thermal network and a synthesizable feedforward-plus-PI controller. Numerical validation includes analytical resistance, conservation, mesh refinement and independent pulse tests. A geometry study evaluates 27 geometries at three operating points and reserves nine whole geometries for surrogate testing. Actual RTL feedback experiments identify integral quantization and heating-rate effects. Joint gain and calibration selection at a 0.15 V heater supply leaves tracking errors above the objective in several cases. A prospective operating-point study holds the selected controller fixed and compares 0.15 V with 0.18 V on six fresh paired cases. At 0.18 V, hold-window RMSE spans 1.675–1.777 °C and worst hold overshoot is 1.297 °C. Peak heater power rises by 44%. An independent spatial pulse at the higher supply gives 0.128 °C compact-model RMS error and 0.324% time-step sensitivity. The routed SKY130 core passes the installed physical checks, with 10 MHz timing conditional on a 15 ns ADC arrival budget. The study uses assumed membrane properties and an ideal external sensing front end.
 
 **Index Terms—** Microhotplates, electrothermal simulation, finite-volume methods, fixed-point arithmetic, feedback control, open-source ASIC design.
 
@@ -18,7 +18,7 @@ Suspended microhotplates provide local temperature control with low thermal mass
 
 ThermoBridge asks a narrower question: how do spatial-model reduction, resistance readout and finite arithmetic affect a controller that can be taken through an open digital implementation flow? The contribution is a reproducible integration study, rather than a new PI algorithm or a claim of superior sensor fabrication. Its evidence comprises a validated assumed-geometry model, recorded negative control results, actual RTL feedback experiments, and a routed digital core with explicit verification limits.
 
-The external membrane, sensing front end, ADC and heater power switch are separate from the 1.8 V CMOS core. The assumed 0.15 V heater supply and approximately 45–70 °C control schedules serve model and controller evaluation. They do not demonstrate a high-temperature gas-sensing application. The reference implementation uses IIC-OSIC-TOOLS [3], SKY130A [4] and LibreLane [5].
+The external membrane, sensing front end, ADC and heater power switch are separate from the 1.8 V CMOS core. The baseline heater supply is 0.15 V and the proposed operating point uses 0.18 V. Control schedules span approximately 45–70 °C. The reference implementation uses IIC-OSIC-TOOLS [3], SKY130A [4] and LibreLane [5].
 
 ## II. Electrothermal and Readout Models
 
@@ -66,7 +66,7 @@ Heater resistance follows a declared linear temperature coefficient. A nonlinear
 
 The [RTL](../rtl/thermobridge_top.sv) uses signed 16-bit temperature with six fractional bits, signed 18-bit coefficients with 14 fractional bits, a 24-bit integrator and a 26-bit combined sum. Rounding is nearest with ties to even; saturators and anti-windup bound state and output. A 16-entry, 9-bit feedforward table is configured through shadow registers and an atomic commit. The duty range 0–256 gives exact off/full endpoints for an eight-bit PWM phase counter.
 
-The nominal 10 MHz clock produces 39.0625 kHz PWM and a 1 ms control interval. Stale data, rail values, invalid calibration, overtemperature and shutdown invoke latched safe-off behaviour. Fault clearing and reset are tested explicitly. Cocotb [6] compares real Icarus RTL outputs against the integer reference. Current checks comprise **26 Python tests and two directed/randomized RTL tests**; the v2 study adds **46 actual RTL-in-loop runs**.
+The nominal 10 MHz clock produces 39.0625 kHz PWM and a 1 ms control interval. Stale data, rail values, invalid calibration, overtemperature and shutdown invoke latched safe-off behaviour. Fault clearing and reset are tested explicitly. Cocotb [6] compares real Icarus RTL outputs against the integer reference. Current checks comprise **29 Python tests and two directed/randomized RTL tests**. The v2 study contains 46 actual RTL feedback runs. The new calibration and supply studies add **71 runs**, including training and paired evaluation.
 
 ### B. Integral quantization and frozen retuning
 
@@ -127,7 +127,7 @@ Feedforward improves mean tracking relative to this PI baseline, but uses more h
 
 ### C. Actual RTL retuning
 
-Training selects $K_p = 1147/16384$ and $K_i = 32/16384$ per sample, with mean training RMSE 2.054 °C. The original configuration remains archived and unchanged.
+Training selects Kp=1147/16384 and Ki=32/16384 per sample, with mean training RMSE 2.054 °C. The baseline coefficients are recorded in the original study.
 
 **Table III. Paired actual-RTL evaluation.**
 
@@ -145,11 +145,36 @@ Training selects $K_p = 1147/16384$ and $K_i = 32/16384$ per sample, with mean t
 
 Retuning improves three of the four new cases, but slightly worsens the warm-ambient case. Neither result set satisfies the 2 °C objective across the new cases. The regression improvement is useful diagnostic evidence, not a fresh independent success. Powered-phase faults are checked in every run; cooldown may latch stale while disabled PWM remains off. CONTROL_DIV is accelerated to 32 clocks while the plant advances by 1 ms per sample. This is actual RTL feedback, but not a simulation of every physical PWM period.
 
-### D. Spatial geometry study
+### D. Calibration and heater operating point
+
+The v3 joint study selects Kp=1638/16384, Ki=32/16384 per sample and calibration at 45/70 °C. Its mean training RMSE is 2.013 °C. At 0.15 V, five of six fresh v3 cases exceed 2 °C. The v4 protocol inherits these coefficients and compares heater supply on six further fresh cases and two regressions.
+
+**Table IV. Paired external heater operating points.**
+
+| Fresh case | 0.15 V RMSE (°C) | 0.18 V RMSE (°C) | 0.18 V hold overshoot (°C) |
+|---|---:|---:|---:|
+| v4_E01 | 2.004 | 1.674 | 0.778 |
+| v4_E02 | 2.161 | 1.714 | 0.910 |
+| v4_E03 | 2.253 | 1.777 | 1.145 |
+| v4_E04_cold | 2.166 | 1.677 | 0.596 |
+| v4_E05_warm | 1.953 | 1.698 | 1.098 |
+| v4_E06_warm | 1.943 | 1.744 | 1.297 |
+
+All six 0.18 V cases meet the 2 °C hold-RMSE and 5 °C overshoot limits. Maximum measured hold overshoot is 1.297 °C. Powered-phase fault counts are zero. The higher supply raises available peak heater power by 44%, with the sensing excitation held at 18 mV. These results belong to the proposed 0.18 V operating point.
+
+An independent 25 ms full-duty spatial pulse and cooldown at 0.18 V validates the original frozen compact coefficients. At dt=0.25 ms, RMS error is 0.128 °C and maximum absolute error is 0.226 °C. Halving the step changes the trajectory by 0.324%. The spatial peak reaches 99.173 °C within the declared material-model range. Both step sizes pass the predeclared numerical gates.
+
+![External heater operating point and independent spatial validation](../docs/figures/heater_operating_point.png)
+
+**Fig. 5.** Fresh paired RTL cases at two heater supplies and an independent full-duty spatial pulse at 0.18 V. [Operating-point study](../reports/rtl_study_v4.json), [spatial validation](../reports/operating_point_validation.json), [conditional heating reference](../reports/heating_reference.json).
+
+The reference calculation starts at the pre-step setpoint, assumes perfect readout and applies full heating after the step. Its errors exceed 2 °C in four v3 cases at 0.15 V. Anticipatory trajectories and different temperatures at the step require separate analysis. The v4 experiment therefore declares a higher external supply before its fresh evaluation. Heater voltage is the paired treatment, with gains, calibration and control timing held equal between each pair.
+
+### E. Spatial geometry study
 
 All 81 operating points solved with no recorded solver failures. Maximum electrical and thermal balance residuals are 5.20e-13 and 2.65e-08. On the nine held-out geometries, temperature prediction has median absolute error 2.124 °C and worst absolute error 5.133 °C. This error limits surrogate-only selection; final candidates require direct spatial solves. Two points lie on the discrete training front and are refined.
 
-**Table IV. Direct 2 µm candidate validation at a 55°C target.**
+**Table V. Direct 2 µm candidate validation at a 55°C target.**
 
 | Candidate (width/pitch/anchor, µm) | Refined mean (°C) | Power (µW) | Central std. (°C) | Warmup to 54°C (ms) |
 |---|---:|---:|---:|---:|
@@ -158,13 +183,13 @@ All 81 operating points solved with no recorded solver failures. Maximum electri
 
 ![Geometry screening and independent candidate refinement](../docs/figures/geometry_study.png)
 
-**Fig. 5.** Coarse training/test geometries and selected 2 µm candidate results. [Summary](../reports/geometry_study.json), [raw screen, split and fields](../results/geometry/geometry-20261030T175916Z). Finite-grid screening does not establish a global optimum.
+**Fig. 6.** Coarse training/test geometries and selected 2 µm candidate results. [Summary](../reports/geometry_study.json), [raw screen, split and fields](../results/geometry/geometry-20261030T175916Z). Finite-grid screening does not establish a global optimum.
 
-### E. Physical implementation
+### F. Physical implementation
 
 The implemented `sky130_fd_sc_hd` core reports 69,405.3 µm² standard-cell area and 158,379 µm² core area. Final GDS, DEF, LEF, mapped/powered netlists, constraints and SPEF are archived. Magic DRC, KLayout DRC and Netgen LVS report zero errors; detailed-routing and antenna checks are also zero. The v2 coefficient study changes registers, not this verified RTL or geometry.
 
-**Table V. Conditional routed timing qualification.**
+**Table VI. Conditional routed timing qualification.**
 
 | Routed timing condition | Worst setup slack | Worst hold slack | Status |
 |---|---:|---:|---|
@@ -175,7 +200,7 @@ Other synchronous input/output budgets remain 20 ns. Nine installed corners are 
 
 ![Actual routed digital core](../docs/figures/routed_core.png)
 
-**Fig. 6.** KLayout [7] view of the actual generated [GDS](../results/asic/mag_gds/thermobridge_top.magic.gds), with no membrane, ADC or padframe. [Physical summary](../reports/asic/summary.json), [original logs and checks](../reports/asic/original/), [view extents](../docs/figures/gds_capture.json).
+**Fig. 7.** KLayout [7] view of the actual generated [GDS](../results/asic/mag_gds/thermobridge_top.magic.gds). [Physical summary](../reports/asic/summary.json), [original logs and checks](../reports/asic/original/), [view extents](../docs/figures/gds_capture.json).
 
 ## V. Discussion and Limitations
 
@@ -187,7 +212,7 @@ The current prototype includes spatial screening, actual RTL control and routed 
 
 ## VI. Conclusion
 
-ThermoBridge provides a traceable route from a conservative spatial thermal model to fixed-point control and a conditionally timed digital layout. The completed prototype exposes, rather than removes from the record, a missed tracking objective and an unsupported energy-saving hypothesis. Whole-geometry screening and paired RTL retuning extend the evidence without changing the routed core. The next engineering work is improved sensing calibration, a newly frozen control protocol and independently verified analogue/physical extensions.
+ThermoBridge connects a conservative spatial thermal model, fixed-point control and a conditionally timed digital layout. The 0.18 V operating point meets the tracking and overshoot objectives on six fresh model-based cases. That result requires a higher external heater supply and 44% greater peak heater power. Historical 0.15 V failures remain in the record. Further engineering work includes a transistor sensing macro, activity-based power and independent physical verification.
 
 ## VII. Reproduction and Artifact Availability
 
@@ -202,6 +227,18 @@ python scripts/container.py run python3 scripts/run_rtl_study.py
 python scripts/container.py fetch reports/rtl_study_v2.json results/rtl_study
 python scripts/fetch_rtl_study.py
 ```
+
+The new frozen studies and their selected raw runs can be reproduced with the commands below.
+
+```powershell
+python scripts/container.py run python3 scripts/run_rtl_study.py --protocol configs/rtl_study_v3.json
+python scripts/container.py run python3 scripts/run_rtl_study.py --protocol configs/rtl_study_v4.json
+python scripts/container.py run python3 scripts/validate_operating_point.py
+```
+
+Fetch `reports/rtl_study_v3.json`, `reports/rtl_study_v4.json`, `results/rtl_study`, `reports/operating_point_validation.json` and `results/operating_point` after running. Use `scripts/fetch_rtl_study.py --report reports/rtl_study_v4.json` for the 19 v4 raw runs. `python scripts/release_check.py --operating-point` checks the declared 0.18 V objectives. The legacy `--strict` gate continues to expose the original 0.15 V failure.
+
+`make simulate-operating-point` runs the frozen 19-run v4 study through its standard entry point. Fetch the new report and regenerate the article after a rerun so its evidence hashes identify the current run.
 
 For the bounded spatial screen and article on a host with the documented dependencies:
 
@@ -242,9 +279,7 @@ Editorial structure follows the [IEEE Author Center guidance](https://conference
 
 **Fig. S1.** Original Python nominal cycle. [Raw traces](../results/raw/experiments/exp-20261027T135345Z-7afca8/traces.csv).
 
-![Actual routed layout detail](../docs/figures/routed_core_detail.png)
-
-**Fig. S2.** Detail from the same generated GDS. [Capture metadata](../docs/figures/gds_capture.json).
+The [routed layout detail](../docs/figures/routed_core_detail.png) and [capture metadata](../docs/figures/gds_capture.json) are available with the physical evidence.
 
 Historical release exports and earlier unrelated RC campaigns are superseded, not additional successful tests. The [27 October snapshot](../reports/release_snapshot.json) preserves the earlier scope and recorded results.
 

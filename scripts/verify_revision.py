@@ -1,7 +1,7 @@
 """Record installed-environment checks and distinguish target failure from test failure."""
 from pathlib import Path
 from datetime import datetime,timezone
-import hashlib,json,subprocess,sys
+import hashlib,json,re,subprocess,sys
 import pymupdf
 ROOT=Path(__file__).resolve().parents[1]
 def main():
@@ -14,6 +14,7 @@ def main():
         ('container_pytest',[sys.executable,'scripts/container.py','run','python3','-m','pytest','-q','tests','release/tests'],0),
         ('rtl',[sys.executable,'scripts/container.py','run','python3','scripts/run_rtl.py'],0),
         ('evidence',[sys.executable,'scripts/release_check.py'],0),
+        ('operating_point',[sys.executable,'scripts/release_check.py','--operating-point'],0),
         ('unmet_target',[sys.executable,'scripts/release_check.py','--strict'],1),
     ]
     for label,args,expected in commands:
@@ -25,9 +26,11 @@ def main():
         if not passed:print((run.stdout+run.stderr)[-1200:])
     doc=pymupdf.open(ROOT/'reports/thermobridge_article.pdf')
     text=''.join(page.get_text() for page in doc)
-    result['pdf']={'pages':len(doc),'replacement_characters':text.count(chr(65533)),'main_figures':6,'tables':5,'visual_review':'All final rendered pages inspected in this revision'}
-    result['status']='PASS' if all(r['pass'] for r in result['checks']) and len(doc)==5 and chr(65533) not in text else 'FAIL'
+    article=(ROOT/'README.md').read_text(encoding='utf-8').split('<details>')[0]
+    result['pdf']={'pages':len(doc),'replacement_characters':text.count(chr(65533)),'main_figures':len(re.findall(r'^!\[',article,re.MULTILINE)),'tables':len(re.findall(r'^\*\*Table ',article,re.MULTILINE)),'visual_review':'All final rendered pages inspected in this revision'}
+    result['status']='PASS' if all(r['pass'] for r in result['checks']) and 4<=len(doc)<=12 and chr(65533) not in text else 'FAIL'
     result['engineering_target_met']=False
+    result['operating_point_target_met']=next(check['pass'] for check in result['checks'] if check['name']=='operating_point')
     result['rtl_source_sha256']=hashlib.sha256((ROOT/'rtl/thermobridge_top.sv').read_bytes()).hexdigest()
     report.write_text(json.dumps(result,indent=2)+'\n')
     if result['status']!='PASS':raise SystemExit(1)

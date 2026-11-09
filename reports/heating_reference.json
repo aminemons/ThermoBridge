@@ -1,0 +1,67 @@
+{
+  "run": "results/heating_reference/20261109T154030921338Z",
+  "metrics": [
+    {
+      "case": "v3_E01",
+      "heater_v": 0.15,
+      "rmse_hold_c": 1.9591470626417649
+    },
+    {
+      "case": "v3_E01",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.667959090424182
+    },
+    {
+      "case": "v3_E02",
+      "heater_v": 0.15,
+      "rmse_hold_c": 2.0408544683505547
+    },
+    {
+      "case": "v3_E02",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.7029201984382316
+    },
+    {
+      "case": "v3_E03",
+      "heater_v": 0.15,
+      "rmse_hold_c": 2.1405343155394503
+    },
+    {
+      "case": "v3_E03",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.7440575372430307
+    },
+    {
+      "case": "v3_E04_cold",
+      "heater_v": 0.15,
+      "rmse_hold_c": 2.009465084363093
+    },
+    {
+      "case": "v3_E04_cold",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.6880942484248114
+    },
+    {
+      "case": "v3_E05_warm",
+      "heater_v": 0.15,
+      "rmse_hold_c": 1.9867842920017091
+    },
+    {
+      "case": "v3_E05_warm",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.6819800588307126
+    },
+    {
+      "case": "v3_E06_warm",
+      "heater_v": 0.15,
+      "rmse_hold_c": 2.0023102279096956
+    },
+    {
+      "case": "v3_E06_warm",
+      "heater_v": 0.18,
+      "rmse_hold_c": 1.6909773191948434
+    }
+  ],
+  "assumptions": "Exact initial tracking, perfect readout, continuous duty, full heating after an unanticipated step, no preheating. Actual controllers may have a different temperature at the step.",
+  "scope": "Conditional no-preheating reference. It does not optimize anticipatory trajectories or certify a global tracking lower bound."
+}

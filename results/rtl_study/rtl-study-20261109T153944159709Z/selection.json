@@ -1,0 +1,10 @@
+{
+  "kp_q14": 1638,
+  "ki_per_sample_q14": 32,
+  "calibration_c": [
+    45,
+    70
+  ],
+  "heater_v": 0.18,
+  "mean_training_rmse_c": 1.7466604470203955
+}

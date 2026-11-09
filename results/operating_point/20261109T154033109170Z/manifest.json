@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/validate_operating_point.py"
+  ],
+  "duration_s": 40.295477,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs/materials.json": "c9295770e787150d3dd04db3b51ecc3831ca0facf9dbc11a53d141b77153ff71",
+    "configs/operating_point_validation_v1.json": "1ec6794d666885182ff670e7c5b631d9554642477ff31a6d59c8df81177a6575",
+    "configs/physics.json": "3f1a48e6a81c9085e13492a7ee41323608d91c5799891f5b1151b2c276cdd1b5",
+    "src/physics/fvm.py": "3ec6950024897338f0ae1468f18ed525cd04b99bcb7c35d5ae034ef8caabd500",
+    "src/physics/rc.py": "401d73f8320a170f84260d45c99da9f9c7f3e93584649e5efc00d3cb6ace4890"
+  },
+  "outputs": {
+    "results/operating_point/20261109T154033109170Z/pulse-0.00025.npz": "ebe71f214373047e2bdec3a008a8e310535f03861097908f9933f8447decfca0",
+    "results/operating_point/20261109T154033109170Z/pulse-0.0005.npz": "95ef56ca2e987595bc4d2efe2cc1b5adda197cdda48eb9f1dc967a86a68aad61",
+    "results/operating_point/20261109T154033109170Z/summary.json": "a2490f3b3c0c92625325b054a6569a0a4e8be9c313b3b1502eb27e0e572f4ece"
+  },
+  "run_id": "20261109T154033109170Z",
+  "schema": "thermobridge.run.v1",
+  "seed": null,
+  "source_commit": "fc23552cfa8d5d7838882d7633ecfe8c5558e99f",
+  "source_sha256": "30d08ad83d21298b11ed36cdb7c2a6ba7920c70fa548b14249f313dce0f0012d",
+  "status": "complete",
+  "timestamp_utc": "2026-11-09T15:40:33.109170+00:00",
+  "tool_versions": {
+    "numpy": "2.5.4",
+    "python": "3.12.3",
+    "scipy": "1.18.1"
+  }
+}

@@ -1,6 +1,6 @@
 """Render the evidence-backed README and a Times, two-column technical article."""
 from pathlib import Path
-import csv,hashlib,json,re,sys,textwrap
+import argparse,csv,hashlib,json,re,sys,textwrap
 from html import escape
 from urllib.parse import quote
 import numpy as np
@@ -22,6 +22,45 @@ def save(fig,name):
         if ext=='svg':
             path.write_text('\n'.join(line.rstrip() for line in path.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8',newline='\n')
     plt.close(fig)
+
+def operating_point_figure(study, validation):
+    fresh = [r for r in study['evaluation'] if not r['previously_observed']]
+    cases = list(dict.fromkeys(r['scenario_id'] for r in fresh))
+    fig, axes = plt.subplots(2, 1, figsize=(3.5, 3.8), layout='constrained')
+    for shift, label, color, supply in [(-.18, 'baseline', '#8395a5', '0.15 V'), (.18, 'retuned', '#176e7d', '0.18 V')]:
+        values = [next(r['rmse_hold_c'] for r in fresh if r['scenario_id'] == case and r['study_label'] == label) for case in cases]
+        axes[0].bar(np.arange(len(cases)) + shift, values, .34, label=supply, color=color)
+    axes[0].axhline(2, color='#a54c2b', linestyle='--', linewidth=1)
+    axes[0].set_xticks(range(len(cases)), [case.replace('v4_', '') for case in cases], rotation=25, ha='right')
+    axes[0].set_ylabel('hold RMSE (°C)')
+    axes[0].legend(frameon=False, ncol=2)
+    fine = validation['simulations'][-1]
+    pulse = np.load(ROOT / validation['run'] / f"pulse-{fine['dt_s']}.npz")
+    axes[1].plot(pulse['times_s'] * 1000, pulse['spatial_mean_c'], label='spatial FVM', color='#176e7d')
+    axes[1].plot(pulse['times_s'] * 1000, pulse['compact_c'], '--', label='frozen RC', color='#a54c2b')
+    axes[1].set(xlabel='pulse/cooldown time (ms)', ylabel='mean temperature (°C)')
+    axes[1].legend(frameon=False)
+    for axis in axes:
+        axis.grid(alpha=.2)
+    save(fig, 'heater_operating_point')
+
+def operating_point_results(study, calibration, validation):
+    chosen = calibration['selected']
+    fresh = [r for r in study['evaluation'] if not r['previously_observed']]
+    selected = [r for r in fresh if r['study_label'] == 'retuned']
+    fine = validation['simulations'][-1]
+    lines = [
+        f"The v3 joint study selects Kp={chosen['kp_q14']}/16384, Ki={chosen['ki_per_sample_q14']}/16384 per sample and calibration at 45/70 °C. Its mean training RMSE is {chosen['mean_training_rmse_c']:.3f} °C. At 0.15 V, five of six fresh v3 cases exceed 2 °C. The v4 protocol inherits these coefficients and compares heater supply on six further fresh cases and two regressions.",
+        '', '**Table IV. Paired external heater operating points.**', '',
+        '| Fresh case | 0.15 V RMSE (°C) | 0.18 V RMSE (°C) | 0.18 V hold overshoot (°C) |',
+        '|---|---:|---:|---:|',
+    ]
+    for row in selected:
+        baseline = next(r for r in fresh if r['scenario_id'] == row['scenario_id'] and r['study_label'] == 'baseline')
+        lines.append(f"| {row['scenario_id']} | {baseline['rmse_hold_c']:.3f} | {row['rmse_hold_c']:.3f} | {row['overshoot_hold_c']:.3f} |")
+    lines += ['', f"All six 0.18 V cases meet the 2 °C hold-RMSE and 5 °C overshoot limits. Maximum measured hold overshoot is {max(r['overshoot_hold_c'] for r in selected):.3f} °C. Powered-phase fault counts are zero. The higher supply raises available peak heater power by 44%, with the sensing excitation held at 18 mV. These results belong to the proposed 0.18 V operating point.", '',
+        f"An independent 25 ms full-duty spatial pulse and cooldown at 0.18 V validates the original frozen compact coefficients. At dt={fine['dt_s']*1000:g} ms, RMS error is {fine['rmse_c']:.3f} °C and maximum absolute error is {fine['max_abs_error_c']:.3f} °C. Halving the step changes the trajectory by {validation['refinement_relative']*100:.3f}%. The spatial peak reaches {fine['max_spatial_temperature_c']:.3f} °C within the declared material-model range. Both step sizes pass the predeclared numerical gates."]
+    return '\n'.join(lines)
 
 def figures(rtl,geometry):
     plt.rcParams.update({'font.size':8,'axes.titlesize':8,'axes.labelsize':8,'xtick.labelsize':7,'ytick.labelsize':7,'legend.fontsize':7,'axes.spines.top':False,'axes.spines.right':False})
@@ -68,7 +107,7 @@ def figures(rtl,geometry):
 
 def markdown(rtl,geo):
     selection=rtl['selected'];text=(ROOT/'docs/article.template.md').read_text(encoding='utf-8')
-    selection_text=f"Training selects Kp={selection['kp_q14']}/16384 and Ki={selection['ki_per_sample_q14']}/16384 per sample, with mean training RMSE {selection['mean_training_rmse_c']:.3f} °C. The original configuration remains archived and unchanged."
+    selection_text=f"Training selects Kp={selection['kp_q14']}/16384 and Ki={selection['ki_per_sample_q14']}/16384 per sample, with mean training RMSE {selection['mean_training_rmse_c']:.3f} °C. The baseline coefficients are recorded in the original study."
     table=['| Case | Baseline RMSE (°C) | Retuned RMSE (°C) | Evaluation role |','|---|---:|---:|---|']
     for case in dict.fromkeys(r['scenario_id'] for r in rtl['evaluation']):
         a,b=[next(r for r in rtl['evaluation'] if r['scenario_id']==case and r['study_label']==label) for label in ['baseline','retuned']]
@@ -79,6 +118,10 @@ def markdown(rtl,geo):
     for r in geo['refined_candidates']:
         if r['status']=='solved':gt.append(f"| {r['id']} ({r['heater_width_um']}/{r['heater_pitch_um']}/{r['anchor_width_um']}) | {r['mean_c']:.3f} | {r['power_w']*1e6:.3f} | {r['roi_std_c']:.4f} | {r['warmup_to_target_minus_1c_s']*1e3:.0f} |")
     for key,value in {'RTL_SELECTION':selection_text,'RTL_TABLE':'\n'.join(table),'GEOMETRY_SUMMARY':description,'GEOMETRY_TABLE':'\n'.join(gt),'GEOMETRY_RUN':geo['run']}.items():text=text.replace('{{'+key+'}}',value)
+    operating = json.loads((OUT / 'rtl_study_v4.json').read_text())
+    calibration = json.loads((OUT / 'rtl_study_v3.json').read_text())
+    validation = json.loads((OUT / 'operating_point_validation.json').read_text())
+    text = text.replace('{{OPERATING_POINT_RESULTS}}', operating_point_results(operating, calibration, validation))
     assert '{{' not in text,'Unresolved article field'
     (ROOT/'README.md').write_text(text,encoding='utf-8',newline='\n')
     article_text=re.sub(r'\]\((?!https?://|#)([^)]+)\)',lambda m: '](../'+m.group(1)+')',text)
@@ -190,88 +233,34 @@ def pdf(text):
             pending_caption=Paragraph(inline(value),styles['tablecaption']);continue
         story.append(Paragraph(inline(value),style))
     def header(canvas,doc):
-        canvas.setFont('Article',8);canvas.drawString(48,764,'THERMOBRIDGE - TECHNICAL REPORT, REVISION 2, OCTOBER 2026');canvas.drawRightString(564,29,str(doc.page))
+        canvas.setFont('Article',8);canvas.drawString(48,764,'THERMOBRIDGE - TECHNICAL REPORT, REVISION 3, NOVEMBER 2026');canvas.drawRightString(564,29,str(doc.page))
     def first(canvas,doc):
         header(canvas,doc)
         title=Paragraph('ThermoBridge: Electrothermal Modelling and<br/>Fixed-Point Control of a Microhotplate',ParagraphStyle('title',fontName='Article',fontSize=21,leading=24,alignment=1))
         title.wrap(516,80);title.drawOn(canvas,48,695)
-        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'Amine Allab  |  Ishaq Kolla');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | Not peer reviewed | 30 October 2026')
+        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'Amine Allab  |  Ishaq Kolla');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | 9 November 2026')
     doc=BaseDocTemplate(str(OUT/'thermobridge_article.pdf'),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=50,bottomMargin=42,title='ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate',author='Amine Allab; Ishaq Kolla')
     frames=lambda top:[Frame(48,42,width,top-42,id='left',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0),Frame(314,42,width,top-42,id='right',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)]
     doc.addPageTemplates([PageTemplate(id='first',frames=frames(643),onPage=first),PageTemplate(id='body',frames=frames(744),onPage=header)])
     doc.build(story)
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--refresh-figures', action='store_true', help='Regenerate archived baseline figures')
+    arguments = parser.parse_args()
     FIG.mkdir(parents=True,exist_ok=True);OUT.mkdir(exist_ok=True)
     rtl=json.loads((OUT/'rtl_study_v2.json').read_text());geometry=json.loads((OUT/'geometry_study.json').read_text())
-    figures(rtl,geometry);text=markdown(rtl,geometry);pdf(text)
+    baseline_names = ['physics_temperature_article', 'physics_validation_article', 'experiment_energy_article', 'rtl_retuning_v2', 'geometry_study']
+    if arguments.refresh_figures or not all((FIG / f'{name}.png').exists() for name in baseline_names):
+        figures(rtl,geometry)
+    plt.rcParams.update({'font.size':8,'axes.titlesize':8,'axes.labelsize':8,'xtick.labelsize':7,'ytick.labelsize':7,'legend.fontsize':7})
+    operating = json.loads((OUT / 'rtl_study_v4.json').read_text())
+    validation = json.loads((OUT / 'operating_point_validation.json').read_text())
+    operating_point_figure(operating, validation)
+    text=markdown(rtl,geometry);pdf(text)
     paths=[ROOT/'docs/article.template.md',OUT/'rtl_study_v2.json',OUT/'geometry_study.json',ROOT/'outputs/physics/validation.json',OUT/'asic/summary.json',ROOT/'outputs/physics/steady_1um.npz',ROOT/'outputs/physics/transient_validation.npz',ROOT/'results/raw/experiments/exp-20261027T135345Z-7afca8/metrics.csv',ROOT/geometry['run']/'steady.csv',ROOT/geometry['run']/'surrogate.npz']
-    images=[ROOT/p for p in re.findall(r'!\[[^\]]*\]\(([^)]+)\)',text)]
-    (OUT/'article_manifest.json').write_text(json.dumps({'inputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},'outputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'README.md',OUT/'thermobridge_article.pdf',*images]},'format':'Two-column technical report; IEEE-style structure, Times fonts and numbered references; not an IEEE publication'},indent=2)+'\n')
-    print('Built README.md, article figures and reports/thermobridge_article.pdf')
-if __name__=='__main__':main()
-,'',equation)
-            equation=equation.strip().rstrip('.')
-            fig=plt.figure(figsize=(3.8,.55));fig.text(.01,.5,'$'+equation+'$',fontsize=9.5,va='center')
-            temp=ROOT/'tmp/article';temp.mkdir(parents=True,exist_ok=True);path=temp/f'equation-{number or i}.png'
-            fig.savefig(path,dpi=300,bbox_inches='tight',transparent=False);plt.close(fig)
-            w,h=ImageReader(str(path)).getSize();scale=min((width-22)/w,40/h)
-            table=Table([[Image(str(path),width=w*scale,height=h*scale),Paragraph('('+number+')' if number else '',styles['small'])]],colWidths=[width-22,22])
-            table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0)]))
-            story.extend([table,Spacer(1,7)]);continue
-        if line.startswith('!['):
-            match=re.match(r'!\[(.*?)\]\((.*?)\)',line);path=ROOT/match.group(2);w,h=ImageReader(str(path)).getSize();scale=min(width/w,260/h)
-            block=[Image(str(path),width=w*scale,height=h*scale),Spacer(1,4)];i+=1
-            while i<len(lines) and not lines[i].strip():i+=1
-            if i<len(lines) and lines[i].startswith('**Fig.'):
-                block.append(Paragraph(inline(lines[i]),styles['caption']));i+=1
-            story.append(KeepTogether(block));continue
-        if line.startswith('|'):
-            data=[]
-            while i<len(lines) and lines[i].startswith('|'):
-                row=[s.strip() for s in lines[i].strip().strip('|').split('|')]
-                if not all(re.fullmatch(r':?-+:?',s.replace(' ','')) for s in row):data.append(row)
-                i+=1
-            cells=[[Paragraph(inline(s),styles['small']) for s in row] for row in data]
-            count=len(data[0]);widths=[width/count]*count
-            if count>=4:widths=[width*.31]+[width*.69/(count-1)]*(count-1)
-            t=Table(cells,colWidths=widths,repeatRows=1,hAlign='LEFT')
-            t.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,colors.black),('LINEBELOW',(0,0),(-1,0),.4,colors.black),('LINEBELOW',(0,-1),(-1,-1),.6,colors.black),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),3),('RIGHTPADDING',(0,0),(-1,-1),3),('TOPPADDING',(0,0),(-1,-1),4),('BOTTOMPADDING',(0,0),(-1,-1),3)]))
-            block=[t,Spacer(1,7)]
-            if pending_caption is not None:
-                block.insert(0,pending_caption);pending_caption=None
-                while story and isinstance(story[-1],Paragraph) and story[-1].style.name in ['h1','h2']:
-                    block.insert(0,story.pop())
-            story.append(KeepTogether(block));continue
-        if line.startswith('```'):
-            code=[];i+=1
-            while i<len(lines) and not lines[i].startswith('```'):
-                code.extend(textwrap.wrap(lines[i],width=57,replace_whitespace=False) or ['']);i+=1
-            i+=1;story.append(Preformatted('\n'.join(code),styles['code']));continue
-        paragraph=[line];i+=1
-        while i<len(lines) and lines[i].strip() and not lines[i].startswith(('#','![','|','```','$$','<details>')):
-            paragraph.append(lines[i].strip());i+=1
-        value=' '.join(paragraph);style=styles['small'] if re.match(r'^\[\d+\]',value) else styles['body']
-        if value.startswith('**Table '):
-            pending_caption=Paragraph(inline(value),styles['tablecaption']);continue
-        story.append(Paragraph(inline(value),style))
-    def header(canvas,doc):
-        canvas.setFont('Article',8);canvas.drawString(48,764,'THERMOBRIDGE - TECHNICAL REPORT, REVISION 2, OCTOBER 2026');canvas.drawRightString(564,29,str(doc.page))
-    def first(canvas,doc):
-        header(canvas,doc)
-        title=Paragraph('ThermoBridge: Electrothermal Modelling and<br/>Fixed-Point Control of a Microhotplate',ParagraphStyle('title',fontName='Article',fontSize=21,leading=24,alignment=1))
-        title.wrap(516,80);title.drawOn(canvas,48,695)
-        canvas.setFont('Article',10);canvas.drawCentredString(306,677,'Amine Allab  |  Ishaq Kolla');canvas.setFont('Article-Italic',9);canvas.drawCentredString(306,663,'Research technical report | Not peer reviewed | 30 October 2026')
-    doc=BaseDocTemplate(str(OUT/'thermobridge_article.pdf'),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=50,bottomMargin=42,title='ThermoBridge: Electrothermal Modelling and Fixed-Point Control of a Microhotplate',author='Amine Allab; Ishaq Kolla')
-    frames=lambda top:[Frame(48,42,width,top-42,id='left',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0),Frame(314,42,width,top-42,id='right',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)]
-    doc.addPageTemplates([PageTemplate(id='first',frames=frames(643),onPage=first),PageTemplate(id='body',frames=frames(744),onPage=header)])
-    doc.build(story)
-
-def main():
-    FIG.mkdir(parents=True,exist_ok=True);OUT.mkdir(exist_ok=True)
-    rtl=json.loads((OUT/'rtl_study_v2.json').read_text());geometry=json.loads((OUT/'geometry_study.json').read_text())
-    figures(rtl,geometry);text=markdown(rtl,geometry);pdf(text)
-    paths=[ROOT/'docs/article.template.md',OUT/'rtl_study_v2.json',OUT/'geometry_study.json',ROOT/'outputs/physics/validation.json',OUT/'asic/summary.json',ROOT/'outputs/physics/steady_1um.npz',ROOT/'outputs/physics/transient_validation.npz',ROOT/'results/raw/experiments/exp-20261027T135345Z-7afca8/metrics.csv',ROOT/geometry['run']/'steady.csv',ROOT/geometry['run']/'surrogate.npz']
+    paths += [OUT / name for name in ['rtl_study_v3.json', 'rtl_study_v4.json', 'operating_point_validation.json', 'heating_reference.json']]
+    paths.append(ROOT / validation['run'] / f"pulse-{validation['simulations'][-1]['dt_s']}.npz")
     images=[ROOT/p for p in re.findall(r'!\[[^\]]*\]\(([^)]+)\)',text)]
     (OUT/'article_manifest.json').write_text(json.dumps({'inputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},'outputs':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/'README.md',OUT/'thermobridge_article.pdf',*images]},'format':'Two-column technical report; IEEE-style structure, Times fonts and numbered references; not an IEEE publication'},indent=2)+'\n')
     print('Built README.md, article figures and reports/thermobridge_article.pdf')

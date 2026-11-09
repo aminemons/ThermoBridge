@@ -1,0 +1,12 @@
+{
+  "status": "PASS: conditional research snapshot",
+  "legacy_0p15v_targets": {
+    "nominal_hold_rmse_le_2_c": false
+  },
+  "operating_0p18v_targets": {
+    "six_fresh_cases_rmse_le_2_c": true,
+    "six_fresh_cases_overshoot_le_5_c": true,
+    "spatial_validation": true
+  },
+  "limitations": "docs/LIMITATIONS.md"
+}

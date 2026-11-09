@@ -2,7 +2,13 @@
 from pathlib import Path
 import argparse,hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--strict',action='store_true');p.add_argument('--physical-only',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--strict',action='store_true');p.add_argument('--physical-only',action='store_true');p.add_argument('--operating-point',action='store_true');a=p.parse_args()
+
+def verify_manifest_outputs(path):
+    value = json.loads(path.read_text())
+    assert value['status'] == 'complete', 'Incomplete run: ' + str(path)
+    for name, digest in value['outputs'].items():
+        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest, 'Changed run output: ' + name
 physical=json.loads((ROOT/'reports/asic/summary.json').read_text())
 assert all(physical['checks'].values()),'Physical evidence includes failed gates'
 assert hashlib.sha256((ROOT/'rtl/thermobridge_top.sv').read_bytes()).hexdigest()==physical['rtl_sha256'],'RTL differs from physically implemented source'
@@ -49,5 +55,40 @@ if article.exists():
     for output,digest in gm['outputs'].items():
         assert hashlib.sha256((ROOT/output).read_bytes()).hexdigest()==digest,'Changed spatial evidence: '+output
     assert hashlib.sha256((directory/'source/fvm.py').read_bytes()).hexdigest()==gm['input_sha256']['src/physics/fvm.py']
-print(json.dumps({'status':'PASS: conditional research snapshot, not all aspirational targets','engineering_targets':snapshot['engineering_targets'],'limitations':'docs/LIMITATIONS.md'},indent=2))
+operating_targets = None
+if (ROOT / 'reports/rtl_study_v4.json').exists():
+    for name, training_count, evaluation_count in [('rtl_study_v3.json', 36, 16), ('rtl_study_v4.json', 3, 16)]:
+        report = json.loads((ROOT / 'reports' / name).read_text())
+        folder = ROOT / report['run']
+        summary = json.loads((folder / 'summary.json').read_text())
+        protocol = json.loads((folder / 'protocol.json').read_text())
+        training_runs = [run for candidate in summary['training'] for run in candidate['runs']]
+        assert len(training_runs) == training_count and len(report['evaluation']) == evaluation_count
+        assert report['selected'] == json.loads((folder / 'selection.json').read_text())
+        assert report['selected']['mean_training_rmse_c'] == min(candidate['mean_training_rmse_c'] for candidate in summary['training'])
+        assert not ({case['id'] for case in protocol['training']} & {case['id'] for case in protocol['evaluation']})
+        verify_manifest_outputs(folder / 'manifest.json')
+        for run in training_runs + report['evaluation']:
+            assert run['powered_fault_count'] == 0
+            verify_manifest_outputs(ROOT / 'results/raw/experiments' / run['run_id'] / 'manifest.json')
+    validation = json.loads((ROOT / 'reports/operating_point_validation.json').read_text())
+    assert all(validation['checks'].values())
+    verify_manifest_outputs(ROOT / validation['run'] / 'manifest.json')
+    reference = json.loads((ROOT / 'reports/heating_reference.json').read_text())
+    verify_manifest_outputs(ROOT / reference['run'] / 'manifest.json')
+    fresh = [run for run in report['evaluation'] if run['study_label'] == 'retuned' and not run['previously_observed']]
+    assert len(fresh) == 6
+    assert all(run['heater_voltage_v'] == .18 for run in fresh)
+    operating_targets = {
+        'six_fresh_cases_rmse_le_2_c': all(run['rmse_hold_c'] <= 2 for run in fresh),
+        'six_fresh_cases_overshoot_le_5_c': all(run['overshoot_hold_c'] <= 5 for run in fresh),
+        'spatial_validation': all(validation['checks'].values()),
+    }
+    for run in fresh:
+        baseline = next(item for item in report['evaluation'] if item['scenario_id'] == run['scenario_id'] and item['study_label'] == 'baseline')
+        assert baseline['heater_voltage_v'] == .15
+        assert (baseline['kp_q14'], baseline['ki_per_sample_q14'], baseline['readout']) == (run['kp_q14'], run['ki_per_sample_q14'], run['readout'])
+if a.operating_point:
+    assert operating_targets and all(operating_targets.values()), 'Operating-point targets are unmet or missing'
+print(json.dumps({'status':'PASS: conditional research snapshot','legacy_0p15v_targets':snapshot['engineering_targets'],'operating_0p18v_targets':operating_targets,'limitations':'docs/LIMITATIONS.md'},indent=2))
 if a.strict and not all(snapshot['engineering_targets'].values()):raise SystemExit(1)

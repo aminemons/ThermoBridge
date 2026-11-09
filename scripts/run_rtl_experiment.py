@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--case');parser.add_argument('--kp-q14',type=int);parser.add_argument('--ki-q14',type=int)
     parser.add_argument('--protocol', type=Path, default=ROOT/'configs/rtl_study_v2.json')
     parser.add_argument('--calibration-c', type=float, nargs=2, metavar=('LOW', 'HIGH'))
+    parser.add_argument('--heater-v', type=float)
     args=parser.parse_args();started=datetime.now(timezone.utc)
     run_prefix = 'rtl-'
     extra={'PYTHONPATH':str(ROOT)+os.pathsep+str(ROOT/'tb')}
@@ -22,12 +23,17 @@ def main():
         if case is None:parser.error('unknown frozen study case')
         extra.update(THERMO_RTL_CASE_JSON=json.dumps(case),THERMO_RTL_TRAINING=str(int(case in protocol['training'])))
         extra['THERMO_RTL_PROTOCOL'] = protocol['protocol']
-        run_prefix = 'rtl3-' if protocol['protocol'].endswith('-v3') else 'rtl2-'
+        suffix = protocol['protocol'].rsplit('-', 1)[-1]
+        run_prefix = {'v3':'rtl3-', 'v4':'rtl4-'}.get(suffix, 'rtl2-')
     if args.calibration_c is not None:
         low, high = args.calibration_c
         if not 20 <= low < high <= 350:
             parser.error('Calibration bounds must increase within 20 to 350 C')
         extra['THERMO_RTL_CALIBRATION_C'] = json.dumps(args.calibration_c)
+    if args.heater_v is not None:
+        if not 0 < args.heater_v <= 1.8:
+            parser.error('External heater voltage must be positive and at most 1.8 V')
+        extra['THERMO_RTL_HEATER_V'] = str(args.heater_v)
     run_id = run_prefix + started.strftime('%Y%m%dT%H%M%S%fZ')
     extra['THERMO_RTL_RUN_ID'] = run_id
     for name,value in [('THERMO_RTL_KP_Q14',args.kp_q14),('THERMO_RTL_KI_Q14',args.ki_q14)]:

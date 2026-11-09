@@ -1,0 +1,41 @@
+{
+  "run": "results/operating_point/20261109T154033109170Z",
+  "protocol": {
+    "protocol": "thermobridge-operating-point-validation-v1",
+    "frozen_date": "2026-11-09",
+    "heater_voltage_v": 0.18,
+    "pulse_duration_s": 0.025,
+    "duration_s": 0.1,
+    "time_steps_s": [
+      0.0005,
+      0.00025
+    ],
+    "compact_rmse_limit_c": 2.0,
+    "refinement_relative_limit": 0.02,
+    "scope": "Unseen full-duty pulse and cooldown in the primary spatial geometry with the original frozen RC coefficients"
+  },
+  "simulations": [
+    {
+      "dt_s": 0.0005,
+      "rmse_c": 0.2374201244266664,
+      "max_abs_error_c": 0.4683842724605256,
+      "max_spatial_temperature_c": 98.9482747192306,
+      "samples": 201
+    },
+    {
+      "dt_s": 0.00025,
+      "rmse_c": 0.12795152892885453,
+      "max_abs_error_c": 0.22647361843227998,
+      "max_spatial_temperature_c": 99.17309225708243,
+      "samples": 401
+    }
+  ],
+  "max_refinement_change_c": 0.22903876215512753,
+  "refinement_relative": 0.003238348681183482,
+  "checks": {
+    "compact_rmse": true,
+    "time_step_refinement": true,
+    "material_temperature_range": true
+  },
+  "compact_parameters_refitted": false
+}
