@@ -1,0 +1,1 @@
+Icarus/cocotb passed. RTL duty drives the RC plant; nonlinear ADC supplies feedback. CONTROL_DIV=32 accelerates the declared 1 ms plant interval.

@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.physics.rc import ThermalRC
 from src.sensing import HeaterReadout, ReadoutConfig
+from src.sensing.calibration import calibration_coefficients
 from tb.rtl_plant_bridge import RTLPlantBridge
 
 
@@ -51,11 +52,12 @@ async def rtl_ffpi_closed_loop_rc(dut):
     readout = HeaterReadout(ReadoutConfig(r0_ohm=base["heater_r_ohm"],tcr_per_k=base["r_tcr_per_k"],reference_c=25.0,calibration_r0_ohm=base["heater_r_ohm"],calibration_tcr_per_k=base["r_tcr_per_k"],divider_reference_ohm=base["heater_r_ohm"],excitation_v=0.018,front_end_gain=800.0,front_end_reference_v=0.0086,adc_reference_v=1.8,valid_temperature_c=(20,350),delay_samples=0,noise_rms_v=0), seed=11)
     readout=HeaterReadout(replace(readout.config,noise_rms_v=case.get('noise_rms_v',0)),seed=case.get('seed',11))
     calibration=HeaterReadout(replace(readout.config,noise_rms_v=0),seed=0)
-    lo_code = calibration.sample(40.0, 1.0).code
-    hi_code = calibration.sample(80.0, 1.0).code
-    gain_q14 = round((40.0 * 64.0 / (hi_code - lo_code)) * (1 << 14))
-    offset_q6 = round(40.0*64.0 - lo_code * gain_q14 / (1 << 14))
-    assert 0 < gain_q14 < (1 << 17) and -(1 << 15) <= offset_q6 < (1 << 15)
+    calibration_c = json.loads(os.environ.get('THERMO_RTL_CALIBRATION_C', '[40,80]'))
+    lo_code = calibration.sample(calibration_c[0], 1.0).code
+    hi_code = calibration.sample(calibration_c[1], 1.0).code
+    gain_q14, offset_q6 = calibration_coefficients(
+        lo_code, hi_code, calibration_c[0], calibration_c[1]
+    )
     bridge = RTLPlantBridge(dut)
     await bridge.write(bridge.REG_CTRL, 5)  # enable + lookup feedforward
     await bridge.write(bridge.REG_SETPOINT, round(cycle["initial_setpoint_c"] * 64))
@@ -112,7 +114,7 @@ async def rtl_ffpi_closed_loop_rc(dut):
         applied=max(command,1/256) if phase!="cooldown" and command==0.0 else command
         power=plant.power(applied,temp)
         energy[phase]+=power*dt
-        trace.append({"t_s":i*dt,"temp_c":temp,"setpoint_c":target,"duty_q8":previous_q8,"applied_duty_including_measurement_pulse":applied,"heater_power_w":power,"sample_valid":int(phase!="cooldown"),"phase":phase,"fault_cause":result["fault_cause"]})
+        trace.append({"t_s":i*dt,"temp_c":temp,"setpoint_c":target,"duty_q8":previous_q8,"applied_duty_including_measurement_pulse":applied,"heater_power_w":power,"sample_valid":int(phase!="cooldown"),"phase":phase,"fault_cause":result["fault_cause"],"estimated_temp_c":result.get('temp_q6',float('nan'))/64})
         temp=plant.step(temp,applied,dt)
         sample=readout.sample(temp,applied)
         assert sample.valid == (phase != "cooldown")
@@ -130,10 +132,11 @@ async def rtl_ffpi_closed_loop_rc(dut):
         powered_fault_count=sum(bool(x['fault_cause']) for x in trace if x['phase']!='cooldown'),
         cooldown_stale_latched=any(x['fault_cause']==4 for x in trace if x['phase']=='cooldown'),
         paired_reference='Separate RTL subset with explicitly centered ideal external readout; not identical to Python front end',
-        readout={'gain':800,'reference_v':.0086,'excitation_v':.018,'calibration_c':[40,80],'amplifier_power':'not modeled'})
+        readout={'gain':800,'reference_v':.0086,'excitation_v':.018,'calibration_c':calibration_c,'amplifier_power':'not modeled'})
     if case:
         summary.update(scenario_id=case['id'],seed=case['seed'],case=case,
-            protocol='thermobridge-rtl-retuning-v2',previously_observed=case.get('previously_observed',False))
+            protocol=os.environ.get('THERMO_RTL_PROTOCOL','thermobridge-rtl-retuning-v2'),previously_observed=case.get('previously_observed',False))
     summary['overshoot_hold_c']=max(0.0,max(errors))
+    summary['readout_rmse_hold_c']=math.sqrt(sum((r['estimated_temp_c']-r['temp_c'])**2 for r in hold)/len(hold))
     (out/"metrics.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     dut._log.info("RTL-in-loop experiment complete: %s",json.dumps(summary))

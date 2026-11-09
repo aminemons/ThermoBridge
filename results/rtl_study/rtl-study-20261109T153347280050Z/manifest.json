@@ -1,0 +1,53 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/run_rtl_study.py",
+    "--protocol",
+    "configs/rtl_study_v3.json"
+  ],
+  "duration_s": 114.38568,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/rtl_study_v3.json": "14f8c9d913790337d29d675bad68066c82ce123b298c921eff4e65b4eb4df2bb",
+    "scripts/run_rtl_study.py": "7f97f9de25e8eee4ad9aec1010283be3dbcecbf69e9cd4144edec9bd84374387"
+  },
+  "outputs": {
+    "results/rtl_study/rtl-study-20261109T153347280050Z/protocol.json": "937ed3cb1c5fbb16025301ed67cac9db37bdd178bf0cf287c6c0fe3ac61b93fc",
+    "results/rtl_study/rtl-study-20261109T153347280050Z/selection.json": "a49e3b6d162529294c19abcfca2988f89b04ae4c0d1a1b07d5a4afbd140257f1",
+    "results/rtl_study/rtl-study-20261109T153347280050Z/summary.json": "4d80b7ca74d2def0e5371d2fbf224e946bf5dc5555f5d0dc73ee8ead61af8fa1"
+  },
+  "run_id": "rtl-study-20261109T153347280050Z",
+  "schema": "thermobridge.run.v1",
+  "seed": [
+    101,
+    103,
+    107,
+    109,
+    113,
+    127,
+    11,
+    41
+  ],
+  "source_commit": "0c31c1eadfdbf325b9df6e73c357c41c657f70ee",
+  "source_sha256": "c61a150b6b9168e3248e5e5f51d8991c0b99760410e70fa78645c412b4a6d442",
+  "status": "complete",
+  "timestamp_utc": "2026-11-09T15:33:47.280050+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}

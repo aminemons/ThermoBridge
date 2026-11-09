@@ -1,0 +1,9 @@
+{
+  "kp_q14": 1638,
+  "ki_per_sample_q14": 32,
+  "calibration_c": [
+    45,
+    70
+  ],
+  "mean_training_rmse_c": 2.012539772656577
+}

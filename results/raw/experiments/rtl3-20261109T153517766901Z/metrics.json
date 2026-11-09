@@ -1,0 +1,48 @@
+{
+  "run_id": "rtl3-20261109T153517766901Z",
+  "simulation_kind": "rtl_in_loop_cocotb_icarus",
+  "plant": "primary fitted RC ROM from spatial FVM; duty read from RTL at every sample; nonlinear divider ADC feeds next sample",
+  "arithmetic": "synthesizable RTL controller; Q14 KP/KI, Q6 calibration/setpoint, Q8 duty",
+  "paired_reference": "Separate RTL subset with explicitly centered ideal external readout; not identical to Python front end",
+  "scenario_id": "v3_E02",
+  "seed": 103,
+  "controller": "thermobridge_top feedforward plus PI with frozen spatial-FVM LUT",
+  "kp": 0.0999755859375,
+  "ki_per_s": 1.953125,
+  "control_dt_s": 0.001,
+  "control_div_clock_cycles": 32,
+  "rmse_hold_c": 2.198297027752279,
+  "energy_warmup_j": 1.0458275783108915e-05,
+  "energy_hold_j": 5.820160694255567e-06,
+  "energy_cooldown_j": 0.0,
+  "energy_total_j": 1.627843647736448e-05,
+  "sensing_energy_j": 2.9019121364890785e-07,
+  "sample_count": 238,
+  "training_only": false,
+  "kp_q14": 1638,
+  "ki_per_sample_q14": 32,
+  "powered_fault_count": 0,
+  "cooldown_stale_latched": true,
+  "readout": {
+    "gain": 800,
+    "reference_v": 0.0086,
+    "excitation_v": 0.018,
+    "calibration_c": [
+      45.0,
+      70.0
+    ],
+    "amplifier_power": "not modeled"
+  },
+  "case": {
+    "id": "v3_E02",
+    "initial_setpoint_c": 54,
+    "step_c": 10,
+    "ambient_c": 25,
+    "seed": 103,
+    "previously_observed": false
+  },
+  "protocol": "thermobridge-rtl-calibration-v3",
+  "previously_observed": false,
+  "overshoot_hold_c": 0.0,
+  "readout_rmse_hold_c": 0.19505505465634554
+}

@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/run_rtl_experiment.py",
+    "--case",
+    "v3_regression52cold",
+    "--protocol",
+    "/foss/designs/thermobridge/configs/rtl_study_v3.json",
+    "--kp-q14",
+    "1147",
+    "--ki-q14",
+    "32",
+    "--calibration-c",
+    "40",
+    "80"
+  ],
+  "duration_s": 1.570665,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": true,
+  "input_sha256": {
+    "configs/evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs/feedforward_lut.json": "3406364f862fe487e9c55463f735ea9f03ad95d575e0e79d585689985ca85c71",
+    "configs/rtl_study_v3.json": "14f8c9d913790337d29d675bad68066c82ce123b298c921eff4e65b4eb4df2bb",
+    "configs/rtl_tuned.json": "f134524938fb44a6dabdb82105b0f33bd139d128666abc7bd5b50b8f3ab336e6",
+    "rtl/thermobridge_top.sv": "2c6e11c35ea9bbc133da332f997097d656f8bee050e0257a6144ca4d522589e8",
+    "src/physics/rc.py": "401d73f8320a170f84260d45c99da9f9c7f3e93584649e5efc00d3cb6ace4890",
+    "src/sensing/calibration.py": "2aa7819821f03e04203a5b5533a8c86c2d13b8caf712d7ceaa88fa1615c4785c",
+    "src/sensing/readout.py": "2120bcbb1fc876d3cf69101892b06f1040a8c5c3af7e3b7fee2f53b3a8881b6e",
+    "tb/rtl_plant_bridge.py": "54ea317aaf27744a769e870ade65919c598590ee23a1514eccd6dd4416a0094a",
+    "tb/test_experiment_bridge.py": "71b84600b0225a1f233c090b3bb5035c4322c830abfd561cd8ce53311d089307"
+  },
+  "outputs": {
+    "results/raw/experiments/rtl3-20261109T153538258330Z/metrics.json": "d85d822c44e6f1f7f90fd20fb58886f431a386b893ae10468cc1ec649ad892b9",
+    "results/raw/experiments/rtl3-20261109T153538258330Z/run.log": "70c79b592a99bb056ecd562544174c54b03259676c73035515e38cddd225bda3",
+    "results/raw/experiments/rtl3-20261109T153538258330Z/trace.csv": "e3b84e901afff13c27119a8de2894203397cb11fbf24ff83aa36f8a58ea0cdd2"
+  },
+  "run_id": "rtl3-20261109T153538258330Z",
+  "schema": "thermobridge.run.v1",
+  "seed": 41,
+  "simulation_kind": "Actual RTL-in-loop; accelerated control divider32",
+  "source_commit": "0c31c1eadfdbf325b9df6e73c357c41c657f70ee",
+  "source_sha256": "c61a150b6b9168e3248e5e5f51d8991c0b99760410e70fa78645c412b4a6d442",
+  "status": "complete",
+  "timestamp_utc": "2026-11-09T15:35:38.258330+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 14.0 (devel) (s20260301-579-g15d870a5-dirty)",
+    "klayout": "KLayout 0.30.12",
+    "librelane": "3.1.0.dev3",
+    "magic": "8.3.685",
+    "matplotlib": "3.11.2",
+    "netgen": "Netgen 1.5.324 compiled on Thu Oct 15 02:24:51 PM CEST 2026",
+    "ngspice": "",
+    "numpy": "2.5.4",
+    "openroad": "26Q4-407-geb14e40b7",
+    "pytest": "9.1.1",
+    "scipy": "1.18.1",
+    "verilator": "Verilator 5.052 2026-09-05 rev v5.052",
+    "xschem": "Sourced library init file /foss/tools/xschem/share/doc/xschem/analyses/lib_init.tcl",
+    "yosys": "Yosys 0.70 (git sha1 28ba3cb92, Release, GNU /usr/bin/c++ 13.3.0)"
+  }
+}

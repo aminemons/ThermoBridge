@@ -1,9 +1,12 @@
 """Fetch only raw runs referenced by the completed study, preserving other data."""
 from pathlib import Path
-import io,json,os,subprocess,tarfile
+import argparse,io,json,os,subprocess,tarfile
 ROOT=Path(__file__).resolve().parents[1]
 def main():
-    report=json.loads((ROOT/'reports/rtl_study_v2.json').read_text())
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--report',type=Path,default=Path('reports/rtl_study_v2.json'))
+    arguments=parser.parse_args()
+    report=json.loads((ROOT/arguments.report).read_text())
     summary=json.loads((ROOT/report['run']/'summary.json').read_text())
     runs=[r['run_id'] for candidate in summary['training'] for r in candidate['runs']]+[r['run_id'] for r in summary['evaluation']]
     paths=['results/raw/experiments/'+r for r in runs]

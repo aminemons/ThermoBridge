@@ -9,22 +9,33 @@ from scripts.run_manifest import write_manifest
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--case');parser.add_argument('--kp-q14',type=int);parser.add_argument('--ki-q14',type=int)
+    parser.add_argument('--protocol', type=Path, default=ROOT/'configs/rtl_study_v2.json')
+    parser.add_argument('--calibration-c', type=float, nargs=2, metavar=('LOW', 'HIGH'))
     args=parser.parse_args();started=datetime.now(timezone.utc)
-    run_id=('rtl2-' if args.case else 'rtl-')+started.strftime('%Y%m%dT%H%M%S%fZ')
-    extra={'PYTHONPATH':str(ROOT)+os.pathsep+str(ROOT/'tb'),'THERMO_RTL_RUN_ID':run_id}
-    inputs=[ROOT/p for p in ['rtl/thermobridge_top.sv','tb/test_experiment_bridge.py','tb/rtl_plant_bridge.py','src/physics/rc.py','src/sensing/readout.py','configs/evaluation_v1.json','configs/feedforward_lut.json','configs/rtl_tuned.json']]
+    run_prefix = 'rtl-'
+    extra={'PYTHONPATH':str(ROOT)+os.pathsep+str(ROOT/'tb')}
+    inputs=[ROOT/p for p in ['rtl/thermobridge_top.sv','tb/test_experiment_bridge.py','tb/rtl_plant_bridge.py','src/physics/rc.py','src/sensing/readout.py','src/sensing/calibration.py','configs/evaluation_v1.json','configs/feedforward_lut.json','configs/rtl_tuned.json']]
     if args.case:
-        path=ROOT/'configs/rtl_study_v2.json';protocol=json.loads(path.read_text());inputs.append(path)
+        path=args.protocol.resolve();protocol=json.loads(path.read_text());inputs.append(path)
         cases=protocol['training']+protocol['evaluation']
         case=next((c for c in cases if c['id']==args.case),None)
         if case is None:parser.error('unknown frozen study case')
         extra.update(THERMO_RTL_CASE_JSON=json.dumps(case),THERMO_RTL_TRAINING=str(int(case in protocol['training'])))
+        extra['THERMO_RTL_PROTOCOL'] = protocol['protocol']
+        run_prefix = 'rtl3-' if protocol['protocol'].endswith('-v3') else 'rtl2-'
+    if args.calibration_c is not None:
+        low, high = args.calibration_c
+        if not 20 <= low < high <= 350:
+            parser.error('Calibration bounds must increase within 20 to 350 C')
+        extra['THERMO_RTL_CALIBRATION_C'] = json.dumps(args.calibration_c)
+    run_id = run_prefix + started.strftime('%Y%m%dT%H%M%S%fZ')
+    extra['THERMO_RTL_RUN_ID'] = run_id
     for name,value in [('THERMO_RTL_KP_Q14',args.kp_q14),('THERMO_RTL_KI_Q14',args.ki_q14)]:
         if value is not None:extra[name]=str(value)
-    runner=get_runner('icarus');build=ROOT/'build/rtl-experiment'
+    runner=get_runner('icarus');build=ROOT/'build/rtl-experiment'/run_id
     runner.build(sources=[ROOT/'rtl/thermobridge_top.sv'],hdl_toplevel='thermobridge_top',build_dir=build,parameters={'CONTROL_DIV':32},always=True)
-    runner.test(hdl_toplevel='thermobridge_top',test_module='test_experiment_bridge',test_dir=ROOT/'tb',build_dir=build,extra_env=extra)
-    xml=ET.parse(ROOT/'tb/results.xml').getroot()
+    result_xml = runner.test(hdl_toplevel='thermobridge_top',test_module='tb.test_experiment_bridge',test_dir=build,build_dir=build,extra_env=extra)
+    xml=ET.parse(result_xml).getroot()
     if not xml.findall('.//testcase') or xml.findall('.//failure') or xml.findall('.//error'):
         raise SystemExit('RTL-in-loop failed; no successful manifest was written.')
     out=ROOT/'results/raw/experiments'/run_id
