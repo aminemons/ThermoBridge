@@ -1,0 +1,10 @@
+TRAIN 1638 32 [45, 70] 1.7467
+TEST v4_E01 2.0041 1.6745
+TEST v4_E02 2.1614 1.7135
+TEST v4_E03 2.2528 1.7772
+TEST v4_E04_cold 2.1658 1.6768
+TEST v4_E05_warm 1.9529 1.6978
+TEST v4_E06_warm 1.9433 1.7436
+TEST v4_regression55 2.0966 1.7465
+TEST v4_regression52cold 2.348 1.7401
+Completed /tmp/thermobridge-v5.iMSUqm/results/rtl_study/rtl-study-20261118T170657918918Z

@@ -1,0 +1,71 @@
+{
+  "command": [
+    "/home/ishaq/Dev/ThermoBridge/.venv/bin/python",
+    "scripts/run_rtl_robustness.py"
+  ],
+  "duration_s": 83.514756,
+  "environment_manifest_sha256": "8ff45fbedc76edcc6f4be96b2bb132111eea2e39068f03304cdc12879bc651de",
+  "git_dirty": false,
+  "input_sha256": {
+    "configs/evaluation_v1.json": "33f7a6fba26ae061c1945d8b409bb876d16882823475e73ad9aba9a23f77cfb7",
+    "configs/rtl_study_v5.json": "a8043b50bc4093ae46dd75a8f915416287c18b928e9b849ce9052c70df580b7d",
+    "scripts/run_rtl_robustness.py": "984e5ef7dc5b3b29eae4b0832a94e3e7287a79c4f3a209c86a0f8f13f7650423"
+  },
+  "outputs": {
+    "reports/rtl_study_v5.json": "bf19347078e408a6d626b95ad4d7e39299ebf8c212b5c1c7140ef6f36713a09a",
+    "results/rtl_study/rtl-robustness-20261118T170918600085Z/evidence.zip": "409ae37c6c42d3000c0f4710f20d856b90ec5c0bfee579dfb79d2a9b8c5f13c6"
+  },
+  "run_id": "rtl-robustness-20261118T170918600085Z",
+  "schema": "thermobridge.run.v1",
+  "seed": [
+    5010,
+    5020,
+    5030,
+    5031,
+    5032,
+    5033,
+    5034,
+    5040,
+    5050,
+    5060,
+    5070,
+    5080,
+    5090,
+    5100,
+    5110,
+    5120,
+    5130,
+    5140,
+    5150,
+    5160,
+    5161,
+    5162,
+    5163,
+    5164,
+    5170,
+    5180,
+    5181,
+    5182,
+    5183,
+    5184,
+    5190,
+    5191,
+    5192,
+    5193,
+    5194,
+    5200,
+    5201,
+    5202,
+    5203,
+    5204
+  ],
+  "source_commit": "5d569b69648b33f5712736e321d17838c3920c53",
+  "source_sha256": "c0f011a0437ce5933691ce50a1b5646c6194aefb31d4fcd609785519d63201f9",
+  "status": "complete",
+  "timestamp_utc": "2026-11-18T17:09:18.600085+00:00",
+  "tool_versions": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "python": "3.12.3"
+  }
+}
