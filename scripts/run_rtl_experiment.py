@@ -1,7 +1,8 @@
 """Run a dedicated cocotb loop; accept only this invocation's verified output."""
 from datetime import datetime,timezone
 from pathlib import Path
-import argparse,json,os,sys,xml.etree.ElementTree as ET
+import argparse,json,os,platform,subprocess,sys,xml.etree.ElementTree as ET
+from importlib.metadata import version
 from cocotb_tools.runner import get_runner
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
@@ -15,7 +16,7 @@ def main():
     args=parser.parse_args();started=datetime.now(timezone.utc)
     run_prefix = 'rtl-'
     extra={'PYTHONPATH':str(ROOT)+os.pathsep+str(ROOT/'tb')}
-    inputs=[ROOT/p for p in ['rtl/thermobridge_top.sv','tb/test_experiment_bridge.py','tb/rtl_plant_bridge.py','src/physics/rc.py','src/sensing/readout.py','src/sensing/calibration.py','configs/evaluation_v1.json','configs/feedforward_lut.json','configs/rtl_tuned.json']]
+    inputs=[ROOT/p for p in ['rtl/thermobridge_top.sv','tb/test_experiment_bridge.py','tb/rtl_plant_bridge.py','src/physics/rc.py','src/sensing/readout.py','src/sensing/calibration.py','configs/evaluation_v1.json','configs/feedforward_lut.json','configs/rtl_tuned.json','scripts/run_rtl_experiment.py']]
     if args.case:
         path=args.protocol.resolve();protocol=json.loads(path.read_text());inputs.append(path)
         cases=protocol['training']+protocol['evaluation']
@@ -23,8 +24,10 @@ def main():
         if case is None:parser.error('unknown frozen study case')
         extra.update(THERMO_RTL_CASE_JSON=json.dumps(case),THERMO_RTL_TRAINING=str(int(case in protocol['training'])))
         extra['THERMO_RTL_PROTOCOL'] = protocol['protocol']
+        if 'robustness' in protocol:
+            extra['THERMO_RTL_ROBUSTNESS'] = json.dumps(protocol['robustness'])
         suffix = protocol['protocol'].rsplit('-', 1)[-1]
-        run_prefix = {'v3':'rtl3-', 'v4':'rtl4-'}.get(suffix, 'rtl2-')
+        run_prefix = {'v3':'rtl3-', 'v4':'rtl4-', 'v5':'rtl5-'}.get(suffix, 'rtl2-')
     if args.calibration_c is not None:
         low, high = args.calibration_c
         if not 20 <= low < high <= 350:
@@ -48,6 +51,13 @@ def main():
     if not all((out/name).is_file() for name in ['trace.csv','metrics.json']):
         raise SystemExit('This invocation did not produce required experiment outputs.')
     log=out/'run.log';log.write_text('Icarus/cocotb passed. RTL duty drives the RC plant; nonlinear ADC supplies feedback. CONTROL_DIV=32 accelerates the declared 1 ms plant interval.\n')
-    write_manifest(out/'manifest.json',run_id=run_id,command=[sys.executable,'scripts/run_rtl_experiment.py',*sys.argv[1:]],input_paths=inputs,seed=json.loads((out/'metrics.json').read_text())['seed'],started=started,status='complete',output_paths=[out/'trace.csv',out/'metrics.json',log],extra={'simulation_kind':'Actual RTL-in-loop; accelerated control divider32'})
+    write_manifest(out/'manifest.json',run_id=run_id,command=[sys.executable,'scripts/run_rtl_experiment.py',*sys.argv[1:]],input_paths=inputs,seed=json.loads((out/'metrics.json').read_text())['seed'],started=started,status='complete',output_paths=[out/'trace.csv',out/'metrics.json',log],extra={
+        'simulation_kind':'Actual RTL-in-loop; accelerated control divider32',
+        'tool_versions': {
+            'python': platform.python_version(),
+            'cocotb': version('cocotb'),
+            'iverilog': subprocess.check_output(['iverilog', '-V'], stderr=subprocess.DEVNULL, text=True).splitlines()[0],
+        },
+    })
     print('RTL-in-loop trace saved: '+str(out))
 if __name__=='__main__':main()

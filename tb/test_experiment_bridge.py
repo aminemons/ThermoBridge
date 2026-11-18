@@ -45,14 +45,33 @@ async def rtl_ffpi_closed_loop_rc(dut):
     case=json.loads(os.environ.get('THERMO_RTL_CASE_JSON','{}'))
     for key in ('initial_setpoint_c','step_c'):
         if key in case:cycle[key]=case[key]
-    base=dict(base,ambient_c=case.get('ambient_c',base['ambient_c']))
+    robustness = json.loads(os.environ.get('THERMO_RTL_ROBUSTNESS', 'null'))
+    nominal = base
+    base = dict(nominal, ambient_c=case.get('ambient_c', nominal['ambient_c']))
+    if robustness is not None:
+        for parameter, scale in (
+            ('r_th_k_per_w', 'rth_scale'), ('c_th_j_per_k', 'cth_scale'),
+            ('heater_r_ohm', 'heater_r_scale'), ('r_tcr_per_k', 'tcr_scale'),
+        ):
+            base[parameter] *= case[scale]
     base['heater_v'] = float(os.environ.get('THERMO_RTL_HEATER_V',base['heater_v']))
     plant = ThermalRC(r_th_k_per_w=base["r_th_k_per_w"],c_th_j_per_k=base["c_th_j_per_k"],ambient_c=base["ambient_c"],heater_v=base["heater_v"],heater_r_ohm=base["heater_r_ohm"],r_tcr_per_k=base["r_tcr_per_k"])
     # Explicit ideal differential front end centers the divider output before
     # amplification. It is external behavioural circuitry, not an on-chip OTA.
     readout = HeaterReadout(ReadoutConfig(r0_ohm=base["heater_r_ohm"],tcr_per_k=base["r_tcr_per_k"],reference_c=25.0,calibration_r0_ohm=base["heater_r_ohm"],calibration_tcr_per_k=base["r_tcr_per_k"],divider_reference_ohm=base["heater_r_ohm"],excitation_v=0.018,front_end_gain=800.0,front_end_reference_v=0.0086,adc_reference_v=1.8,valid_temperature_c=(20,350),delay_samples=0,noise_rms_v=0), seed=11)
     readout=HeaterReadout(replace(readout.config,noise_rms_v=case.get('noise_rms_v',0)),seed=case.get('seed',11))
-    calibration=HeaterReadout(replace(readout.config,noise_rms_v=0),seed=0)
+    calibration = HeaterReadout(replace(
+        readout.config, r0_ohm=nominal['heater_r_ohm'], tcr_per_k=nominal['r_tcr_per_k'],
+        divider_reference_ohm=nominal['heater_r_ohm'], noise_rms_v=0,
+    ), seed=0)
+    if robustness is not None:
+        readout = HeaterReadout(replace(
+            readout.config, calibration_r0_ohm=nominal['heater_r_ohm'],
+            calibration_tcr_per_k=nominal['r_tcr_per_k'],
+            divider_reference_ohm=nominal['heater_r_ohm'],
+            delay_samples=case['delay_samples'], gain_error_fraction=case['gain_error'],
+            offset_error_v=case['offset_v'],
+        ), seed=case['seed'])
     calibration_c = json.loads(os.environ.get('THERMO_RTL_CALIBRATION_C', '[40,80]'))
     lo_code = calibration.sample(calibration_c[0], 1.0).code
     hi_code = calibration.sample(calibration_c[1], 1.0).code
@@ -85,11 +104,20 @@ async def rtl_ffpi_closed_loop_rc(dut):
         await bridge.write(0x40+4*index,entry["duty_q8"])
     await bridge.commit()
 
-    nw, nh, nc = round(cycle["warmup_tau"]*plant.tau_s/dt), round(cycle["hold_tau"]*plant.tau_s/dt), round(cycle["cool_tau"]*plant.tau_s/dt)
+    cycle_tau_s = (nominal['r_th_k_per_w'] * nominal['c_th_j_per_k']
+                   if robustness is not None else plant.tau_s)
+    nw, nh, nc = (round(cycle[key] * cycle_tau_s / dt)
+                  for key in ('warmup_tau', 'hold_tau', 'cool_tau'))
     step_i, cool_i, total = nw+round(nh*cycle["step_at_hold_fraction"]), nw+nh, nw+nh+nc
-    temp=plant.ambient_c; applied=1/256; latest_code=readout.sample(temp,applied).code
+    temp = plant.ambient_c
+    applied = 1 / 256
+    # Fill the delay line at the initial ambient equilibrium before starting the cycle.
+    for _ in range(readout.config.delay_samples + 1):
+        sample = readout.sample(temp, applied)
+    assert sample.valid
+    latest_code = sample.code
     trace=[]; energy={"warmup":0.0,"hold":0.0,"cooldown":0.0}; sensing_energy=0.0
-    previous_q8=0
+    powered_fault_latched = False
     for i in range(total):
         phase="warmup" if i<nw else "hold" if i<cool_i else "cooldown"
         target=cycle["initial_setpoint_c"]+(cycle["step_c"] if i>=step_i else 0)
@@ -99,28 +127,45 @@ async def rtl_ffpi_closed_loop_rc(dut):
         if i == cool_i:
             await bridge.write(bridge.REG_CTRL, 0)
             await bridge.commit(max_cycles=300)
-        if phase == "cooldown":
+        if phase == "cooldown" or powered_fault_latched:
             dut.adc_valid.value = 0
             await Timer(3200, unit="ns")
             result={"duty_q8":int(dut.duty_q8.value),"fault_cause":int(dut.fault_cause.value)}
             assert int(dut.pwm_out.value) == 0
         else:
             result=await bridge.next_sample(latest_code,max_cycles=300)
-        if phase != "cooldown":
-            assert result["fault_cause"]==0, f"RTL fault latched in powered loop at interval {i}: {result}"
-        else:
-            assert result["duty_q8"] == 0 and result["fault_cause"] in (0,4)
-        previous_q8=result["duty_q8"]
-        command=0.0 if phase=="cooldown" else previous_q8/256.0
-        applied=max(command,1/256) if phase!="cooldown" and command==0.0 else command
+        if phase == "cooldown":
+            assert result["duty_q8"] == 0
+            if robustness is None:
+                assert result["fault_cause"] in (0, 4)
+        elif robustness is None:
+            assert result["fault_cause"] == 0, f"RTL fault latched at interval {i}: {result}"
+        elif result["fault_cause"]:
+            powered_fault_latched = True
+            assert int(dut.pwm_out.value) == 0
+        previous_q8 = result["duty_q8"]
+        powered = phase != "cooldown" and not powered_fault_latched
+        applied = max(previous_q8, 1) / 256.0 if powered else 0.0
         power=plant.power(applied,temp)
         energy[phase]+=power*dt
         trace.append({"t_s":i*dt,"temp_c":temp,"setpoint_c":target,"duty_q8":previous_q8,"applied_duty_including_measurement_pulse":applied,"heater_power_w":power,"sample_valid":int(phase!="cooldown"),"phase":phase,"fault_cause":result["fault_cause"],"estimated_temp_c":result.get('temp_q6',float('nan'))/64})
-        temp=plant.step(temp,applied,dt)
-        sample=readout.sample(temp,applied)
-        assert sample.valid == (phase != "cooldown")
-        sensing_energy += sample.sense_power_w*dt
-        if sample.valid: latest_code=sample.code
+        temp = plant.step(temp, applied, dt)
+        sample = readout.sample(temp, applied)
+        if robustness is None:
+            assert sample.valid == (phase != "cooldown")
+            sensing_energy += sample.sense_power_w * dt
+        else:
+            observable = applied >= readout.config.window_min_duty
+            sense_power = (readout.config.excitation_v**2 /
+                           (readout.config.divider_reference_ohm + readout.resistance(temp))
+                           if observable else 0.0)
+            sensing_energy += sense_power * dt
+            trace[-1].update(
+                adc_code=result.get('adc_code', ''), sample_valid=int('adc_code' in result),
+                sensing_power_w=sense_power, post_step=int(step_i <= i < cool_i),
+            )
+        if sample.valid:
+            latest_code = sample.code
 
     trace_path=out/"trace.csv"
     with trace_path.open("w",newline="",encoding="utf-8") as f:
@@ -140,5 +185,24 @@ async def rtl_ffpi_closed_loop_rc(dut):
     summary['overshoot_hold_c']=max(0.0,max(errors))
     summary['heater_voltage_v'] = base['heater_v']
     summary['readout_rmse_hold_c']=math.sqrt(sum((r['estimated_temp_c']-r['temp_c'])**2 for r in hold)/len(hold))
+    if robustness is not None:
+        dwell = robustness['settling_dwell_samples']
+        settle_index = next((
+            i for i in range(step_i, cool_i - dwell + 1)
+            if all(abs(row['temp_c'] - row['setpoint_c']) <= robustness['settling_band_c']
+                   for row in trace[i:i + dwell])
+        ), None)
+        summary.update(
+            settling_time_after_step_s=None if settle_index is None else (settle_index - step_i) * dt,
+            peak_temperature_c=max(row['temp_c'] for row in trace),
+            applied_plant={key: base[key] for key in (
+                'r_th_k_per_w', 'c_th_j_per_k', 'heater_r_ohm', 'r_tcr_per_k', 'ambient_c'
+            )},
+        )
+        summary['readout'].update(
+            delay_samples=readout.config.delay_samples, gain_error=readout.config.gain_error_fraction,
+            offset_v=readout.config.offset_error_v, noise_rms_v=readout.config.noise_rms_v,
+            calibration_gain_q14=gain_q14, calibration_offset_q6=offset_q6,
+        )
     (out/"metrics.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     dut._log.info("RTL-in-loop experiment complete: %s",json.dumps(summary))
