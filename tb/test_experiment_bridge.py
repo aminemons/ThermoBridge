@@ -199,6 +199,15 @@ async def rtl_ffpi_closed_loop_rc(dut):
                 'r_th_k_per_w', 'c_th_j_per_k', 'heater_r_ohm', 'r_tcr_per_k', 'ambient_c'
             )},
         )
+        readout_errors = [
+            row['estimated_temp_c'] - row['temp_c']
+            for row in hold if row['sample_valid']
+        ]
+        summary['readout_rmse_hold_c'] = (
+            math.sqrt(sum(error * error for error in readout_errors) / len(readout_errors))
+            if readout_errors else None
+        )
+        summary['readout_hold_sample_count'] = len(readout_errors)
         summary['readout'].update(
             delay_samples=readout.config.delay_samples, gain_error=readout.config.gain_error_fraction,
             offset_v=readout.config.offset_error_v, noise_rms_v=readout.config.noise_rms_v,

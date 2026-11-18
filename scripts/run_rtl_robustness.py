@@ -69,6 +69,15 @@ def verify_trace(rows, metrics, robustness):
     require(all(float(row["heater_power_w"]) == 0 for row in rows
                 if row["phase"] == "cooldown" or int(row["fault_cause"])),
             "heater applied while disabled or faulted")
+    readout_errors = [float(row["estimated_temp_c"]) - float(row["temp_c"])
+                      for row in hold if row["sample_valid"] == "1"]
+    require(len(readout_errors) == metrics["readout_hold_sample_count"], "readout sample count")
+    observed_rmse = metrics["readout_rmse_hold_c"]
+    if readout_errors:
+        require(math.isclose(math.sqrt(sum(e * e for e in readout_errors) / len(readout_errors)),
+                             observed_rmse), "readout RMSE")
+    else:
+        require(observed_rmse is None, "missing readout RMSE")
     require(all(math.isclose(float(row["t_s"]), i * dt) for i, row in enumerate(rows)), "sample grid")
 
 
