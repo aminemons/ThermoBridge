@@ -1,0 +1,70 @@
+{
+  "protocol": "thermobridge-fixed-controller-robustness-v5",
+  "frozen_date": "2026-11-18",
+  "purpose": "Paired 0.15 V and 0.18 V heater supplies under assumed plant and readout variation. No coefficient selection or training.",
+  "case_basis": "Assumption ranges from evaluation_v1.json heldout_scenarios. New composite RTL cases use a 51-to-61 C schedule and new RNG seeds.",
+  "fixed_controller": {
+    "kp_q14": 1638,
+    "ki_per_sample_q14": 32,
+    "calibration_c": [
+      45,
+      70
+    ]
+  },
+  "heater_supplies_v": [
+    0.15,
+    0.18
+  ],
+  "robustness": {
+    "settling_band_c": 2.0,
+    "settling_dwell_samples": 10
+  },
+  "engineering_limits": {
+    "hold_rmse_c": 2.0,
+    "hold_overshoot_c": 5.0,
+    "powered_fault_count": 0
+  },
+  "training": [],
+  "evaluation": [
+    {"id":"v5_01_nominal_5010","scenario":"E01_nominal","seed":5010,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_02_cold_ambient_5020","scenario":"E02_cold_ambient","seed":5020,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_03_hot_ambient_5030","scenario":"E03_hot_ambient","seed":5030,"initial_setpoint_c":51,"step_c":10,"ambient_c":45,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.01,"offset_v":0.001,"noise_rms_v":0.0003,"delay_samples":1},
+    {"id":"v5_03_hot_ambient_5031","scenario":"E03_hot_ambient","seed":5031,"initial_setpoint_c":51,"step_c":10,"ambient_c":45,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.01,"offset_v":0.001,"noise_rms_v":0.0003,"delay_samples":1},
+    {"id":"v5_03_hot_ambient_5032","scenario":"E03_hot_ambient","seed":5032,"initial_setpoint_c":51,"step_c":10,"ambient_c":45,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.01,"offset_v":0.001,"noise_rms_v":0.0003,"delay_samples":1},
+    {"id":"v5_03_hot_ambient_5033","scenario":"E03_hot_ambient","seed":5033,"initial_setpoint_c":51,"step_c":10,"ambient_c":45,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.01,"offset_v":0.001,"noise_rms_v":0.0003,"delay_samples":1},
+    {"id":"v5_03_hot_ambient_5034","scenario":"E03_hot_ambient","seed":5034,"initial_setpoint_c":51,"step_c":10,"ambient_c":45,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.01,"offset_v":0.001,"noise_rms_v":0.0003,"delay_samples":1},
+    {"id":"v5_04_low_Rth_5040","scenario":"E04_low_Rth","seed":5040,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":0.8,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_05_high_Rth_5050","scenario":"E05_high_Rth","seed":5050,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.2,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_06_low_Cth_5060","scenario":"E06_low_Cth","seed":5060,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":0.8,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_07_high_Cth_5070","scenario":"E07_high_Cth","seed":5070,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.2,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_08_low_Rheater_5080","scenario":"E08_low_Rheater","seed":5080,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":0.9,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_09_high_Rheater_5090","scenario":"E09_high_Rheater","seed":5090,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.1,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_10_low_TCR_5100","scenario":"E10_low_TCR","seed":5100,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":0.8,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_11_high_TCR_5110","scenario":"E11_high_TCR","seed":5110,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.2,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_12_gain_minus_5120","scenario":"E12_gain_minus","seed":5120,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":-0.02,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_13_gain_plus_5130","scenario":"E13_gain_plus","seed":5130,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0.02,"offset_v":0,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_14_offset_minus_5140","scenario":"E14_offset_minus","seed":5140,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":-0.003,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_15_offset_plus_5150","scenario":"E15_offset_plus","seed":5150,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0.003,"noise_rms_v":0,"delay_samples":1},
+    {"id":"v5_16_noisy_5160","scenario":"E16_noisy","seed":5160,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0.001,"delay_samples":1},
+    {"id":"v5_16_noisy_5161","scenario":"E16_noisy","seed":5161,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0.001,"delay_samples":1},
+    {"id":"v5_16_noisy_5162","scenario":"E16_noisy","seed":5162,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0.001,"delay_samples":1},
+    {"id":"v5_16_noisy_5163","scenario":"E16_noisy","seed":5163,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0.001,"delay_samples":1},
+    {"id":"v5_16_noisy_5164","scenario":"E16_noisy","seed":5164,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0.001,"delay_samples":1},
+    {"id":"v5_17_two_sample_delay_5170","scenario":"E17_two_sample_delay","seed":5170,"initial_setpoint_c":51,"step_c":10,"ambient_c":25,"rth_scale":1.0,"cth_scale":1.0,"heater_r_scale":1.0,"tcr_scale":1.0,"gain_error":0,"offset_v":0,"noise_rms_v":0,"delay_samples":2},
+    {"id":"v5_18_combined_A_5180","scenario":"E18_combined_A","seed":5180,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.15,"cth_scale":0.9,"heater_r_scale":1.08,"tcr_scale":0.85,"gain_error":-0.015,"offset_v":0.002,"noise_rms_v":0.0006,"delay_samples":2},
+    {"id":"v5_18_combined_A_5181","scenario":"E18_combined_A","seed":5181,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.15,"cth_scale":0.9,"heater_r_scale":1.08,"tcr_scale":0.85,"gain_error":-0.015,"offset_v":0.002,"noise_rms_v":0.0006,"delay_samples":2},
+    {"id":"v5_18_combined_A_5182","scenario":"E18_combined_A","seed":5182,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.15,"cth_scale":0.9,"heater_r_scale":1.08,"tcr_scale":0.85,"gain_error":-0.015,"offset_v":0.002,"noise_rms_v":0.0006,"delay_samples":2},
+    {"id":"v5_18_combined_A_5183","scenario":"E18_combined_A","seed":5183,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.15,"cth_scale":0.9,"heater_r_scale":1.08,"tcr_scale":0.85,"gain_error":-0.015,"offset_v":0.002,"noise_rms_v":0.0006,"delay_samples":2},
+    {"id":"v5_18_combined_A_5184","scenario":"E18_combined_A","seed":5184,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.15,"cth_scale":0.9,"heater_r_scale":1.08,"tcr_scale":0.85,"gain_error":-0.015,"offset_v":0.002,"noise_rms_v":0.0006,"delay_samples":2},
+    {"id":"v5_19_combined_B_5190","scenario":"E19_combined_B","seed":5190,"initial_setpoint_c":51,"step_c":10,"ambient_c":38,"rth_scale":0.9,"cth_scale":1.15,"heater_r_scale":0.92,"tcr_scale":1.15,"gain_error":0.015,"offset_v":-0.002,"noise_rms_v":0.0007,"delay_samples":1},
+    {"id":"v5_19_combined_B_5191","scenario":"E19_combined_B","seed":5191,"initial_setpoint_c":51,"step_c":10,"ambient_c":38,"rth_scale":0.9,"cth_scale":1.15,"heater_r_scale":0.92,"tcr_scale":1.15,"gain_error":0.015,"offset_v":-0.002,"noise_rms_v":0.0007,"delay_samples":1},
+    {"id":"v5_19_combined_B_5192","scenario":"E19_combined_B","seed":5192,"initial_setpoint_c":51,"step_c":10,"ambient_c":38,"rth_scale":0.9,"cth_scale":1.15,"heater_r_scale":0.92,"tcr_scale":1.15,"gain_error":0.015,"offset_v":-0.002,"noise_rms_v":0.0007,"delay_samples":1},
+    {"id":"v5_19_combined_B_5193","scenario":"E19_combined_B","seed":5193,"initial_setpoint_c":51,"step_c":10,"ambient_c":38,"rth_scale":0.9,"cth_scale":1.15,"heater_r_scale":0.92,"tcr_scale":1.15,"gain_error":0.015,"offset_v":-0.002,"noise_rms_v":0.0007,"delay_samples":1},
+    {"id":"v5_19_combined_B_5194","scenario":"E19_combined_B","seed":5194,"initial_setpoint_c":51,"step_c":10,"ambient_c":38,"rth_scale":0.9,"cth_scale":1.15,"heater_r_scale":0.92,"tcr_scale":1.15,"gain_error":0.015,"offset_v":-0.002,"noise_rms_v":0.0007,"delay_samples":1},
+    {"id":"v5_20_combined_C_5200","scenario":"E20_combined_C","seed":5200,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.05,"cth_scale":1.1,"heater_r_scale":1.05,"tcr_scale":1.1,"gain_error":-0.01,"offset_v":0.0015,"noise_rms_v":0.0008,"delay_samples":3},
+    {"id":"v5_20_combined_C_5201","scenario":"E20_combined_C","seed":5201,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.05,"cth_scale":1.1,"heater_r_scale":1.05,"tcr_scale":1.1,"gain_error":-0.01,"offset_v":0.0015,"noise_rms_v":0.0008,"delay_samples":3},
+    {"id":"v5_20_combined_C_5202","scenario":"E20_combined_C","seed":5202,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.05,"cth_scale":1.1,"heater_r_scale":1.05,"tcr_scale":1.1,"gain_error":-0.01,"offset_v":0.0015,"noise_rms_v":0.0008,"delay_samples":3},
+    {"id":"v5_20_combined_C_5203","scenario":"E20_combined_C","seed":5203,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.05,"cth_scale":1.1,"heater_r_scale":1.05,"tcr_scale":1.1,"gain_error":-0.01,"offset_v":0.0015,"noise_rms_v":0.0008,"delay_samples":3},
+    {"id":"v5_20_combined_C_5204","scenario":"E20_combined_C","seed":5204,"initial_setpoint_c":51,"step_c":10,"ambient_c":20,"rth_scale":1.05,"cth_scale":1.1,"heater_r_scale":1.05,"tcr_scale":1.1,"gain_error":-0.01,"offset_v":0.0015,"noise_rms_v":0.0008,"delay_samples":3}
+  ]
+}

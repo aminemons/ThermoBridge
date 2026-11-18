@@ -1,0 +1,3 @@
+# Project settings for trusted ThermoBridge workspaces.
+# https://developers.openai.com/codex/config-reference
+sandbox_mode = "workspace-write"

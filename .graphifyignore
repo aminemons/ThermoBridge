@@ -1,0 +1,9 @@
+# Index source and architecture documentation. Archived run outputs stay in Git.
+reports/
+results/
+outputs/
+docs/figures/
+docs/*.pdf
+release/figures/
+graphify-out/
+/ .md

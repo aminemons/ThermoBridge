@@ -1,14 +1,8 @@
 # ThermoBridge checkpoint
 
-Date: 9 November 2026. Phase: heater operating-point validation and prototype release.
+18 November 2026. Phase: frozen v5 heater robustness study completed.
 
-- Current checks cover 29 Python tests and two RTL unit tests. The v3/v4 studies add 71 actual RTL runs. Six fresh 0.18 V cases meet 2 C hold RMSE, spanning 1.675-1.777 C, with worst hold overshoot 1.297 C.
-- The proposed operating point raises the external heater from 0.15 to 0.18 V with v3-trained gains and calibration. Available peak heater power increases 44%. Original 0.15 V failures remain recorded.
-- The independent 0.18 V pulse validates the frozen RC fit with 0.128 C RMS error at 0.25 ms and 0.324% refinement sensitivity. All declared numerical checks pass.
-- Physical: unchanged routed geometry, 10 MHz only with ADC arrival <=15 ns. Original20ns timing failed. Electrical warnings remain; no foundry signoff.
-- Runtime: reused `iic-osic-tools`, `/foss/designs/thermobridge`, UID/GID1000. No image/PDK reinstall.
-- GitHub: Ishaq-ML write access confirmed; contribution reviewed: quickstart `6e23643` / PR#1. Existing rewritten history preserved; new work uses actual dates.
-- Evidence: `reports/rtl_study_v3.json`, `reports/rtl_study_v4.json`, `reports/operating_point_validation.json`, `reports/heating_reference.json`, and the revision3 article.
-- Next: human review of the proposed heater supply; transistor OTA and extracted layout; arithmetic alternatives and independent physical rerun per `docs/LIMITATIONS.md`.
-- Last physical milestone: `fcd61fb`. Final validation commit is recorded by Git and the reproduction audit.
-- Clean source `1e91b8f` passed 29 tests, both RTL unit tests, the 540-row campaign and the evidence audit. The worst fresh 0.18 V case reproduced at 1.777 C in `reports/reproduction/rtl_v4_case.json`.
+- Validated source: `5d569b6`. Host Python and cocotb tests pass, 16 v4 RTL evaluation rows reproduce, and the v5 archive verifier recomputes all 80 traces.
+- v5: 0.18 V passes all four gates in 19 of 40 pairs, versus 8 at 0.15 V. Both supplies latch an ADC-rail fault in the low-resistance case. The wider operating envelope remains open. See [v5 report](../reports/rtl_study_v5.md) and its trace archive.
+- Physical evidence remains conditional on ADC15. The archived core passed DRC and LVS, and the latest clean smoke reached SKY130A synthesis.
+- Next: fix the modeled readout range and test delay margins on a new protocol. Reproduce the digital baseline through route and verification. Derive the sampled readout requirements for the separate OTA.

@@ -20,8 +20,8 @@ The host checkout and `/foss/designs/thermobridge` are separate copies. Run `syn
 ```bash
 mkdir -p ~/Dev/Projects
 cd ~/Dev/Projects
-git clone https://github.com/aminemons/project.git project
-cd project
+git clone https://github.com/aminemons/ThermoBridge.git
+cd ThermoBridge
 
 python3 -m venv .venv
 source .venv/bin/activate

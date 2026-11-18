@@ -1,4 +1,4 @@
-.PHONY: doctor test-physics test-rtl simulate simulate-operating-point sweep synth gds verify-layout figures report release-check
+.PHONY: doctor test-physics test-rtl simulate simulate-operating-point simulate-robustness verify-robustness sweep synth gds verify-layout figures report release-check
 PYTHON ?= python3
 RUN ?= results/raw/experiments/exp-20261027T135345Z-7afca8
 doctor:
@@ -13,6 +13,10 @@ simulate:
 	$(PYTHON) scripts/run_rtl_experiment.py
 simulate-operating-point:
 	$(PYTHON) scripts/run_rtl_study.py --protocol configs/rtl_study_v4.json
+simulate-robustness:
+	$(PYTHON) scripts/run_rtl_robustness.py
+verify-robustness:
+	$(PYTHON) scripts/run_rtl_robustness.py --verify
 sweep:
 	$(PYTHON) scripts/run_geometry_study.py
 synth:

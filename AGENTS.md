@@ -2,6 +2,15 @@
 
 Read `START_HERE.md`, then the current phase in `docs/DESKTOP_CODEX_BRIEF.md`. Implement the project, not another plan. Follow the user's authorization and any applicable higher-priority instructions.
 
+Use `docs/STATE.md` for the current checkpoint, `docs/MILESTONES.md` for the remaining exit gates, and `docs/REPRODUCE.md` for commands. Project workflows live under `.agents/skills/`.
+
+## Working in the codebase
+
+- For architecture questions, start with `graphify query "<question>"` when `graphify-out/graph.json` is available. Check named relationships against the source before changing code.
+- Preserve frozen protocols under `configs/` and their evidence. For a new evaluation, version the protocol and freeze thresholds, the training/evaluation split and seeds before running it.
+- Use `make test-physics test-rtl` for the host simulation baseline. `make verify-layout` audits archived digital evidence. A new physical run needs the recorded SKY130A toolchain and an isolated workspace.
+- Use `python scripts/release_check.py --operating-point` to audit the 0.18 V candidate. Keep its result scoped to the protocol and the original 0.15 V gate visible.
+
 ## Evidence and history
 
 - Use actual commit dates and the authenticated author's identity. Do not fabricate contributions, experiments, institutional affiliations, acceptance odds, or measurements.

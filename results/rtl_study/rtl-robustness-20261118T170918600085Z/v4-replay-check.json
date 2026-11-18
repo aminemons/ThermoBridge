@@ -1,0 +1,21 @@
+{
+  "replayed_run": "results/rtl_study/rtl-study-20261118T170657918918Z",
+  "comparison_fields": [
+    "rmse_hold_c",
+    "overshoot_hold_c",
+    "energy_total_j",
+    "sensing_energy_j",
+    "powered_fault_count"
+  ],
+  "evaluation_rows": 16,
+  "rel_tol": 1e-10,
+  "abs_tol": 1e-12,
+  "source_commit": "df1082452eaddf6713e29125191b5a6434a00519",
+  "reference": "reports/rtl_study_v4.json",
+  "runtime": {
+    "cocotb": "2.1.0",
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "python": "3.12.3"
+  },
+  "status": "passed"
+}

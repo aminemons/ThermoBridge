@@ -72,6 +72,18 @@ python scripts/check_clean_rtl_case.py --report reports/rtl_study_v4.json --case
 
 Its recorded RMSE is 1.777189 C with matching energy at relative tolerance 1e-10 and absolute tolerance 1e-12. Concurrent-run checks are recorded in `reports/rtl_isolation.json`.
 
+## Frozen v5 RTL robustness study
+
+Run in a clean checkout with Python, cocotb and Icarus Verilog available.
+
+```bash
+make simulate-robustness
+make verify-robustness
+python scripts/plot_rtl_robustness.py
+```
+
+The first target runs the fixed controller at both heater supplies and writes a new evidence bundle under `results/rtl_study/`. It updates the JSON report pointer only after recording every case. The verification target audits the indexed archive and recomputes its per-case gates. The plot script uses the report environment. See the [study report](../reports/rtl_study_v5.md) and the [complete experiment table](../reports/rtl_study_v5.csv).
+
 ## Historical material
 
 `release/` preserves an earlier desktop runner/tests. Local `release_out/` and ZIP exports predate final conditional timing and are superseded. Canonical evidence is `reports/asic/summary.json` and `reports/release_snapshot.json`. `reports/asic/manifest.json` is a failed earlier attempt. Selected earlier failure manifests/metrics are retained under `results/history/`; bulky historical traces remain local.
